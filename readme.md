@@ -80,7 +80,7 @@ override styles up to the inline width of the container.
 ------------------------------------------------------------------------------------------------------------------------
 Apple preprocessor changes numbers (phones, etc) into links:
 
-- use <style> to set default color on anchors
+- use style tag to set default color on anchors
     a { color...
 
 - use span with a descendant selector to override default color
