@@ -1,0 +1,11 @@
+/* override styles up to the inline width of the container. */
+@media screen and (max-width: 600px) {
+    .width-full {
+        width: 100% !important;
+    }
+}
+
+.stack-column {
+    display: block !important;
+    width: 100% !important;
+}

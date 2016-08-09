@@ -1,0 +1,38 @@
+/*
+    MAILCHIMP CSS reset for emails
+    http://templates.mailchimp.com/development/css/reset-styles/
+    archived: https://www.evernote.com/shard/s173/sh/4bdb64ef-7a11-4ed6-9892-135922d66689/7243303a0a3ef3f8a6184fc0bd98f58d
+*/
+
+body{
+    margin:0;
+    padding:0;
+}
+
+img{
+    border:0 none;
+    height:auto;
+    line-height:100%;
+    outline:none;
+    text-decoration:none;
+}
+
+a img{
+    border:0 none;
+}
+
+.imageFix{
+    display:block;
+}
+
+table, td{
+    border-collapse:collapse;
+    border: 0;
+}
+
+#bodyTable{
+    height:100% !important;
+    margin:0;
+    padding:0;
+    width:100% !important;
+}

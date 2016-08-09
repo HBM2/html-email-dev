@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Email base</title>
+    <link rel="stylesheet" href="../styles/mailchimp-reset.css">
+    <link rel="stylesheet" href="../styles/fluid-600px.css">
+    <meta name="viewport" content="width=device-width" />
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+    <!-- build:<dev_scripts> -->
+    <!-- scripts for rendering template during development -->
+    <script src="../scripts/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var context = {
+                name: 'Phil buddy'
+            };
+            var template = Handlebars.compile(document.body.innerHTML);
+            var html = template(context);
+            document.body.innerHTML = html;
+        };
+    </script>
+    <!-- endbuild -->
+</head>
+<body>
+<!-- open wrapper table with fixed width in mso/ie (needs to be done around all fluid table elements in body root...) -->
+<!--[if mso|(IE)]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+<tr><td>
+<![endif]-->
+
+<!-- full width fluid table -->
+<table class="width-full" border="0" cellpadding="0" cellspacing="0">
+<tr>
+    <td>
+        <!-- content of email -->
+        {{name}}
+    </td>
+</tr>
+</table>
+
+<!-- close wrapper table with fixed width in mso/ie -->
+<!--[if mso|(IE)]>
+</td></tr></table>
+<![endif]-->
+</body>
+</html>
