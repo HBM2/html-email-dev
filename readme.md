@@ -68,7 +68,7 @@ media queries for smaller screens:
 
 - problem: fixed widths cause zoom out (if there are widths > viewport)
 - solution: any client that supports media queries will support style tags.
-- use 100% width class, within inline <style> tag, for fixed width tables
+- use 100% width class, within inline style tag, for fixed width tables
 
 override styles up to the inline width of the container.
 @media screen and (max-width: 600px) {
