@@ -70,7 +70,7 @@ media queries for smaller screens:
 - solution: any client that supports media queries will support style tags.
 - use 100% width class, within inline <style> tag, for fixed width tables
 
-/* override styles up to the inline width of the container. */
+override styles up to the inline width of the container.
 @media screen and (max-width: 600px) {
     .width-full {
         width: 100% !important;
