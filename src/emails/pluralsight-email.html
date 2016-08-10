@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML Email base</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../styles/mailchimp-reset.css">
+    <link rel="stylesheet" href="../styles/fluid-600px.css">
+    <link rel="stylesheet" href="../styles/pluralsight-email.css">
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+    <!-- scripts for rendering template during development, TODO: remove in build -->
+    <script src="../scripts/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var context = {
+                name: 'Phil buddy!'
+            };
+            var template = Handlebars.compile(document.body.innerHTML);
+            var html = template(context);
+            document.body.innerHTML = html;
+        };
+    </script>
+</head>
+<body>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+<tr>
+    <td>
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+            <!-- logo / preheader text -->
+            <tr>
+                <td>
+                    <!-- content table -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td>
+                                LOGO
+                            </td>
+                            <td>
+                                Some witty text can go up here.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+    <tr>
+        <td>
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <!-- logo / preheader text -->
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td>
+                                    IMAGE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Responsive email design
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Email is one of those most important tools for connecting with people on the web.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Join email advocates <a href="#">Buddy McDonalds</a> as they build an email.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" id="html">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>HTML Email base</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/mailchimp-reset.css">
     <link rel="stylesheet" href="../styles/fluid-600px.css">
     <meta name="viewport" content="width=device-width" />
@@ -14,20 +14,18 @@
     </style>
     <![endif]-->
 
-    <!-- build:<dev_scripts> -->
-    <!-- scripts for rendering template during development -->
+    <!-- scripts for rendering template during development, TODO: remove in build -->
     <script src="../scripts/handlebars-v4.0.5.js"></script>
     <script type="text/javascript">
         window.onload = function() {
             var context = {
-                name: 'Phil buddy'
+                name: 'Phil buddy!'
             };
             var template = Handlebars.compile(document.body.innerHTML);
             var html = template(context);
             document.body.innerHTML = html;
         };
     </script>
-    <!-- endbuild -->
 </head>
 <body>
 <!-- open wrapper table with fixed width in mso/ie (needs to be done around all fluid table elements in body root...) -->

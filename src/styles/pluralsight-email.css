@@ -1,0 +1,6 @@
+.container_table {
+    width: 100%;
+
+    /* bugfix for yahoo mail, for table alignment in nested tables. only needs to be on outermost container table */
+    table-layout: fixed;
+}

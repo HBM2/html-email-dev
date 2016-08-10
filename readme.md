@@ -24,9 +24,14 @@ https://www.campaignmonitor.com/css/
 ------------------------------------------------------------------------------------------------------------------------
 general tips:
 
+- put alt text on img, add font-styles for alt text styling
+- use tables for layout. put most styles on td elements.
+- use align attribute on td to align text, instead of text-align styles
+- use pixel values for best client support (instead of ems/rems/etc)
+- use maximum fixed width of 600px in general. outlook needs a fixed width on something, or it gets blown out.
+- then override with media queries and width:100% for mobile devices
 - don't use shorthand styles (eg, margin: 0 0 0 0). Use margin-left, margin-right, etc.
-- use fixed width of 600px in general, then override with media queries and width:100% for mobile devices
-- use tables for layout. tables inside of tables inside of tables.
+    (1 exception - you can use shorthand padding!)
 - use both css width and html attribute width, etc
 - table elements need border=0, cellpadding=0, cellspacing=0 attribute resets.
 - style fonts on td's
