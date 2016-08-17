@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var inlineCss = require('gulp-inline-css');
 var htmlReplace = require('gulp-html-replace');
+var uploadImages = require('./gulp-static-image-uploader');
 
 gulp.task('default', inlineStyles);
 
@@ -37,5 +38,6 @@ function inlineStyles() {
                 tpl: '<!-- script removed -->'
             }
         }))
+        .pipe(uploadImages({}))
         .pipe(gulp.dest('./build/'));
 }
