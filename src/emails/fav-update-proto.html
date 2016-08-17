@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML Email base</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="../styles/fav-update-proto.css"/>
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+    <!-- scripts for rendering template during development, TODO: remove in build -->
+    <script src="../scripts/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var context = {
+                // email viewmodel for handlebars to render
+            };
+            var template = Handlebars.compile(document.body.innerHTML);
+            var html = template(context);
+            document.body.innerHTML = html;
+        };
+    </script>
+</head>
+<body class="bgcolor">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="header_container">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="../../images/fav-update-proto/logo.png" alt="Home Scouting" />
+                                </td>
+                                <td class="header_text">
+                                    Favorite Update
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td class="topcopy">
+                                    Recent changes to one of your favorite properties.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620" class="whitebg">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- content padding -->
+                                <td style="padding: 20px;">
+                                    <!-- inner table for property information responsive columns -->
+                                    <table border="0" cellpadding="0" cellspacing="0" class="container_table">
+                                        <tr>
+                                            <td>
+                                                <div class="listing_photo">
+                                                    <img src="../../images/fav-update-proto/listing_pic_fpo.png"
+                                                         alt="1840 Sioux Trail South"/>
+                                                </div>
+                                                <div class="listing_info valign_top">
+                                                    <!-- nested table for listing info -->
+                                                    <table border="0" cellspacing="0" cellpadding="0" class="container_table">
+                                                        <tr>
+                                                            <td class="listprice">
+                                                                $425,000
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="listing_info_copy">
+                                                                3 beds 2 baths
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="listing_info_copy">
+                                                                1840 Sioux Trail South
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="listing_info_copy">
+                                                                New Brighton, MN
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="listing_status">
+                                                                STATUS CHANGE: PENDING
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="listing_info_copy">
+                                                                <div>
+                                                                    <!--[if mso]>
+                                                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://" style="height:40px;v-text-anchor:middle;width:100%;" arcsize="10%" stroke="f" fillcolor="#1c75bc">
+                                                                        <w:anchorlock/>
+                                                                        <center>
+                                                                    <![endif]-->
+                                                                    <a href="http://"
+                                                                       style="background-color:#1c75bc;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:100%;-webkit-text-size-adjust:none;">View it in Home Scouting</a>
+                                                                    <!--[if mso]>
+                                                                    </center>
+                                                                    </v:roundrect>
+                                                                    <![endif]-->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+<!-- agent biz card  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620" class="whitebg">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- content padding cell -->
+                                <td class="bizcard_padding">
+                                    <!-- bizcard content nested table -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td class="bizcard_photo">
+                                                <!-- photo -->
+                                                <img src="../../images/fav-update-proto/agent.png" alt="agent name" />
+                                            </td>
+                                            <td class="bizcard_copy_td">
+                                                <!-- nested agent copy table -->
+                                                <table border="0" cellspacing="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td class="bizcard_header">
+                                                            Great agent header here
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bizcard_copy">
+                                                            Wonderful copy here that reflects on well on the agent.
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+<!-- lo biz card  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620" class="whitebg">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- content padding cell -->
+                                <td class="bizcard_padding">
+                                    <!-- bizcard content nested table -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td class="bizcard_photo">
+                                                <!-- photo -->
+                                                <img src="../../images/fav-update-proto/lender.png" alt="agent name" />
+                                            </td>
+                                            <td class="bizcard_copy_td">
+                                                <!-- nested agent copy table -->
+                                                <table border="0" cellspacing="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td class="bizcard_header">
+                                                            Great lender header here
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bizcard_copy">
+                                                            Wonderful copy here that reflects on well on the lender.
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="header_container">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620">
+                <tr>
+                    <td>
+                        <!-- content table , no 100% width for this one, want it to collapse to fit. -->
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="getapp">
+                                    Get the Home Scouting App
+                                </td>
+                                <td class="appstore">
+                                    <a href="#">
+                                        <img src="../../images/fav-update-proto/app_store.png" alt="Available on the App Store" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <img src="../../images/fav-update-proto/google_play.png" alt="Available on Google Play" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="header_container">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620">
+                <tr>
+                    <td class="fineprint">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis convallis libero. Proin convallis nulla metus, non viverra elit consectetur at. Ut vehicula arcu eu odio ullamcorper faucibus. Fusce iaculis lacinia dictum. Ut mattis augue ex. In tempor vel neque sit amet efficitur. Fusce eros augue, mattis a tristique nec, elementum at nisl. Maecenas eros ante, porttitor at finibus pellentesque, fringilla sit amet dui. Praesent venenatis quam mauris, non pellentesque velit aliquet id.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="header_container">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="620">
+                <tr>
+                    <td class="fineprint">
+                        If you would like to unsubscribe to this email <a class="unsub" href="#">click here</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
