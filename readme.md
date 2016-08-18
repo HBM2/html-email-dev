@@ -1,3 +1,7 @@
+you might wanna read the raw version of this, it looks bad on github!
+https://github.com/philwinkel/html-email-dev/blob/master/readme.md
+
+
 npm install
 
 ------------------------------------------------------------------------------------------------------------------------
