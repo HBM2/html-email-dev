@@ -1,6 +1,10 @@
 /**
  * Created by pwinkel on 8/17/2016.
- * gulp plugin that will find images in a HTML file, upload them somewhere, and replace the img src
+ * gulp plugin that does some custom processing for HTML email templates
+ *  - find images in a HTML file, upload them somewhere, and replace the img src
+ *  - remove script tags
+ *  - remove html comments
+ *  - minify html
  */
 var cheerio = require('cheerio');
 var through = require('through2');
@@ -8,6 +12,10 @@ var PluginError = require('gulp-util').PluginError;
 var moment = require('moment');
 var fs = require('fs');
 var path = require('path');
+var username = require('username');
+var nodemailer = require('nodemailer');
+var Promise = require('bluebird');
+var litmusConfig = require('./config/litmus.config');
 
 const PLUGIN_NAME = 'gulp-static-image-uploader';
 
@@ -20,8 +28,6 @@ const DEFAULT_OPTIONS = {
 module.exports = function() {
     return through.obj(function(file, encoding, callback) {
         // The type of file.contents should always be the same going out as it was when it came in
-
-        var chunks = [];
 
         if (file.isNull()) {
             // nothing to do
@@ -37,13 +43,8 @@ module.exports = function() {
             // return callback(null, file);
         } else if (file.isBuffer()) {
             // file.contents is a Buffer - https://nodejs.org/api/buffer.html
-            // this.emit('error', new PluginError(PLUGIN_NAME, 'Buffers not supported!'));
 
-            // file.basename = 'fav-update-proto.html'
-            // file.dirname = 'C:\Users\pwinkel\WebstormProjects\html-email-dev\src\emails'
-
-            // or, if you can handle Buffers:
-            //file.contents = ...
+            // load html into cheerio
             var $ = cheerio.load(file.contents.toString());
             var images = $('img');
             if (images.length) {
@@ -52,7 +53,7 @@ module.exports = function() {
             // for each image in the HTML...
             for(var i = 0; i < images.length; i++) {
                 // we have the HTML - relative image path in the src...
-                console.log(images[i].attribs.src);
+                var originalImgSrc = images[i].attribs.src;
 
                 // convert HTML relative image path to absolute filesystem path
                 var imageFilePath = path.resolve(file.dirname, images[i].attribs.src);
@@ -70,12 +71,62 @@ module.exports = function() {
 
                 // update the img.src to point at the destination
                 images[i].attribs.src = 'http://photos.hbm2.com/email-images/' + newFileName;
+
+                console.log(originalImgSrc + ' uploaded to ' + images[i].attribs.src);
             }
+
+            // get rid of any script tags in the html
+            $('script').remove();
+
+            // remove html comments from email
+            $('*').contents().filter(isComment).remove();
+
+            // add comment into head with some build info
+            var buildComment = '<!-- built by ' + username.sync() + ' on ' + moment().toString() + ' -->';
+            $('head').prepend(buildComment);
 
             // now that we updated image src paths using cheerio, redo the file html and pass it along to gulp
             file.contents = new Buffer($.html());
 
-            return callback(null, file);
+            // send the email to litmus
+            sendEmail({
+                from: 'pdub87@gmail.com',
+                to: litmusConfig.litmusTestAddress,
+                subject: $('title').text(),
+                text: 'plaintext email',
+                html: $.html()
+            }).then(function() {
+                console.log('sendEmail finished');
+                return callback(null, file);
+            });
         }
     });
 };
+
+function isComment(index, node) {
+    return node.type === 'comment';
+}
+
+function sendEmail(mailOptions) {
+    return new Promise(function(resolve,reject) {
+        var smtpConfig = require('./config/smtp.config');
+        var transporter = nodemailer.createTransport(smtpConfig);
+        transporter.sendMail(mailOptions, function(err, info){
+            if (err !== null) {
+                reject(err);
+            } else {
+                if (info.accepted.length) {
+                    for(var i = 0; i > info.accepted.length; i++) {
+                        console.log('sent email to ' + info.accepted[i]);
+                    }
+                }
+                if (info.rejected.length) {
+                    for(var i = 0; i > info.rejected.length; i++) {
+                        console.log('email was REJECTED when sending to ' + info.rejected[i]);
+                    }
+                }
+                resolve();
+            }
+        });
+    });
+}

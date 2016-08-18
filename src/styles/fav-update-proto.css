@@ -5,9 +5,11 @@ table td {
 
 .container_table {
     width: 100%;
+}
 
-    /* bugfix for yahoo mail, for table alignment in nested tables. only needs to be on outermost container table */
-    table-layout: fixed;
+.content_padding {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .stack_column {
@@ -47,14 +49,19 @@ table td {
 }
 
 .listing_photo {
-    width: 337px;
+    width: 300px;
     display: inline-block;
+}
+
+.listing_photo img {
+    max-width: 100%;
 }
 
 .listing_info {
     display: inline-block;
-    width: 217px;
+    width: 210px;
     padding-left: 20px;
+    padding-right: 0px;
 }
 .valign_top {
     vertical-align: top;
@@ -111,21 +118,4 @@ table td {
     color: #3da938;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-/* override styles up to the inline width of the container. */
-/* max-width here should match the .fixedwidth */
-@media screen and (max-width: 500px) {
-    .listing_photo, .listing_info {
-        display: block !important;
-        width: 100% !important;
-    }
-    .listing_photo img {
-        width: 100%;
-        max-width: 100%;
-    }
-    .listing_info {
-        padding-top: 20px;
-        padding-left: 0;
-    }
 }

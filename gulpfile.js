@@ -1,11 +1,13 @@
 var gulp = require('gulp');
 var inlineCss = require('gulp-inline-css');
-var htmlReplace = require('gulp-html-replace');
-var uploadImages = require('./gulp-static-image-uploader');
+var htmlEmailCustom = require('./gulp-html-email-custom');
+var litmus = require('gulp-litmus');
+var htmlmin = require('gulp-html-minifier');
+var nodemailer = require('nodemailer');
 
-gulp.task('default', inlineStyles);
+gulp.task('default', buildHtmlEmails);
 
-function inlineStyles() {
+function buildHtmlEmails() {
     return gulp.src('./src/emails/**/*.html')
         .pipe(inlineCss({
             // applies inlining to <style> tags
@@ -32,12 +34,8 @@ function inlineStyles() {
             // removes class and id attributes from html
             removeHtmlSelectors: false
         }))
-        .pipe(htmlReplace({
-            js: {
-                src: 'dev_scripts',
-                tpl: '<!-- script removed -->'
-            }
-        }))
-        .pipe(uploadImages({}))
+        .pipe(htmlEmailCustom())
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(litmus(require('./config/litmus.config')))
         .pipe(gulp.dest('./build/'));
 }

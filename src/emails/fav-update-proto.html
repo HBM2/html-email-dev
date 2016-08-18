@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HTML Email base</title>
+    <!-- title will be the name of the test in litmus -->
+    <title>fav-update-proto.html</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
@@ -16,7 +17,7 @@
     </style>
     <![endif]-->
 
-    <!-- scripts for rendering template during development, TODO: remove in build -->
+    <!-- scripts for rendering template during development, use whatever engine you want -->
     <script src="../scripts/handlebars-v4.0.5.js"></script>
     <script type="text/javascript">
         window.onload = function() {
@@ -28,15 +29,39 @@
             document.body.innerHTML = html;
         };
     </script>
+
+    <style>
+        /* override styles up to the inline width of the container. */
+        /* max-width here should match the .fixedwidth */
+        @media screen and (max-width: 500px) {
+            .listing_photo, .listing_info {
+                display: block !important;
+                width: 100% !important;
+            }
+            .listing_photo {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_photo img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_info {
+                padding-top: 20px;
+                padding-left: 0px;
+                padding-right: 20px;
+            }
+        }
+    </style>
 </head>
 <body class="bgcolor">
 
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center" class="header_container">
+        <td align="center" class="header_container content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620">
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
                 <tr>
                     <td>
                         <!-- content table -->
@@ -60,9 +85,9 @@
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center">
+        <td align="center" class="content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620">
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
                 <tr>
                     <td>
                         <!-- content table -->
@@ -83,9 +108,9 @@
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center">
+        <td align="center" class="content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620" class="whitebg">
+            <table border="0" cellpadding="0" cellspacing="0" width="580" class="whitebg">
                 <tr>
                     <td>
                         <!-- content table -->
@@ -169,9 +194,9 @@
 <!-- agent biz card  -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center">
+        <td align="center" class="content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620" class="whitebg">
+            <table border="0" cellpadding="0" cellspacing="0" width="580" class="whitebg">
                 <tr>
                     <td>
                         <!-- content table -->
@@ -221,9 +246,9 @@
 <!-- lo biz card  -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center">
+        <td align="center" class="content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620" class="whitebg">
+            <table border="0" cellpadding="0" cellspacing="0" width="580" class="whitebg">
                 <tr>
                     <td>
                         <!-- content table -->
@@ -268,9 +293,9 @@
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center" class="header_container">
+        <td align="center" class="header_container content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620">
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
                 <tr>
                     <td>
                         <!-- content table , no 100% width for this one, want it to collapse to fit. -->
@@ -301,9 +326,9 @@
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center" class="header_container">
+        <td align="center" class="header_container content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620">
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
                 <tr>
                     <td class="fineprint">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis convallis libero. Proin convallis nulla metus, non viverra elit consectetur at. Ut vehicula arcu eu odio ullamcorper faucibus. Fusce iaculis lacinia dictum. Ut mattis augue ex. In tempor vel neque sit amet efficitur. Fusce eros augue, mattis a tristique nec, elementum at nisl. Maecenas eros ante, porttitor at finibus pellentesque, fringilla sit amet dui. Praesent venenatis quam mauris, non pellentesque velit aliquet id.
@@ -317,9 +342,9 @@
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center" class="header_container">
+        <td align="center" class="header_container content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="620">
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
                 <tr>
                     <td class="fineprint">
                         If you would like to unsubscribe to this email <a class="unsub" href="#">click here</a>
