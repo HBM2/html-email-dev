@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var inlineCss = require('gulp-inline-css');
 var htmlEmailCustom = require('./gulp-html-email-custom');
-var litmus = require('gulp-litmus');
 var htmlmin = require('gulp-html-minifier');
 var nodemailer = require('nodemailer');
 
@@ -36,6 +35,5 @@ function buildHtmlEmails() {
         }))
         .pipe(htmlEmailCustom())
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(litmus(require('./config/litmus.config')))
         .pipe(gulp.dest('./build/'));
 }
