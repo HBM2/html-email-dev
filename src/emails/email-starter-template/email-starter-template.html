@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>fav-update-proto.html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+
+    <!-- TODO: CSS file with styles for this email template -->
+    <!--<link rel="stylesheet" href="your-styles.css"/>-->
+
+    <!-- mustache for front-end javascript template rendering - removed during gulp build -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+
+    <!-- script for rendering template during development - this is removed during gulp build -->
+    <script type="text/javascript">
+        window.onload = function () {
+            // TODO: define your mock email "object" that is used to render the template
+            var templateData = {
+                FirstName: "Dan",
+                LastName: "Cowman"
+            };
+            // render the email with Mustache, using the above template data
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            // write the rendered email template to the body, replacing the template
+            document.body.innerHTML = html;
+        };
+    </script>
+</head>
+<body class="">
+
+<!--
+    - use tables within tables - it should be at least 2 levels deep.
+    - you must provide a table to serve as a redundant <body> element,
+      as some email clients strip out the element when they render the email.
+
+    -- emails should ideally be around 600px wide, 800px is workable upper limit.
+    -- the second table - emailContainer in this case, is where to set that width.
+
+    -- utilize HTML table attributes - border, cellpadding, cellspacing, width, align, valign
+
+    -- use tables for everything...
+-->
+
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer">
+                <tr>
+                    <td align="center" valign="top">
+                        Email content here {{FirstName}} {{LastName}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="logo.png" alt="put ALT text on your images in emails!" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

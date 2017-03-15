@@ -1,29 +1,32 @@
-you might wanna read the raw version of this, it looks bad on github!
-https://raw.githubusercontent.com/philwinkel/html-email-dev/master/readme.md
+development environment set up (do once when you are setting up. again if new npm packages are added)
 
-
-npm install
+> npm i
+> npm i -g gulp
+> npm i -g gulp-cli
 
 ------------------------------------------------------------------------------------------------------------------------
 to develop,
+
 > node devserver
+- browsersync will start a development server on http://localhost:3000
 - navigate to your template (eg, /src/emails/index.html)
 - server should serve the file, browser sync should be running. save changes to file and it updates in-browser.
 
-if you want to a template engine during development, add the necessary scripts and render during window.onload, etc
-
 ------------------------------------------------------------------------------------------------------------------------
 to build,
-> npm install -g gulp
+
 > gulp
 
 this will go through all the .html files in /src/emails , inline the CSS, and output them to /build
+it will also find all of the images in the email, copy them to photos.hbm2.com, and update <img> tags in email
 
 ------------------------------------------------------------------------------------------------------------------------
-html emails notes
+CSS STYLING FOR HTML EMAILS
 
-refer to this document for CSS support across various email clients:
+refer to these guides when writing your CSS styles
+
 https://www.campaignmonitor.com/css/
+https://templates.mailchimp.com/resources/email-client-css-support/
 
 ------------------------------------------------------------------------------------------------------------------------
 general tips:

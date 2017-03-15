@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- title will be the name of the test in litmus -->
     <title>fav-update-proto.html</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="fav-update-proto.css"/>
 
-    <link rel="stylesheet" href="../styles/mailchimp-reset.css"/>
-    <link rel="stylesheet" href="../styles/fav-update-proto.css"/>
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+                FirstName : "Dan",
+                LastName : "Cowman"
+            };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
 
     <!-- correct line height in word-rendered emails:
     (this only works consistently when applied to table elements) -->
@@ -16,19 +28,6 @@
         td { mso-line-height-rule: exactly; }
     </style>
     <![endif]-->
-
-    <!-- scripts for rendering template during development, use whatever engine you want -->
-    <script src="../scripts/handlebars-v4.0.5.js"></script>
-    <script type="text/javascript">
-        window.onload = function() {
-            var context = {
-                // email viewmodel for handlebars to render
-            };
-            var template = Handlebars.compile(document.body.innerHTML);
-            var html = template(context);
-            document.body.innerHTML = html;
-        };
-    </script>
 
     <style>
         /* override styles up to the inline width of the container. */
@@ -68,7 +67,7 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td class="header_logo">
-                                    <img src="../../images/fav-update-proto/logo.png" alt="Home Scouting" />
+                                    <img src="logo.png" alt="Home Scouting" />
                                 </td>
                                 <td class="header_text">
                                     Favorite Update
@@ -94,7 +93,7 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td class="topcopy">
-                                    Recent changes to one of your favorite properties.
+                                    {{FirstName}} {{LastName}}, here are recent changes to one of your favorite properties.
                                 </td>
                             </tr>
                         </table>
@@ -123,7 +122,7 @@
                                         <tr>
                                             <td>
                                                 <div class="listing_photo">
-                                                    <img src="../../images/fav-update-proto/listing_pic_fpo.png"
+                                                    <img src="listing_pic_fpo.png"
                                                          alt="1840 Sioux Trail South"/>
                                                 </div>
                                                 <div class="listing_info valign_top">
@@ -209,7 +208,7 @@
                                         <tr>
                                             <td class="bizcard_photo">
                                                 <!-- photo -->
-                                                <img src="../../images/fav-update-proto/agent.png" alt="agent name" />
+                                                <img src="agent.png" alt="agent name" />
                                             </td>
                                             <td class="bizcard_copy_td">
                                                 <!-- nested agent copy table -->
@@ -261,7 +260,7 @@
                                         <tr>
                                             <td class="bizcard_photo">
                                                 <!-- photo -->
-                                                <img src="../../images/fav-update-proto/lender.png" alt="agent name" />
+                                                <img src="lender.png" alt="agent name" />
                                             </td>
                                             <td class="bizcard_copy_td">
                                                 <!-- nested agent copy table -->
@@ -306,12 +305,12 @@
                                 </td>
                                 <td class="appstore">
                                     <a href="#">
-                                        <img src="../../images/fav-update-proto/app_store.png" alt="Available on the App Store" />
+                                        <img src="app_store.png" alt="Available on the App Store" />
                                     </a>
                                 </td>
                                 <td>
                                     <a href="#">
-                                        <img src="../../images/fav-update-proto/google_play.png" alt="Available on Google Play" />
+                                        <img src="google_play.png" alt="Available on Google Play" />
                                     </a>
                                 </td>
                             </tr>

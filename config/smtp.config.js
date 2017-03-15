@@ -4,7 +4,7 @@ module.exports = {
     port: 465,
     secure: true, // use SSL
     auth: {
-        user: 'sendgrid-test-user-phil',
+        user: '',
         pass: ''
     }
 };

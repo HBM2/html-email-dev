@@ -34,8 +34,8 @@ function buildHtmlEmails() {
             // removes class and id attributes from html
             removeHtmlSelectors: false
         }))
-        .pipe(htmlEmailCustom())
+        .pipe(htmlEmailCustom()) // custom gulp plugin I wrote to do various things...
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(litmus(require('./config/litmus.config')))
+        // .pipe(litmus(require('./config/litmus.config')))
         .pipe(gulp.dest('./build/'));
 }

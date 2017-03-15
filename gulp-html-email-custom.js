@@ -27,6 +27,8 @@ const DEFAULT_OPTIONS = {
 
 module.exports = function() {
     return through.obj(function(file, encoding, callback) {
+        console.log('---------------------');
+
         // The type of file.contents should always be the same going out as it was when it came in
 
         if (file.isNull()) {
@@ -44,7 +46,7 @@ module.exports = function() {
         } else if (file.isBuffer()) {
             // file.contents is a Buffer - https://nodejs.org/api/buffer.html
 
-            // load html into cheerio
+            // load html into cheerio, its similar to jQuery CSS selector engine
             var $ = cheerio.load(file.contents.toString());
             var images = $('img');
             if (images.length) {
@@ -62,7 +64,9 @@ module.exports = function() {
                 var timestamp = moment().unix();
 
                 // append timestamp to filename
-                var newFileName = path.parse(imageFilePath).name + '-' + timestamp + path.parse(imageFilePath).ext;
+                var newFileName = path.basename(file.path, '.html') + '-' +
+                    path.parse(imageFilePath).name + '-' +
+                    timestamp + path.parse(imageFilePath).ext;
 
                 // upload image to destination
                 // for now copy to \\hbmphotoprod01\HBMPhotos\email-images
@@ -89,16 +93,18 @@ module.exports = function() {
             file.contents = new Buffer($.html());
 
             // send the email to litmus
-            sendEmail({
-                from: 'pdub87@gmail.com',
-                to: litmusConfig.litmusTestAddress,
-                subject: $('title').text(),
-                text: 'plaintext email',
-                html: $.html()
-            }).then(function() {
-                console.log('sendEmail finished');
-                return callback(null, file);
-            });
+            // sendEmail({
+            //     from: 'pdub87@gmail.com',
+            //     to: litmusConfig.litmusTestAddress,
+            //     subject: $('title').text(),
+            //     text: 'plaintext email',
+            //     html: $.html()
+            // }).then(function() {
+            //     console.log('sendEmail finished');
+            //     return callback(null, file);
+            // });
+
+            return callback(null, file);
         }
     });
 };
