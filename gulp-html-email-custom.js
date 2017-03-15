@@ -57,6 +57,11 @@ module.exports = function() {
                 // we have the HTML - relative image path in the src...
                 var originalImgSrc = images[i].attribs.src;
 
+                //if originalImgSrc starts with {{ then skip
+                if(originalImgSrc.indexOf('{{') >= 0){
+                  continue;
+                }
+                                
                 // convert HTML relative image path to absolute filesystem path
                 var imageFilePath = path.resolve(file.dirname, images[i].attribs.src);
 
@@ -77,6 +82,7 @@ module.exports = function() {
                 images[i].attribs.src = 'http://photos.hbm2.com/email-images/' + newFileName;
 
                 console.log(originalImgSrc + ' uploaded to ' + images[i].attribs.src);
+
             }
 
             // get rid of any script tags in the html

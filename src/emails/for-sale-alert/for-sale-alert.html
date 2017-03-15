@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>For-Sale Alert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="for-sale-alert.css"/>
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+              ListingCount: 36,
+              SearchName: "Malibu Homes",
+              BuyerGuid:"",
+              EntityRoleId:"",
+              SavedSearchId:"",
+              Listings:[
+                        {DetailURL:"", PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
+                         Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213", PhotoPath:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg"},
+
+                         {DetailURL:"", PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
+                          Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213", PhotoPath:"https://photos6.hbm2.com/001/35/2/7/7/HBMLG_16-166772.jpg"}
+                        ],
+              TeamPhotos:[{PhotoPath:"https://photos.hbm2.com/Circled/EntityRoleID/23249.jpg"},
+                          {PhotoPath:"https://photos.hbm2.com/agent/7.jpg"},
+                          {PhotoPath:"https://photos.hbm2.com/Circled/EntityRoleID/22299.jpg"}]
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+    <style>
+        /* override styles up to the inline width of the container. */
+        /* max-width here should match the .fixedwidth */
+        @media screen and (max-width: 500px) {
+            .listing_photo, .listing_info {
+                display: block !important;
+                width: 100% !important;
+            }
+            .listing_photo {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_photo img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_info {
+                padding-top: 20px;
+                padding-left: 0px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bgcolor">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="header_container content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="580" bgcolor="#47c6ab" class="header_table">
+                <tr>
+                    <td align="center">
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="logo.png" alt="Home Scouting" />
+                                </td>
+                                <td class="header_text">
+                                    Home Scouting<sup class="superscript">TM</sup>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="houses_table">
+                            <tr>
+                                <td align="center" class="falling_houses">
+                                    <img src="fallingHouses.png" alt="Background" />
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="houses_text">
+                                Fresh listings.<br/>
+                                Heads Up!
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="hero-content">
+                                  <span class="hero-highlight">{{ListingCount}}</span> listings have been added to your
+                                  <span class="hero-highlight">{{SearchName}}</span> search.
+                                  Here's a sneak peak.  Log in to Home Scouting to <span class="hero-highlight">see them all</span>.
+                                  <br/><br/>
+                                  <div><!--[if mso]>
+                                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.homescouting.com" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fc4a1a">
+                                        <w:anchorlock/>
+                                        <center>
+                                      <![endif]-->
+                                          <a href="https://www.homescouting.com"
+                                    style="background-color:#fc4a1a;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Go Now</a>
+                                      <!--[if mso]>
+                                        </center>
+                                      </v:roundrect>
+                                    <![endif]-->
+                                  </div>
+                                  <br/><br/>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- content padding -->
+                                <td align="center" style="padding: 20px;">
+
+                                  {{#Listings}}
+                                    <!-- ########inner table for property information responsive columns########### -->
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                          <td class="topcopy">&nbsp;</td>
+                                      </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="listing_photo">
+                                                    <img src={{PhotoPath}}
+                                                         alt={{Address1}}/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <div class="listing_info">
+                                                <!-- nested table for listing info -->
+                                                <table border="0" cellspacing="0" cellpadding="0" class="container_table">
+                                                    <tr>
+                                                        <td class="listprice">
+                                                            <img src="orange-dot.png" /> {{PriceString}} {{Status}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="listing_info_copy">{{Beds}} Beds | {{Baths}} Baths | {{SqFt}} SqFt</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="listing_info_copy">{{Address1}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="listing_info_copy">{{Address2}}</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                    </table>
+                                    {{/Listings}}
+
+
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+<!-- agent biz card  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="580" class="whitebg">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <tr>
+                                  <td align="center" class="hero-content">
+                                    <br/><br/>
+                                    Work with your circle to make sure you get the home you want.
+                                    It's a competitive market out there and homes are selling fast.
+                                    <br/><br/><br/>
+                                    <div><!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.homescouting.com" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fc4a1a">
+                                          <w:anchorlock/>
+                                          <center>
+                                        <![endif]-->
+                                            <a href="https://www.homescouting.com"
+                                      style="background-color:#fc4a1a;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Explore</a>
+                                        <!--[if mso]>
+                                          </center>
+                                        </v:roundrect>
+                                      <![endif]-->
+                                    </div>
+                                    <br/><br/>
+                                  </td>
+                              </tr>
+                                <!-- content padding cell -->
+                                <td align="center" class="bizcard_padding">
+                                    <!-- bizcard content nested table -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="70%">
+                                        <tr>
+
+                                            <td align="center" class="bizcard_photo">
+                                              {{#TeamPhotos}}
+                                              <a border=0 class="team-link" href="https://www.homescouting.com/teamProfile">
+                                                <img src={{PhotoPath}} class="team-photo" alt="your circle" />
+                                              </a>
+                                                {{/TeamPhotos}}
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="footer-content">
+                                <br/><br/>
+                                Home Scouting &reg; is a free home finding service provided directly to you
+                                by HBM2, a licensed real estate brokerage.
+                                <br/>
+                                &copy; Home Buyers Marketing II, Inc.
+                                <br/>
+                                6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+                                <br />
+                                <a class="unsub" href="#">Unsubscribe</a>
+                                <br/><br/><br/>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+</body>
+</html>
