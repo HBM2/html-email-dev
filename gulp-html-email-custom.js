@@ -89,7 +89,7 @@ module.exports = function() {
             $('script').remove();
 
             // remove html comments from email
-            $('*').contents().filter(isComment).remove();
+            // $('*').contents().filter(isComment).remove();
 
             // add comment into head with some build info
             var buildComment = '<!-- built by ' + username.sync() + ' on ' + moment().toString() + ' -->';
