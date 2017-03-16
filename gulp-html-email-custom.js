@@ -57,6 +57,11 @@ module.exports = function() {
                 // we have the HTML - relative image path in the src...
                 var originalImgSrc = images[i].attribs.src;
 
+                //if originalImgSrc starts with {{ then skip
+                if(originalImgSrc.indexOf('{{') >= 0){
+                  continue;
+                }
+                
                 // convert HTML relative image path to absolute filesystem path
                 var imageFilePath = path.resolve(file.dirname, images[i].attribs.src);
 
@@ -83,7 +88,7 @@ module.exports = function() {
             $('script').remove();
 
             // remove html comments from email
-            $('*').contents().filter(isComment).remove();
+            //$('*').contents().filter(isComment).remove();
 
             // add comment into head with some build info
             var buildComment = '<!-- built by ' + username.sync() + ' on ' + moment().toString() + ' -->';
