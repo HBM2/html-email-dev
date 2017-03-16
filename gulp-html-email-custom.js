@@ -61,7 +61,7 @@ module.exports = function() {
                 if(originalImgSrc.indexOf('{{') >= 0){
                   continue;
                 }
-                
+                                
                 // convert HTML relative image path to absolute filesystem path
                 var imageFilePath = path.resolve(file.dirname, images[i].attribs.src);
 
@@ -82,13 +82,14 @@ module.exports = function() {
                 images[i].attribs.src = 'http://photos.hbm2.com/email-images/' + newFileName;
 
                 console.log(originalImgSrc + ' uploaded to ' + images[i].attribs.src);
+
             }
 
             // get rid of any script tags in the html
             $('script').remove();
 
             // remove html comments from email
-            //$('*').contents().filter(isComment).remove();
+            $('*').contents().filter(isComment).remove();
 
             // add comment into head with some build info
             var buildComment = '<!-- built by ' + username.sync() + ' on ' + moment().toString() + ' -->';

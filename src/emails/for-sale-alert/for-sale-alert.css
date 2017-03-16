@@ -1,0 +1,165 @@
+/* some default colors and stuff */
+table td {
+    color: #343434;
+}
+
+.container_table {
+    width: 100%;
+}
+
+.content_padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.stack_column {
+    display: block !important;
+    width: 100% !important;
+}
+
+.bgcolor {
+    background-color: #ebeaea;
+}
+
+.fixedwidth {
+    width: 620px;
+}
+.header_table{
+  background-color:#47c6ab;
+}
+.houses_table{
+  background-color:#ffffff;
+}
+.houses_text{
+  color:#47c6ab;
+  font-size: 30px;
+  font-family:"Open Sans",sans-serif;
+}
+.hero-content{
+  font-size: 18px;
+  font-family:"Open Sans",sans-serif;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.hero-highlight{
+  color:#fc4a1a;
+}
+.header_container {
+    padding-top: 20px;
+}
+
+.header_logo {
+    width: 97px;
+    height:90px;
+}
+.falling_houses{
+  width:414px;
+  height:199px;
+}
+.header_text {
+    padding-left: 10px;
+    font-size: 24px;
+    font-family:"Open Sans",sans-serif;
+    color:#ffffff;
+}
+.superscript{font-size:6px;}
+.topcopy {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.whitebg {
+    background-color: #ffffff;
+}
+
+.listing_photo {
+    width: 290px;
+    display: block;
+}
+
+.listing_photo img {
+    max-width: 100%;
+}
+
+.listing_info {
+    display: block;
+    width: 220px;
+    padding-left: 20px;
+    padding-right: 0px;
+}
+.valign_top {
+    vertical-align: top;
+}
+.bizcard_padding {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.bizcard_photo {
+    width: 60px;
+}
+.bizcard_copy_td {
+    padding-left: 15px;
+}
+
+.bizcard_header {
+    font-weight: bold;
+    color: #363636;
+}
+
+.getapp {
+    color: #706e6e;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.appstore {
+    padding-right: 10px;
+}
+
+.unsub {
+  color:#47c6ab;
+  font-size: 9px;
+  font-family:"Open Sans",sans-serif;
+  text-decoration:none;
+}
+
+.fineprint {
+    color: #989b9d;
+}
+
+.listprice {
+    font-size: 18px;
+    font-family:"Open Sans",sans-serif;
+    padding-bottom: 4px;
+}
+
+.listing_info_copy {
+  font-family:"Open Sans",sans-serif;
+  font-size:14px;
+  padding-bottom: 3px;
+}
+
+.listing_status {
+    color: #3da938;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer-content{
+  font-size:9px;
+  font-family:"Open Sans",sans-serif;
+  color:#bcbcbc;
+  padding-bottom:20px;
+}
+.team-photo{
+  width:100px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.team-link{
+  text-decoration: none;
+}

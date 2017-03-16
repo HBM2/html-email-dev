@@ -1,7 +1,6 @@
 development environment set up (do once when you are setting up. again if new npm packages are added)
 
 > npm i
-> npm i -g gulp
 > npm i -g gulp-cli
 
 ------------------------------------------------------------------------------------------------------------------------
