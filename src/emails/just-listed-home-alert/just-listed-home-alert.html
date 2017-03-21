@@ -13,7 +13,7 @@
         window.onload = function() {
             // mock "view model" object for mustache rendering engine
             var templateData = {
-              JustListedBaseUrl:"http://local.openhouse.com/detail?m=",
+              JustListedBaseUrl:"http://local.openhouse.com/detail",
               BaseTeamPhotoUrl:"https://photos.hbm2.com/Circled/EntityRoleID/",
               HBMTeamLogoUrl:"https://photos.hbm2.com/agent/7.jpg",
               ListingPhotoUrl:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
@@ -234,7 +234,7 @@
                                             beginning of a beautiful friendship.
                                     <br/><br/><br/>
                                     <div><!--[if mso]>
-                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.homescouting.com" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fc4a1a">
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href={{JustListedBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}} style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fc4a1a">
                                           <w:anchorlock/>
                                           <center>
                                         <![endif]-->
