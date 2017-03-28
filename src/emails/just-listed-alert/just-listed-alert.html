@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Just-Listed Alert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="just-listed-alert.css"/>
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+              JustListedBaseUrl:"http://local.openhouse.com/detail",
+              ListingTinyURL: "http://tinyurl.com/78873",
+              MLSListingID:"91123",
+              TerritoryID:"528",
+              TeamID:"786",
+              AgentEntityRoleID:"23249",
+              LenderEntityRoleID:"22299",
+              Remarks:"SPECIAL PRICE! PRIME BLDG. SITE, PONDVIEW ESATES. RESTRICTIONS ON FILE. ALL CITY UTILITIES, NO ASSESSMNET, CLOSE TO SCHOOL. WILL COMBINE LOTS",
+              ListingPrice:"$14,500,000",
+              StatusDesc:"Active",
+              Address:"6736 Falcon Crescent",
+              City: "Malibu",
+              State: "CA",
+              Zip: "90213"
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+</head>
+<body class="bgcolor">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="header_container content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#47c6ab" class="header_table">
+                <tr>
+                    <td align="center">
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="logo.png" class="header_logo" alt="Home Scouting" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="main_table">
+                          <tr>
+                            <td>&nbsp;</td>
+                          </tr>
+                            <tr>
+                                <td align="center" class="jl_flag">
+                                    <img src="just-listed-flag.png" alt="Background" />
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="grats_text">
+                                Grats on the new listing!
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="addy_text">{{Address}}</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="flyer_text">
+                                  Find a website and print ready flyer already
+                                  created for your new listing and share it with
+                                          potiential buyers.
+                                  <br/><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="button_style">
+                                <div><!--[if mso]>
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href={{JustListedBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}} style="height:70px;v-text-anchor:middle;width:250px;" arcsize="10%" stroke="f" fillcolor="#fdb714">
+                                      <w:anchorlock/>
+                                      <center>
+                                    <![endif]-->
+                                      <a href={{JustListedBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}}
+                                  style="background-color:#fdb714;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:24px;font-weight:bold;line-height:70px;text-align:center;text-decoration:none;width:250px;-webkit-text-size-adjust:none;">See the Listing</a>
+                                    <!--[if mso]>
+                                      </center>
+                                    </v:roundrect>
+                                  <![endif]-->
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="flyer_text">
+                                  or share this link in email, social media or txt.
+                                  <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="link_text">
+                                <a href={{ListingTinyURL}}>{{ListingTinyURL}}</a>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="20">&nbsp;</td></tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- content padding -->
+                                <td align="center" style="padding: 10px;">
+
+                                    <!-- ########inner table for property information responsive columns########### -->
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                          <td align="center" class="next_text">
+                                            What Next?
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" class="flyer_text">
+                                          1. Go to the site and download the PDF.
+                                        </td>
+                                      </tr>
+                                        <tr>
+                                          <td align="center" class="flyer_text">
+                                            2. Email the PDF to possible buyers.
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center" class="flyer_text">
+                                            3. Share the link via social media, email, txt.
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- Sell box  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="whitebg">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="center" class="sell_text">
+                                  <br/>
+                                  Let us sell this listing!
+                                  <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+<!-- footer  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+
+    <tr>
+      <td align="center" class="footer-content">
+        <br/><br/>
+        HomeScout <sup class="superscript">TM</sup> is a free home finding service provided directly to you
+        by HBM2, a licensed real estate brokerage.
+        <br/>
+        &copy; Home Buyers Marketing II, Inc.
+        <br/>
+        6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+        <br/><br/><br/>
+        To unsubscribe from communication email <a class="unsub" href="mailto:justlistedsupport@hbm2.com">click here</a>.
+        <br/><br/><br/>
+      </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+</body>
+</html>
