@@ -4,9 +4,6 @@ table td {
 }
 a {text-decoration:none;}
 
-.container_table {
-    width: 100%;
-}
 .content_padding {
     padding-left: 20px;
     padding-right: 20px;
@@ -14,86 +11,28 @@ a {text-decoration:none;}
 .bgcolor {
     background-color: #ebeaea;
 }
+.whitebg {
+    background-color: #ffffff;
+}
 .fixedwidth {
-    width: 620px;
+    width: 600px;
 }
 .header_container {
     padding-top: 20px;
 }
 .header_logo {
-    width: 230px;
-    height:52px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-bottom: 20px;
 }
 .header_table{
   background-color:#2a94ce;
   height:90px;
 }
-.main_table{
-  background-color:#ffffff;
-}
-.grats_text{
-  color:#2a94ce;
-  font-size: 34px;
-  font-family:"Open Sans",sans-serif;
-  font-weight: bold;
-  padding-bottom: 20px;
-}
-.addy_text{
-  color:#000000;
-  font-size: 30px;
-  font-family:"Open Sans",sans-serif;
-  font-weight: bold;
-  padding-bottom: 30px;
-}
-.flyer_text{
-  font-size: 24px;
-  font-family:"Open Sans",sans-serif;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 20px;
-}
-.link_text{
-  font-size: 24px;
-  font-family: "Open Sans",sans-serif;
-  color: #2a94ce;
-  padding-top: 10px;
-  padding-bottom: 40px;
-}
-.next_text {
-    color:#000000;
-    font-size: 26px;
-    font-weight: bold;
-    font-family:"Open Sans",sans-serif;
-    padding-bottom: 40px;
-}
-.sell_text{
-  font-size: 26px;
-  font-family:"Open Sans",sans-serif;
-  padding-top: 10px;
-  padding-bottom: 40px;
-}
-.jl_flag img {
-  padding-top: 30px;
-  padding-bottom: 20px;
-  height:190px;
+.flag_logo {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .button_style {
-    padding-bottom: 50px;
-}
-.whitebg {
-    background-color: #ffffff;
-}
-.listing_info {
-    display: block;
-}
-.fineprint {
-    color: #989b9d;
-}
-.footer-content{
-  font-size:9px;
-  font-family:"Open Sans",sans-serif;
-  color:#bcbcbc;
-  padding-bottom:20px;
+  padding-bottom: 40px;
 }
