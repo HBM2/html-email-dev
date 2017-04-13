@@ -1,0 +1,37 @@
+/* some default colors and stuff */
+table td {
+    color: #343434;
+}
+
+.content_padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.bgcolor {
+    background-color: #ebeaea;
+}
+.whitebg {
+    background-color: #ffffff;
+}
+.fixedwidth {
+    width: 600px;
+}
+.header_container {
+    padding-top: 20px;
+}
+.header_logo {
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+}
+.header_table{
+  background-color:#2a94ce;
+  height:90px;
+}
+.flag_logo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.button_style {
+  padding-bottom: 40px;
+}

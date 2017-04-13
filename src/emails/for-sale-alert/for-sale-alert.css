@@ -2,7 +2,7 @@
 table td {
     color: #343434;
 }
-
+a {text-decoration:none;}
 .container_table {
     width: 100%;
 }
@@ -25,14 +25,15 @@ table td {
     width: 620px;
 }
 .header_table{
-  background-color:#47c6ab;
+  background-color:#2a94ce;
+  height:90px;
 }
 .houses_table{
   background-color:#ffffff;
 }
 .houses_text{
-  color:#47c6ab;
-  font-size: 30px;
+  color:#0076b9;
+  font-size: 26px;
   font-family:"Open Sans",sans-serif;
 }
 .hero-content{
@@ -42,19 +43,19 @@ table td {
   padding-right: 70px;
 }
 .hero-highlight{
-  color:#fc4a1a;
+  color:#fdb714;
 }
 .header_container {
     padding-top: 20px;
 }
 
 .header_logo {
-    width: 97px;
-    height:90px;
+    width: 230px;
+    height:52px;
 }
 .falling_houses{
-  width:414px;
-  height:199px;
+  width:600x;
+  /*height:199px;*/
 }
 .header_text {
     padding-left: 10px;
@@ -64,8 +65,8 @@ table td {
 }
 .superscript{font-size:6px;}
 .topcopy {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
     font-size: 18px;
 }
 
@@ -74,7 +75,7 @@ table td {
 }
 
 .listing_photo {
-    width: 290px;
+    width: 200px;
     display: block;
 }
 
@@ -87,6 +88,7 @@ table td {
     width: 220px;
     padding-left: 20px;
     padding-right: 0px;
+    vertical-align:top;
 }
 .valign_top {
     vertical-align: top;
@@ -133,16 +135,25 @@ table td {
 }
 
 .listprice {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight:bold;
     font-family:"Open Sans",sans-serif;
     padding-bottom: 4px;
 }
-
+.td-spacer{height:5px;}
 .listing_info_copy {
   font-family:"Open Sans",sans-serif;
-  font-size:14px;
+  font-size:16px;
   padding-bottom: 3px;
 }
+.listing_info_copy2 {
+  font-family:"Open Sans",sans-serif;
+  color:#2a94ce;
+  font-size:16px;
+  padding-bottom: 3px;
+}
+
+
 
 .listing_status {
     color: #3da938;

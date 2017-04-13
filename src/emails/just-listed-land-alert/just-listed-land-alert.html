@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>For-Sale Alert</title>
+    <title>Just-Listed Alert</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
-    <link rel="stylesheet" href="for-sale-alert.css"/>
+    <link rel="stylesheet" href="just-listed-land-alert.css"/>
 
     <!-- scripts for rendering template during development -->
     <script src="../../scripts/mustache-2.3.0.js"></script>
@@ -13,30 +13,24 @@
         window.onload = function() {
             // mock "view model" object for mustache rendering engine
             var templateData = {
-              WebsitePath: "http://local.hsr.com",
-              Bguid: "c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-              ListingCount: 36,
-              SearchName: "Malibu Homes",
-              BuyerGuid:"",
-              EntityRoleId:"",
-              SavedSearchId:"",
-
-              Listings:[
-                        {ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-                         PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
-                         Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213",
-                         PhotoAtHBM:true,
-                         PhotoPath:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
-                         NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"},
-
-
-                         {ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-                          PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
-                          Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213",
-                          PhotoAtHBM:false,
-                          PhotoPath:"https://photos6.hbm2.com/001/35/2/7/7/HBMLG_16-166772.jpg",
-                          NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"}
-                        ]
+              JustListedBaseUrl:"http://local.openhouse.com/detail",
+              BaseTeamPhotoUrl:"https://photos.hbm2.com/Circled/EntityRoleID/",
+              HBMTeamLogoUrl:"https://photos.hbm2.com/agent/7.jpg",
+              ListingPhotoUrl:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+              LenderPhotoURL:"https://photos.hbm2.com/lo/1196.jpg",
+              AgentPhotoURL:"https://photos.hbm2.com/agent/735.jpg",
+              MLSListingID:"91123",
+              TerritoryID:"528",
+              TeamID:"786",
+              AgentEntityRoleID:"23249",
+              LenderEntityRoleID:"22299",
+              Remarks:"SPECIAL PRICE! PRIME BLDG. SITE, PONDVIEW ESATES. RESTRICTIONS ON FILE. ALL CITY UTILITIES, NO ASSESSMNET, CLOSE TO SCHOOL. WILL COMBINE LOTS",
+              ListingPrice:"$14,500,000",
+              StatusDesc:"Active",
+              Address:"6736 Falcon Crescent",
+              City: "Malibu",
+              State: "CA",
+              Zip: "90213"
           };
             var html = Mustache.render(document.body.innerHTML, templateData);
             document.body.innerHTML = html;
@@ -80,16 +74,19 @@
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
-        <td align="center" class="content_padding">
+        <td align="center" class="header_container content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#47c6ab" class="header_table">
+            <table border="0" cellpadding="0" cellspacing="0" width="580" bgcolor="#47c6ab" class="header_table">
                 <tr>
-                    <td>
+                    <td align="center">
                         <!-- content table -->
                         <table border="0" cellpadding="0" cellspacing="0" >
                             <tr>
                                 <td class="header_logo">
-                                    <img src="logo.png" class="header_logo" alt="Home Scouting" />
+                                    <img src="logo.png" alt="Home Scouting" />
+                                </td>
+                                <td class="header_text">
+                                    HomeScout<sup class="superscript">TM</sup>
                                 </td>
                             </tr>
                         </table>
@@ -106,22 +103,22 @@
     <tr>
         <td align="center" class="content_padding">
             <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600">
+            <table border="0" cellpadding="0" cellspacing="0" width="580">
                 <tr>
                     <td>
                         <!-- content table -->
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="houses_table">
+                          <tr>
+                            <td>&nbsp;</td>
+                          </tr>
                             <tr>
-                                <td align="center" class="falling_houses">
-                                    <img src="fallingHouses.png" alt="Background" />
+                                <td align="center" class="thumbs_up">
+                                    <img src="thumbsUp.png" alt="Background" />
                                 </td>
                             </tr>
                             <tr>
-                              <td>&nbsp;</td>
-                            </tr>
-                            <tr>
                               <td align="center" class="houses_text">
-                                Fresh listings. Heads Up!
+                                Grats on the Listing
                               </td>
                             </tr>
                             <tr>
@@ -129,13 +126,13 @@
                             </tr>
                             <tr>
                                 <td align="center" class="hero-content">
-                                  <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{ListingCount}}</span></a> listings have been added to your
-                                  <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{SearchName}}</span></a> search.
-                                  Here's a sneak peak.  Log in to HomeScout to <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">see them all</span></a>.
+                                  Lets work together and use HomeScout<sup class="superscript">TM</sup> and its platform of real estate
+                                  and lead generation technologies to sell your listing, work less and secure a
+                                                lifetime of business for both of us.
                                   <br/><br/>
-
                                 </td>
                             </tr>
+
                         </table>
                     </td>
                 </tr>
@@ -160,55 +157,49 @@
                                 <!-- content padding -->
                                 <td align="center" style="padding: 20px;">
 
-                                  {{#Listings}}
                                     <!-- ########inner table for property information responsive columns########### -->
                                     <table border="0" cellpadding="0" cellspacing="0">
                                       <tr>
                                           <td>&nbsp;</td>
                                       </tr>
+                                      <tr>
+                                          <td align="center" class="listing_info_copy">{{Remarks}}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                      </tr>
                                         <tr>
-                                            <td>
+                                            <td align="center">
                                                 <div class="listing_photo">
-                                                    {{#PhotoAtHBM}}
-                                                    <a href="{{ListingDetailURL}}">
-                                                      <img src={{PhotoPath}} alt={{Address1}}/>
-                                                    </a>
-                                                    {{/PhotoAtHBM}}
-
-                                                    {{^PhotoAtHBM}}
-                                                      <img src={{NoPhotoPath}} alt="Photo Not Available"/>
-                                                    {{/PhotoAtHBM}}
+                                                    <img src={{ListingPhotoUrl}}
+                                                         alt={{Address}}/>
                                                 </div>
                                             </td>
-
-                                          <td valign="top">
+                                        </tr>
+                                        <tr>
+                                          <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                          <td>
                                             <div class="listing_info">
                                                 <!-- nested table for listing info -->
                                                 <table border="0" cellspacing="0" cellpadding="0" class="container_table">
                                                     <tr>
-                                                        <td class="listprice">
-                                                            <img src="orange-dot.png" /> {{PriceString}} {{Status}}
+                                                        <td align="center" class="listprice">
+                                                            <img src="orange-dot.png" /> {{ListingPrice}} {{StatusDesc}}
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="listing_info_copy">{{Beds}} Beds | {{Baths}} Baths | {{SqFt}} SqFt</td>
+                                                        <td align="center" class="listing_info_copy">{{Address}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="td-spacer"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a  class="listing_info_copy2" href="{{ListingDetailURL}}">{{Address1}}</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a class="listing_info_copy2" href="{{ListingDetailURL}}">{{Address2}}</a></td>
+                                                        <td align="center" class="listing_info_copy">{{City}}, {{State}} {{Zip}}</td>
                                                     </tr>
                                                 </table>
                                             </div>
                                           </td>
                                         </tr>
                                     </table>
-                                    {{/Listings}}
-
                                 </td>
                             </tr>
                         </table>
@@ -219,12 +210,7 @@
     </tr>
 </table>
 
-<!-- spacer -->
-<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
-    <tr><td height="10">&nbsp;</td></tr>
-</table>
-
-<!-- agent biz card  -->
+<!-- lendor agent biz cards  -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
         <td align="center" class="content_padding">
@@ -237,14 +223,17 @@
                             <tr>
                               <tr>
                                   <td align="center" class="hero-content">
-                                    <br/><br/>
+                                    <br/>
+                                    You, me, a fresh listing and HomeScout. Sounds like thead
+                                            beginning of a beautiful friendship.
+                                    <br/><br/><br/>
                                     <div><!--[if mso]>
-                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{WebsitePath}}/searches?Bguid={{Bguid}}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fdb714">
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href={{JustListedBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}} style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fc4a1a">
                                           <w:anchorlock/>
                                           <center>
                                         <![endif]-->
-                                            <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"
-                                      style="background-color:#fdb714;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">See them all</a>
+                                          <a href={{JustListedBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}}
+                                      style="background-color:#fc4a1a;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Explore</a>
                                         <!--[if mso]>
                                           </center>
                                         </v:roundrect>
@@ -252,26 +241,44 @@
                                     </div>
                                     <br/><br/>
                                   </td>
+                              </tr>
+                                <!-- content padding cell -->
+                                <td align="center" class="bizcard_padding">
+                                    <!-- bizcard content nested table -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="70%">
+                                        <tr>
+                                            <td align="center" class="bizcard_photo">
+                                                <img src={{AgentPhotoURL}} class="team-photo" alt="your circle" />
+                                            </td>
+                                            <td align="center" class="bizcard_photo">
+                                                <img src=HBMTeamLogo.png class="team-photo" alt="your circle" />
+                                            </td>
+                                            <td align="center" class="bizcard_photo">
+                                                <img src={{LenderPhotoURL}} class="team-photo" alt="your circle" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="footer-content">
+                                <br/><br/>
+                                Home Scouting &reg; is a free home finding service provided directly to you
+                                by HBM2, a licensed real estate brokerage.
+                                <br/>
+                                &copy; Home Buyers Marketing II, Inc.
+                                <br/>
+                                6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+                                <br />
+                                <a class="unsub" href="#">Unsubscribe</a>
+                                <br/><br/><br/>
+                              </td>
+                            </tr>
                         </table>
                     </td>
                 </tr>
-
             </table>
         </td>
-    </tr>
-    <tr>
-      <td align="center" class="footer-content">
-        <br/><br/>
-        HomeScout <sup class="superscript">TM</sup> is a free home finding service provided directly to you
-        by HBM2, a licensed real estate brokerage.
-        <br/>
-        &copy; Home Buyers Marketing II, Inc.
-        <br/>
-        6066 Shingle Creek Pkwy, Minneapolis, MN 55430
-        <br />
-        To unsubscribe <a class="unsub" href="{{WebsitePath}}/searches?Bguid={{Bguid}}">click here</a> and toggle alerts to off.
-        <br/><br/><br/>
-      </td>
     </tr>
 </table>
 
