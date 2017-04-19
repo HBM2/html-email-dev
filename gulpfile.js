@@ -35,7 +35,7 @@ function buildHtmlEmails() {
             removeHtmlSelectors: false
         }))
         .pipe(htmlEmailCustom()) // custom gulp plugin I wrote to do various things...
-        .pipe(htmlmin({collapseWhitespace: true}))
+        //.pipe(htmlmin({collapseWhitespace: true}))
         // .pipe(litmus(require('./config/litmus.config')))
         .pipe(gulp.dest('./build/'));
 }
