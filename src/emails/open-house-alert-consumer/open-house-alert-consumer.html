@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>open-house-alert-consumer.html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+
+    <!-- TODO: CSS file with styles for this email template -->
+    <link rel="stylesheet" href="open-house-alert-consumer.css">
+
+
+    <!-- mustache for front-end javascript template rendering - removed during gulp build -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+
+    <!-- script for rendering template during development - this is removed during gulp build -->
+    <script type="text/javascript">
+        window.onload = function () {
+            // TODO: define your mock email "object" that is used to render the template
+            var templateData = {
+                Address: "2455 Douglas Dr NE",
+                DateTime: "4/23/17 from 12-3P",
+                Photo: "https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg"
+            };
+            // render the email with Mustache, using the above template data
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            // write the rendered email template to the body, replacing the template
+            document.body.innerHTML = html;
+        };
+    </script>
+</head>
+<body class="">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="blue_bg">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="641">
+                <tr>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                    <td width="auto" valign="top">
+                        <!-- content area -->
+                        <!-- header above the white content area -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="center" valign="top" height="60" class="empty_space_above_logo">
+                                    &nbsp;<!-- empty space above logo -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top" height="59">
+                                    <a href="#" class="logo_link">
+                                        <img src="logo.png" alt="HomeScout - put the slogan here" />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" height="25" class="empty_space_below_logo">
+                                    &nbsp;<!-- empty space below logo -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="blue_bg">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="641">
+                <tr>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                    <td width="auto" align="center">
+                        <!-- white content area, blue background  -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
+                            <tr>
+                                <td align="center" valign="top" height="34" class="padding_listing_photo">
+                                    &nbsp;<!-- empty space above listing photo -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" height="250" class="listing_photo_height">
+                                    <a href="#" class="listing_photo_height">
+                                        <img src={{Photo}} class="listing_photo_img" alt={{Address}} />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" height="34" class="padding_listing_photo">
+                                    &nbsp;<!-- empty space below photo -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" class="header_text_cell blue_header_color">
+                                    Open House Alert
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="20"><!-- padding below header text --></td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" class="fontsize22px bold">
+                                    {{Address}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" class="fontsize22px">
+                                    {{DateTime}}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gray_bg">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="641">
+                <tr>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                    <td width="auto">
+                        <!-- white content area, blue background  -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
+                            <tr>
+                                <td align="center" valign="top" height="60">
+                                    &nbsp; <!-- padding -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" class="fontsize22px">
+                                    <!-- using another table to put some padding on left/right side of the text, within the white content area -->
+                                    <table width="600" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="60">
+                                                &nbsp; <!-- left padding -->
+                                            </td>
+                                            <td width="auto" align="center" class="fontsize22px">
+                                                Tap the button and see more dates/times and find out what makes this property so special.
+                                            </td>
+                                            <td width="60">
+                                                &nbsp; <!-- right  padding -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" height="60">
+                                    &nbsp; <!-- padding -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" height="60">
+                                    <div><!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                                     xmlns:w="urn:schemas-microsoft-com:office:word"
+                                                     href="http://homescout.com"
+                                                     style="height:62px;v-text-anchor:middle;width:252px;font-size:22px;"
+                                                     arcsize="7%"
+                                                     stroke="f"
+                                                     fillcolor="#fdb714">
+                                            <w:anchorlock/>
+                                            <center>
+                                        <![endif]-->
+                                        <a href="http://homescout.com"
+                                           class="button">See more dates</a>
+                                        <!--[if mso]>
+                                        </center>
+                                        </v:roundrect>
+                                        <![endif]--></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" height="100">
+                                    &nbsp; <!-- padding -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gray_bg">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="641">
+                <tr>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                    <td width="auto">
+                        <!-- white content area, blue background  -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="gray_bg">
+                            <tr>
+                                <td align="center" valign="top" height="20">
+                                    &nbsp; <!-- padding -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" class="fontsize22px">
+                                    <!-- using another table to put some padding on left/right side of the text, within the white content area -->
+                                    <table width="600" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="20">
+                                                &nbsp; <!-- left padding -->
+                                            </td>
+                                            <td width="auto" align="center" class="footer_text">
+                                                HomeScout &trade; is a free home finding service provided directly to you by HBM2, a licensed real estate brokerage.
+                                            </td>
+                                            <td width="20">
+                                                &nbsp; <!-- right  padding -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20">
+                                                &nbsp; <!-- left padding -->
+                                            </td>
+                                            <td width="auto" align="center" class="footer_text">
+                                                &copy; Home Buyers Marketing II, Inc.
+                                            </td>
+                                            <td width="20">
+                                                &nbsp; <!-- right  padding -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20">
+                                                &nbsp; <!-- left padding -->
+                                            </td>
+                                            <td width="auto" align="center" class="footer_text">
+                                                6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+                                            </td>
+                                            <td width="20">
+                                                &nbsp; <!-- right  padding -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="20">
+                        &nbsp;<!-- padding on left side of content -->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
