@@ -80,7 +80,7 @@ a {text-decoration:none;}
 }
 
 .listing_photo img {
-    max-width: 100%;
+    max-width: 200px;
 }
 
 .listing_info {
