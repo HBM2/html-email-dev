@@ -2,7 +2,7 @@
 table td {
     color: #343434;
 }
-a {text-decoration:none;}
+
 .container_table {
     width: 100%;
 }
@@ -25,37 +25,35 @@ a {text-decoration:none;}
     width: 620px;
 }
 .header_table{
-  background-color:#2a94ce;
-  height:90px;
+  background-color:#47c6ab;
 }
 .houses_table{
   background-color:#ffffff;
 }
 .houses_text{
-  color:#0076b9;
-  font-size: 26px;
+  color:#47c6ab;
+  font-size: 30px;
   font-family:"Open Sans",sans-serif;
 }
 .hero-content{
   font-size: 18px;
   font-family:"Open Sans",sans-serif;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .hero-highlight{
-  color:#fdb714;
+  color:#fc4a1a;
 }
 .header_container {
     padding-top: 20px;
 }
 
 .header_logo {
-    width: 230px;
-    height:52px;
+    width: 97px;
+    height:90px;
 }
-.falling_houses{
-  width:600x;
-  /*height:199px;*/
+.thumbs_up {
+  height:199px;
 }
 .header_text {
     padding-left: 10px;
@@ -65,8 +63,8 @@ a {text-decoration:none;}
 }
 .superscript{font-size:6px;}
 .topcopy {
-    /*padding-top: 10px;*/
-    /*padding-bottom: 10px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 18px;
 }
 
@@ -75,20 +73,15 @@ a {text-decoration:none;}
 }
 
 .listing_photo {
-    width: 200px;
     display: block;
 }
 
 .listing_photo img {
-    max-width: 200px;
+    max-width: 100%;
 }
 
 .listing_info {
     display: block;
-    width: 220px;
-    padding-left: 20px;
-    padding-right: 0px;
-    vertical-align:top;
 }
 .valign_top {
     vertical-align: top;
@@ -135,25 +128,16 @@ a {text-decoration:none;}
 }
 
 .listprice {
-    font-size: 16px;
-    font-weight:bold;
+    font-size: 18px;
     font-family:"Open Sans",sans-serif;
     padding-bottom: 4px;
 }
-.td-spacer{height:5px;}
+
 .listing_info_copy {
   font-family:"Open Sans",sans-serif;
-  font-size:16px;
+  font-size:14px;
   padding-bottom: 3px;
 }
-.listing_info_copy2 {
-  font-family:"Open Sans",sans-serif;
-  color:#2a94ce;
-  font-size:16px;
-  padding-bottom: 3px;
-}
-
-
 
 .listing_status {
     color: #3da938;

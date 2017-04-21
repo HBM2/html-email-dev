@@ -61,6 +61,10 @@ module.exports = function() {
                 if(originalImgSrc.indexOf('{{') >= 0){
                   continue;
                 }
+                // skip images that are already hosted externally
+                if(originalImgSrc.indexOf('http') >= 0) {
+                    continue;
+                }
 
                 // convert HTML relative image path to absolute filesystem path
                 var imageFilePath = path.resolve(file.dirname, images[i].attribs.src);

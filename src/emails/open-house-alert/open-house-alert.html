@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open-House Alert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="open-house-alert.css"/>
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+              OpenHouseBaseUrl:"http://local.openhouse.com/detail",
+              ListingTinyURL: "http://tinyurl.com/78873",
+              Address:"6736 Falcon Crescent",
+              MLSListingID:"91123",
+              TerritoryID:"528",
+              TeamID:"786"
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+
+</head>
+<body class="bgcolor">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr>
+        <td align="center" class="header_container content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#47c6ab" class="header_table">
+                <tr>
+                    <td align="left">
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="MobileHeader.png" alt="Home Scouting" style="width:auto; height:auto; max-width:250px; max-height:100px">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td align="center">
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                          <tr>
+                            <td height="20"></td>
+                          </tr>
+                            <tr>
+                                <td align="center" class="flag_logo">
+                                    <img src="open-house-flag.png" alt="Background" style="width:auto; height:auto; max-width:200px; max-height:200px">
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="color:#2a94ce;font-size:34px;font-family:Open Sans,sans-serif;font-weight:bold;padding-bottom:10px;">
+                                Open house party!
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="color:#000000;font-size:30px;font-family:Open Sans,sans-serif;font-weight:bold;padding-bottom:30px;">{{Address}}</td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color:#000000;font-size:24px;font-family:Open Sans,sans-serif;padding-bottom:20px;padding-left:50px;padding-right:50px;">
+                                  Find a website and print ready flyer already
+                                  created for your new listing and share it with
+                                          potiential buyers.
+                                  <br/><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="button_style">
+                                <div>
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td align="center">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                          <tr>
+                                            <td bgcolor="#fdb714" style="padding: 12px 18px 12px 18px; -webkit-border-radius:4px; border-radius:4px" align="center">
+                                              <a href="{{OpenHouseBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}}" target="_blank" style="font-size: 24px; font-family: sans-serif; font-weight: bold; text-decoration: none; color: #ffffff; display: inline-block;">See the Listing</a>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="color:#000000;font-size:24px;font-family:Open Sans,sans-serif;padding-bottom:20px;padding-left:50px;padding-right:50px;">
+                                  or share this link in email, social media or txt.
+                                  <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="font-size: 24px;font-family:Open Sans,sans-serif;color:#2a94ce;padding-bottom:10px;">
+                                <a href={{ListingTinyURL}}>{{ListingTinyURL}}</a>
+                                <br/><br/>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr>
+      <td>
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="638">
+            <tr>
+                <td height="20"></td>
+            </tr>
+      </td>
+    </tr>
+</table>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- content padding -->
+                                <td align="center" style="padding: 10px;">
+
+                                    <!-- ########inner table for property information responsive columns########### -->
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                          <td align="center"  style="color:#000000;font-size:26px;font-family:Open Sans,sans-serif;font-weight:bold;padding-bottom:30px;">
+                                            What Next?
+                                            <br/>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="color:#000000;font-size:24px;font-family:Open Sans,sans-serif;padding-bottom:20px;padding-left:50px;padding-right:50px;">
+                                          1. Go to the site and download the PDF.
+                                        </td>
+                                      </tr>
+                                        <tr>
+                                          <td align="center" style="color:#000000;font-size:24px;font-family:Open Sans,sans-serif;padding-bottom:20px;padding-left:50px;padding-right:50px;">
+                                            2. Email the PDF to possible buyers.
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center" style="color:#000000;font-size:24px;font-family:Open Sans,sans-serif;padding-bottom:20px;padding-left:50px;padding-right:50px;">
+                                            3. Share the link via social media, email, txt.
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center" style="color:#000000;font-size:24px;font-family:Open Sans,sans-serif;padding-bottom:20px;padding-left:50px;padding-right:50px;">
+                                            Be sure to print PDF flyers for the event.
+                                          </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- Sell box  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="whitebg">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="center" style="font-size:26px;font-family:Open Sans,sans-serif;padding-top:10px;padding-bottom:10px;">
+                                  <br/>
+                                  Let us have a great Open House!
+                                  <br/><br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr>
+      <td>
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="638">
+            <tr>
+                <td height="20"></td>
+            </tr>
+      </td>
+    </tr>
+</table>
+
+<!-- footer  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="bgcolor">
+  <tr>
+      <td align="center" class="content_padding">
+          <!-- wrapper table - outlook needs a fixed width -->
+          <table border="0" cellpadding="0" cellspacing="0" width="600">
+              <tr>
+                  <td>
+                    <!-- content table -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                              <td align="center" style="color:#989b9d;font-size:9px;font-family:Open Sans,sans-serif;color:#bcbcbc;padding-bottom:20px;">
+                                <br/><br/>
+                                HomeScout <sup class="superscript">TM</sup> is a free home finding service provided directly to you
+                                by HBM2, a licensed real estate brokerage.
+                                <br/>
+                                &copy; Home Buyers Marketing II, Inc.
+                                <br/>
+                                6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+                                <br/><br/><br/>
+                                To unsubscribe from communication email <a class="unsub" href="mailto:openhousesupport@hbm2.com?subject=Unsubscribe">click here</a>.
+                                <br/><br/><br/>
+                              </td>
+                          </tr>
+                      </table>
+                  </td>
+              </tr>
+          </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

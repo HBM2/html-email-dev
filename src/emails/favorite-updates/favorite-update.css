@@ -33,11 +33,12 @@ a {text-decoration:none;}
 }
 .houses_text{
   color:#0076b9;
-  font-size: 26px;
+  font-size: 28px;
+  font-weight:bold;
   font-family:"Open Sans",sans-serif;
 }
 .hero-content{
-  font-size: 18px;
+  font-size: 22px;
   font-family:"Open Sans",sans-serif;
   padding-left: 70px;
   padding-right: 70px;
@@ -48,6 +49,7 @@ a {text-decoration:none;}
 .header_container {
     padding-top: 20px;
 }
+.change-highlight{color:green;}
 
 .header_logo {
     width: 230px;
@@ -75,12 +77,12 @@ a {text-decoration:none;}
 }
 
 .listing_photo {
-    width: 200px;
+    width: 400px;
     display: block;
 }
 
 .listing_photo img {
-    max-width: 200px;
+    max-width: 400px;
 }
 
 .listing_info {
@@ -143,14 +145,13 @@ a {text-decoration:none;}
 .td-spacer{height:5px;}
 .listing_info_copy {
   font-family:"Open Sans",sans-serif;
-  font-size:16px;
-  padding-bottom: 3px;
+  font-size:20px;
+  padding-top:5px;
 }
 .listing_info_copy2 {
   font-family:"Open Sans",sans-serif;
-  color:#2a94ce;
-  font-size:16px;
-  padding-bottom: 3px;
+  font-size:22px;
+  font-weight:bold;
 }
 
 

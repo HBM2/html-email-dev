@@ -4,8 +4,10 @@ var htmlEmailCustom = require('./gulp-html-email-custom');
 var litmus = require('gulp-litmus');
 var htmlmin = require('gulp-html-minifier');
 var nodemailer = require('nodemailer');
+var argv = require('yargs').argv;
 
 gulp.task('default', buildHtmlEmails);
+gulp.task('test', test);
 
 function buildHtmlEmails() {
     return gulp.src('./src/emails/**/*.html')
@@ -35,7 +37,11 @@ function buildHtmlEmails() {
             removeHtmlSelectors: false
         }))
         .pipe(htmlEmailCustom()) // custom gulp plugin I wrote to do various things...
-        .pipe(htmlmin({collapseWhitespace: true}))
+        //.pipe(htmlmin({collapseWhitespace: true}))
         // .pipe(litmus(require('./config/litmus.config')))
         .pipe(gulp.dest('./build/'));
+}
+
+function test() {
+
 }
