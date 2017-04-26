@@ -22,7 +22,8 @@
             var templateData = {
                 Address: "2455 Douglas Dr NE",
                 DateTime: "4/23/17 from 12-3P",
-                Photo: "https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg"
+                Photo: "https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+                MoreDates: "http://homescout.com"
             };
             // render the email with Mustache, using the above template data
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -180,7 +181,7 @@
                                             <w:anchorlock/>
                                             <center>
                                         <![endif]-->
-                                        <a href="http://homescout.com"
+                                        <a href={{MoreDates}}
                                            class="button">See more dates</a>
                                         <!--[if mso]>
                                         </center>
