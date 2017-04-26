@@ -15,12 +15,12 @@
             var templateData = {
               WebsitePath: "http://local.hsr.com",
               Bguid: "c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-              ListingCount: 36,
+              ListingCount: 1,
               SearchName: "Malibu Homes",
               BuyerGuid:"",
               EntityRoleId:"",
               SavedSearchId:"",
-
+              MultipleListings:false,
               Listings:[
                         {ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
                          PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
@@ -129,7 +129,7 @@
                             </tr>
                             <tr>
                                 <td align="center" class="hero-content">
-                                  <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{ListingCount}}</span></a> listings have been added to your
+                                  <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{ListingCount}}</span></a> {{#MultipleListings}}listings have{{/MultipleListings}}{{^MultipleListings}}listing has{{/MultipleListings}} been added to your
                                   <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{SearchName}}</span></a> search.
                                   Here's a sneak peak.  Log in to HomeScout to <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">see them all</span></a>.
                                   <br/><br/>
