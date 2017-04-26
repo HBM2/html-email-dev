@@ -15,14 +15,10 @@
             var templateData = {
               WebsitePath: "http://local.hsr.com",
               Bguid: "c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-              BuyerGuid:"",
-              EntityRoleId:"",
-              SavedSearchId:"",
               ChangeString: "Price drop $335,000",
               ChangeHighlight: "(-$10,000)",
               ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-              PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
-              Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213",
+              Address1:"6736 Falcon Crescent"
               PhotoAtHBM:true,
               PhotoPath:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
               NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"
@@ -163,11 +159,11 @@
                                   <td align="center" class="hero-content">
                                     <br/><br/>
                                     <div><!--[if mso]>
-                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{WebsitePath}}/searches?Bguid={{Bguid}}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fdb714">
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ListingDetailURL}}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fdb714">
                                           <w:anchorlock/>
                                           <center>
                                         <![endif]-->
-                                            <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"
+                                            <a href="{{ListingDetailURL}}"
                                       style="background-color:#fdb714;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Get the details</a>
                                         <!--[if mso]>
                                           </center>
@@ -203,7 +199,7 @@
         <br/>
         6066 Shingle Creek Pkwy, Minneapolis, MN 55430
         <br />
-        To unsubscribe <a class="unsub" href="{{WebsitePath}}/searches?Bguid={{Bguid}}">click here</a> and toggle alerts to off.
+        To unsubscribe <a class="unsub" href="{{WebsitePath}}/userprofile?Bguid={{Bguid}}">click here</a> and toggle alerts to off.
         <br/><br/><br/>
       </td>
     </tr>
