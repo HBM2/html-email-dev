@@ -13,9 +13,12 @@
         window.onload = function() {
             // mock "view model" object for mustache rendering engine
             var templateData = {
-              OpenHouseBaseUrl:"http://local.openhouse.com/detail",
+              CRMApiBaseURL: "http://localhost:1864", //"http://dev-01-crmentityapi.hbm2.com",
+              OpenHouseBaseUrl:"http://local.openhouse.com",
               ListingTinyURL: "http://tinyurl.com/78873",
               Address:"6736 Falcon Crescent",
+              LenderEntityRoleID:"1234567",
+              AgentEntityRoleID:"5218814",
               MLSListingID:"91123",
               TerritoryID:"528",
               TeamID:"786"
@@ -95,7 +98,7 @@
                                         <table border="0" cellspacing="0" cellpadding="0">
                                           <tr>
                                             <td bgcolor="#fdb714" style="padding: 12px 18px 12px 18px; -webkit-border-radius:4px; border-radius:4px" align="center">
-                                              <a href="{{OpenHouseBaseUrl}}?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}}" target="_blank" style="font-size: 24px; font-family: sans-serif; font-weight: bold; text-decoration: none; color: #ffffff; display: inline-block;">See the Listing</a>
+                                              <a href="{{OpenHouseBaseUrl}}/detail?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}}" target="_blank" style="font-size: 24px; font-family: sans-serif; font-weight: bold; text-decoration: none; color: #ffffff; display: inline-block;">See the Listing</a>
                                             </td>
                                           </tr>
                                         </table>
@@ -252,7 +255,7 @@
                                 <br/>
                                 6066 Shingle Creek Pkwy, Minneapolis, MN 55430
                                 <br/><br/><br/>
-                                To unsubscribe from communication email <a class="unsub" href="mailto:openhousesupport@hbm2.com?subject=Unsubscribe">click here</a>.
+                                To unsubscribe from communication email <a class="unsub" href="{{CRMApiBaseURL}}/CreateAgentOptOutRecord?AgentEntityRoleID={{AgentEntityRoleID}}&LenderEntityRoleID={{LenderEntityRoleID}}&NotificationTypeID=3">click here</a>
                                 <br/><br/><br/>
                               </td>
                           </tr>
