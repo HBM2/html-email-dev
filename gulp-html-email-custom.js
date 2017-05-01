@@ -16,6 +16,8 @@ var username = require('username');
 var nodemailer = require('nodemailer');
 var Promise = require('bluebird');
 var litmusConfig = require('./config/litmus.config');
+var Entities = require('html-entities').XmlEntities;
+const entities = new Entities();
 
 const PLUGIN_NAME = 'gulp-static-image-uploader';
 
@@ -52,6 +54,9 @@ module.exports = function() {
             if (images.length) {
                 console.log(images.length + ' images found in ' + file.path)
             }
+
+            var html = $.html();
+
             // for each image in the HTML...
             for(var i = 0; i < images.length; i++) {
                 // we have the HTML - relative image path in the src...
@@ -79,8 +84,8 @@ module.exports = function() {
 
                 // upload image to destination
                 // for now copy to \\hbmphotoprod01\HBMPhotos\email-images
-                fs.createReadStream(imageFilePath)
-                    .pipe(fs.createWriteStream('\\\\hbmphotoprod01\\HBMPhotos\\email-images\\' + newFileName));
+                // fs.createReadStream(imageFilePath)
+                //     .pipe(fs.createWriteStream('\\\\hbmphotoprod01\\HBMPhotos\\email-images\\' + newFileName));
 
                 // update the img.src to point at the destination
                 images[i].attribs.src = 'http://photos.hbm2.com/email-images/' + newFileName;
@@ -100,7 +105,9 @@ module.exports = function() {
             $('head').prepend(buildComment);
 
             // now that we updated image src paths using cheerio, redo the file html and pass it along to gulp
-            file.contents = new Buffer($.html());
+            var html = $.html();
+            var decodedHtml = entities.decode(html);
+            file.contents = new Buffer(decodedHtml);
 
             // send the email to litmus
             // sendEmail({
