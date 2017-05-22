@@ -20,10 +20,23 @@
         window.onload = function () {
             // TODO: define your mock email "object" that is used to render the template
             var templateData = {
-                Address: "2455 Douglas Dr NE",
-                DateTime: "4/23/17 from 12-3P",
-                Photo: "https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
-                MoreDates: "http://homescout.com"
+                OpenHouseCount: 5,
+                SearchName: "Vacation Homes",
+                Listing1Address: "6736 Falcon Crescent",
+                Listing1Address2: "Malibu, CA 90213",
+                Listing1Date: "Sat 4/19/17 2-5P",
+                Listing1Price: "$500,000",
+                Listing1Status: "active",
+                Listing1ListingLink: "https://homescout.com",
+                Listing1Photo: "listingphoto.png", //"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+                Listing2Address: "6736 Falcon Crescent",
+                Listing2Address2: "Malibu, CA 90213",
+                Listing2Date: "Sat 4/19/17 2-5P",
+                Listing2Price: "$500,000",
+                Listing2Status: "active",
+                Listing2Photo: "listingphoto.png",//"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+                Listing2ListingLink: "https://homescout.com",
+                SearchLink: "https://homescout.com",
             };
             // render the email with Mustache, using the above template data
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -54,7 +67,7 @@
                             <tr>
                                 <td align="left" valign="top" height="59">
                                     <a href="#" class="logo_link">
-                                        <img src="logo.png" alt="HomeScout - put the slogan here" />
+                                        <img src="logo.png" alt="HomeScout" />
                                     </a>
                                 </td>
                             </tr>
@@ -92,7 +105,7 @@
                             <tr>
                                 <td align="center" valign="top" height="250" class="listing_photo_height">
                                     <a href="#" class="listing_photo_height">
-                                        <img src={{Photo}} class="listing_photo_img" alt={{Address}} />
+                                      <img src="binoculars.png" alt={{Address1}}/>
                                     </a>
                                 </td>
                             </tr>
@@ -103,21 +116,19 @@
                             </tr>
                             <tr>
                                 <td align="center" valign="top" class="header_text_cell blue_header_color">
-                                    Open House Alert
+                                    Don&#8217;t just look. Come on in.
+                                </td>
+                            </tr>
+                            <tr>
+                              <!--TODO: Logic to change wording if only one lising will be shown -->
+                                <td align="center" valign="top" class="subheader_text_cell">
+                                    <span class="search_name">{{OpenHouseCount}}</span> listings have upcoming open houses in your</br>
+                                    <a href={{SearchLink}} class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
+                                    Login to HomeScout to <a href={{SearchLink}} class="search_name">see them all</a>.
                                 </td>
                             </tr>
                             <tr>
                                 <td height="20"><!-- padding below header text --></td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="top" class="fontsize22px bold">
-                                    {{Address}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="top" class="fontsize22px">
-                                    {{DateTime}}
-                                </td>
                             </tr>
                         </table>
                     </td>
@@ -148,17 +159,71 @@
                             <tr>
                                 <td align="center" valign="top" class="fontsize22px">
                                     <!-- using another table to put some padding on left/right side of the text, within the white content area -->
-                                    <table width="600" border="0" cellpadding="0" cellspacing="0">
+                                    <table width="600" height="250" border="0" cellpadding="0" cellspacing="0" class="listing_card">
                                         <tr>
-                                            <td width="60">
-                                                &nbsp; <!-- left padding -->
-                                            </td>
-                                            <td width="auto" align="center" class="fontsize22px">
-                                                Tap the button and see more dates/times and find out what makes this property so special.
-                                            </td>
-                                            <td width="60">
-                                                &nbsp; <!-- right  padding -->
-                                            </td>
+                                          <td align="center" class="photo_padding"><img src={{Listing1Photo}} alt={{Listing1Address1}}/></td>
+                                          <td width="350" valign="top">
+                                            <table>
+                                              <tr height="40"></tr>
+                                              <tr>
+                                                <td class="fontsize22px bold" valign="top">
+                                                  <!--TODO: CREATE LOGIC TO SPECIFY DOT COLOR-->
+                                                  <div class="gallery-proptype-dot gallery-dot-forsale"></div> {{Listing1Price}} Open House
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="fontsize22px ">
+                                                  <span >{{Listing1Date}}</span> <img src="calendar.png" alt="Add date to your calendar" class=""/>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td  class=" blue_header_color address_padding">
+                                                    {{Listing1Address}}
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class=" blue_header_color">
+                                                    {{Listing1Address2}}
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" class="fontsize22px">
+                                    <!-- using another table to put some padding on left/right side of the text, within the white content area -->
+                                    <table width="600" height="250" border="0" cellpadding="0" cellspacing="0" class="listing_card">
+                                        <tr>
+                                          <td align="center" class="photo_padding"><img src={{Listing2Photo}} alt={{Listing2Address1}}/></td>
+                                          <td width="350" valign="top">
+                                            <table>
+                                              <tr height="40"></tr>
+                                              <tr>
+                                                <td class="fontsize22px bold" valign="top">
+                                                  <!--TODO: CREATE LOGIC TO SPECIFY DOT COLOR-->
+                                                  <div class="gallery-proptype-dot gallery-dot-forsale"></div> {{Listing2Price}} Open House
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="fontsize22px ">
+                                                  <span >{{Listing2Date}}</span> <img src="calendar.png" alt="Add date to your calendar" class=""/>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td  class=" blue_header_color address_padding">
+                                                    {{Listing2Address}}
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class=" blue_header_color">
+                                                    {{Listing2Address2}}
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -181,8 +246,8 @@
                                             <w:anchorlock/>
                                             <center>
                                         <![endif]-->
-                                        <a href={{MoreDates}}
-                                           class="button">See more dates</a>
+                                        <a href={{ListingLink}}
+                                           class="button">Go to the Listing</a>
                                         <!--[if mso]>
                                         </center>
                                         </v:roundrect>
@@ -190,7 +255,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" valign="top" height="100">
+                                <td align="center" valign="top" height="50">
                                     &nbsp; <!-- padding -->
                                 </td>
                             </tr>
@@ -225,37 +290,24 @@
                                     <!-- using another table to put some padding on left/right side of the text, within the white content area -->
                                     <table width="600" border="0" cellpadding="0" cellspacing="0">
                                         <tr>
-                                            <td width="20">
-                                                &nbsp; <!-- left padding -->
-                                            </td>
-                                            <td width="auto" align="center" class="footer_text">
-                                                HomeScout &trade; is a free home finding service provided directly to you by HBM2, a licensed real estate brokerage.
-                                            </td>
-                                            <td width="20">
-                                                &nbsp; <!-- right  padding -->
-                                            </td>
+                                          <td width="auto" align="center" class="footer_text">
+                                              HomeScout &trade; is a free home finding service provided directly to you by HBM2, a licensed real estate brokerage.
+                                          </td>
                                         </tr>
                                         <tr>
-                                            <td width="20">
-                                                &nbsp; <!-- left padding -->
-                                            </td>
-                                            <td width="auto" align="center" class="footer_text">
-                                                &copy; Home Buyers Marketing II, Inc.
-                                            </td>
-                                            <td width="20">
-                                                &nbsp; <!-- right  padding -->
-                                            </td>
+                                          <td width="auto" align="center" class="footer_text">
+                                              &copy; Home Buyers Marketing II, Inc.
+                                          </td>
                                         </tr>
                                         <tr>
-                                            <td width="20">
-                                                &nbsp; <!-- left padding -->
-                                            </td>
-                                            <td width="auto" align="center" class="footer_text">
-                                                6066 Shingle Creek Pkwy, Minneapolis, MN 55430
-                                            </td>
-                                            <td width="20">
-                                                &nbsp; <!-- right  padding -->
-                                            </td>
+                                          <td width="auto" align="center" class="footer_text">
+                                              6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td width="auto" align="center" class="footer_text unsubscribe_padding">
+                                              To unsubscribe <a href="https://homescout.homescouting.com/searches" class="blue_header_color">click here</a> and toggle alerts to off
+                                          </td>
                                         </tr>
                                     </table>
                                 </td>
