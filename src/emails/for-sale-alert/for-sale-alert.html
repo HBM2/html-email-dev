@@ -14,13 +14,13 @@
             // mock "view model" object for mustache rendering engine
             var templateData = {
               WebsitePath: "http://local.hsr.com",
-              Bguid: "c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-              ListingCount: 36,
+              Bguid: "e6c1ede5-3713-4386-b126-51eaeec67d69",
+              ListingCount: 1,
               SearchName: "Malibu Homes",
               BuyerGuid:"",
-              EntityRoleId:"",
-              SavedSearchId:"",
-
+              EntityRoleId:"2720226",
+              SavedSearchId:"136",
+              MultipleListings:false,
               Listings:[
                         {ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
                          PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
@@ -129,9 +129,9 @@
                             </tr>
                             <tr>
                                 <td align="center" class="hero-content">
-                                  <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{ListingCount}}</span></a> listings have been added to your
-                                  <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">{{SearchName}}</span></a> search.
-                                  Here's a sneak peak.  Log in to HomeScout to <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"><span class="hero-highlight">see them all</span></a>.
+                                  <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"><span class="hero-highlight">{{ListingCount}}</span></a> {{#MultipleListings}}listings have{{/MultipleListings}}{{^MultipleListings}}listing has{{/MultipleListings}} been added to your
+                                  <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"><span class="hero-highlight">{{SearchName}}</span></a> search.
+                                  Here's a sneak peak.  Log in to HomeScout to <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"><span class="hero-highlight">see them all</span></a>.
                                   <br/><br/>
 
                                 </td>
@@ -242,7 +242,7 @@
                                           <w:anchorlock/>
                                           <center>
                                         <![endif]-->
-                                            <a href="{{WebsitePath}}/searches?Bguid={{Bguid}}"
+                                            <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"
                                       style="background-color:#fdb714;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">See them all</a>
                                         <!--[if mso]>
                                           </center>

@@ -13,9 +13,12 @@
         window.onload = function() {
             // mock "view model" object for mustache rendering engine
             var templateData = {
+              CRMApiBaseURL: "http://localhost:1864", //"http://dev-01-crmentityapi.hbm2.com",
               OpenHouseBaseUrl:"http://local.openhouse.com/detail",
               ListingTinyURL: "http://tinyurl.com/78873",
               Address:"6736 Falcon Crescent",
+              LenderEntityRoleID:"1234567",
+              AgentEntityRoleID:"5218814",
               MLSListingID:"91123",
               TerritoryID:"528",
               TeamID:"786"
@@ -252,7 +255,7 @@
                                 <br/>
                                 6066 Shingle Creek Pkwy, Minneapolis, MN 55430
                                 <br/><br/><br/>
-                                To unsubscribe from communication email <a class="unsub" href="mailto:openhousesupport@hbm2.com?subject=Unsubscribe">click here</a>.
+                                To unsubscribe from communication email <a class="unsub" href="mailto:openhousesupport@hbm2.com?subject=Unsubscribe">click here</a>
                                 <br/><br/><br/>
                               </td>
                           </tr>

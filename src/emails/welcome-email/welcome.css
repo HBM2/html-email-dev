@@ -18,31 +18,54 @@ table td {
 }
 
 .bgcolor {
-    background-color: background-color: #ebeaea ;;
+    background-color: #ebeaea;
 }
 
 .fixedwidth {
     width: 620px;
 }
-
+.header_table{
+  background-color:#1B75BC;
+}
+.houses_table{
+  background-color:#ffffff;
+}
+.houses_text{
+  color:#47c6ab;
+  font-size: 30px;
+  font-family:"Open Sans",sans-serif;
+}
+.hero-content{
+  font-size: 18px;
+  font-family:"Open Sans",sans-serif;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.hero-highlight{
+  color:#fc4a1a;
+}
 .header_container {
     padding-top: 20px;
-    background-color:#1B75BC;
 }
 
 .header_logo {
-    width: 38px;
+    width: 97px;
+    height:90px;
 }
-
+.falling_houses{
+  width:414px;
+  height:199px;
+}
 .header_text {
     padding-left: 10px;
     font-size: 24px;
+    font-family:"Open Sans",sans-serif;
     color:#ffffff;
 }
-
+.superscript{font-size:6px;}
 .topcopy {
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 18px;
 }
 
@@ -50,18 +73,17 @@ table td {
     background-color: #ffffff;
 }
 
-.forgot_photo {
-    width: 320px;
-    height:215px;
-    display: inline-block;
+.listing_photo {
+    width: 290px;
+    display: block;
 }
 
-.forgot_photo img {
+.listing_photo img {
     max-width: 100%;
 }
 
 .listing_info {
-    display: inline-block;
+    display: block;
     width: 220px;
     padding-left: 20px;
     padding-right: 0px;
@@ -73,7 +95,7 @@ table td {
     padding-left: 15px;
     padding-right: 15px;
 
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -100,24 +122,26 @@ table td {
 }
 
 .unsub {
-    color: #288dd1;
+  color:#47c6ab;
+  font-size: 9px;
+  font-family:"Open Sans",sans-serif;
+  text-decoration:none;
 }
 
 .fineprint {
     color: #989b9d;
-    text-align:center;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 
 .listprice {
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: 10px;
+    font-size: 18px;
+    font-family:"Open Sans",sans-serif;
+    padding-bottom: 4px;
 }
 
 .listing_info_copy {
-    padding-bottom: 0px;
+  font-family:"Open Sans",sans-serif;
+  font-size:14px;
+  padding-bottom: 3px;
 }
 
 .listing_status {
@@ -125,44 +149,22 @@ table td {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.team-photos{
-  text-align:center;
-}
-.reset-button-container{
-  text-align:center;
-}
-.reset-button{
-  height:40px;
-  width:200px;
-  font-size:18px;
-  color:#ffffff;
-  background-color:#e8603e;
-  border-style: none;
-}
-.forgot-text{
-  text-align:center;
-  font-size:20px;
-  color:#292929;
-}
-.pad-forgot-text{
-  padding-left:95px;
-  padding-right:95px;
+.footer-content{
+  font-size:9px;
+  font-family:"Open Sans",sans-serif;
+  color:#bcbcbc;
+  padding-bottom:20px;
 }
 .team-photo{
-  width:75px;
-  height:75px;
-  margin-right:20px;
+  width:100px;
+  padding-left:10px;
+  padding-right:10px;
 }
-.logo{
-  width:230px;
-  height:65px;
+.team-link{
+  text-decoration: none;
 }
-.forgot-header{
+.header_text{
+  font-size:24px;
+  font-weight:bold;
   color:#1B75BC;
-  font-weight:bold;
-  font-size:26px;
-}
-.username-text{
-  font-weight:bold;
-  font-size:20px;
 }
