@@ -20,24 +20,52 @@
         window.onload = function () {
             // TODO: define your mock email "object" that is used to render the template
             var templateData = {
-                OpenHouseCount: 5,
-                SearchName: "Vacation Homes",
-                Listing1Address: "6736 Falcon Crescent",
-                Listing1Address2: "Malibu, CA 90213",
-                Listing1Date: "Sat 4/19/17 2-5P",
-                Listing1Price: "$500,000",
-                Listing1Status: "active",
-                Listing1ListingLink: "https://homescout.com",
-                Listing1Photo: "listingphoto.png", //"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
-                Listing2Address: "6736 Falcon Crescent",
-                Listing2Address2: "Malibu, CA 90213",
-                Listing2Date: "Sat 4/19/17 2-5P",
-                Listing2Price: "$500,000",
-                Listing2Status: "active",
-                Listing2Photo: "listingphoto.png",//"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
-                Listing2ListingLink: "https://homescout.com",
-                SearchLink: "https://homescout.com",
-            };
+              WebsitePath: "http://local.hsr.com",
+              Bguid: "e6c1ede5-3713-4386-b126-51eaeec67d69",
+              OpenHouseCount: 5,
+              SearchName: "Malibu Homes",
+              EntityRoleId:"2720226",
+              SavedSearchId:"136",
+              MultipleListings:true,
+              Listings:[
+                {
+                    ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
+                    PriceString:"$14,500,000",
+                    Status:"Active",
+                    Beds:5,
+                    Baths:4,
+                    SqFt:"8,545",
+                    Address1:"6736 Falcon Crescent",
+                    Address2: "Malibu, CA 90213",
+                    PhotoAtHBM:true,
+                    PhotoPath:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+                    NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
+                    OHID:346346346,
+                    OHStartTime: "2017-11-06 13:00:00.000",
+                    OHEndTime: "2017-11-06 16:00:00.000",
+                    OHDateString: "Sat 4/19/17 2-5P",
+                    IsDistressed: true
+                },
+                {
+                    ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
+                    PriceString:"$14,500,000",
+                    Status:"Active",
+                    Beds:5,
+                    Baths:4,
+                    SqFt:"8,545",
+                    Address1:"6736 Falcon Crescent",
+                    Address2: "Malibu, CA 90213",
+                    PhotoAtHBM:false,
+                    PhotoPath:"https://photos6.hbm2.com/001/35/2/7/7/HBMLG_16-166772.jpg",
+                    NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
+                    OHID:120821375617,
+                    OHStartTime: "2018-02-18 12:00:00.000",
+                    OHEndTime: "2018-02-18 16:00:00.000",
+                    OHDateString: "Mon 4/22/17 2-5P",
+                    IsDistressed: false
+                }
+            ]
+          };
             // render the email with Mustache, using the above template data
             var html = Mustache.render(document.body.innerHTML, templateData);
             // write the rendered email template to the body, replacing the template
@@ -103,8 +131,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" valign="top" height="250" class="listing_photo_height">
-                                    <a href="#" class="listing_photo_height">
+                                <td align="center" valign="top" height="250" >
+                                    <a href="#" >
                                       <img src="binoculars.png" alt={{Address1}}/>
                                     </a>
                                 </td>
@@ -152,38 +180,39 @@
                         <!-- white content area, blue background  -->
                         <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
                             <tr>
-                                <td align="center" valign="top" height="60">
+                                <td align="center" valign="top" height="30">
                                     &nbsp; <!-- padding -->
                                 </td>
                             </tr>
+
+                            <!-- {{#Listings}} -->
                             <tr>
-                                <td align="center" valign="top" class="fontsize22px">
+                                <td align="center" valign="top" class="fontsize20px">
                                     <!-- using another table to put some padding on left/right side of the text, within the white content area -->
                                     <table width="600" height="250" border="0" cellpadding="0" cellspacing="0" class="listing_card">
                                         <tr>
-                                          <td align="center" class="photo_padding"><img src={{Listing1Photo}} alt={{Listing1Address1}}/></td>
+                                          <td align="center" class="photo_padding"><img class="listing_photo_height" src={{PhotoPath}} alt={{Address1}}/></td>
                                           <td width="350" valign="top">
                                             <table>
                                               <tr height="40"></tr>
                                               <tr>
-                                                <td class="fontsize22px bold" valign="top">
-                                                  <!--TODO: CREATE LOGIC TO SPECIFY DOT COLOR-->
-                                                  <div class="gallery-proptype-dot gallery-dot-forsale"></div> {{Listing1Price}} Open House
+                                                <td class="fontsize20px bold" valign="top">
+                                                  <div class="gallery-proptype-dot gallery-dot-distressed-{{IsDistressed}}"></div> {{PriceString}} Open House
                                                 </td>
                                               </tr>
                                               <tr>
-                                                <td class="fontsize22px ">
-                                                  <span >{{Listing1Date}}</span> <img src="calendar.png" alt="Add date to your calendar" class=""/>
+                                                <td class="fontsize20px">
+                                                  <span >{{OHDateString}}</span> <img src="calendar.png" alt="Add date to your calendar" class=""/>
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td  class=" blue_header_color address_padding">
-                                                    {{Listing1Address}}
+                                                    {{Address1}}
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td class=" blue_header_color">
-                                                    {{Listing1Address2}}
+                                                    {{Address2}}
                                                 </td>
                                               </tr>
                                             </table>
@@ -192,42 +221,8 @@
                                     </table>
                                 </td>
                             </tr>
-                            <tr>
-                                <td align="center" valign="top" class="fontsize22px">
-                                    <!-- using another table to put some padding on left/right side of the text, within the white content area -->
-                                    <table width="600" height="250" border="0" cellpadding="0" cellspacing="0" class="listing_card">
-                                        <tr>
-                                          <td align="center" class="photo_padding"><img src={{Listing2Photo}} alt={{Listing2Address1}}/></td>
-                                          <td width="350" valign="top">
-                                            <table>
-                                              <tr height="40"></tr>
-                                              <tr>
-                                                <td class="fontsize22px bold" valign="top">
-                                                  <!--TODO: CREATE LOGIC TO SPECIFY DOT COLOR-->
-                                                  <div class="gallery-proptype-dot gallery-dot-forsale"></div> {{Listing2Price}} Open House
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="fontsize22px ">
-                                                  <span >{{Listing2Date}}</span> <img src="calendar.png" alt="Add date to your calendar" class=""/>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td  class=" blue_header_color address_padding">
-                                                    {{Listing2Address}}
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class=" blue_header_color">
-                                                    {{Listing2Address2}}
-                                                </td>
-                                              </tr>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
+                            <!-- {{/Listings}} -->
+
                             <tr>
                                 <td align="center" valign="top" height="60">
                                     &nbsp; <!-- padding -->
@@ -286,7 +281,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" valign="top" class="fontsize22px">
+                                <td align="center" valign="top">
                                     <!-- using another table to put some padding on left/right side of the text, within the white content area -->
                                     <table width="600" border="0" cellpadding="0" cellspacing="0">
                                         <tr>

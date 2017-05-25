@@ -44,11 +44,11 @@ a img {
 }
 
 .padding_listing_photo {
-    height: 34px;
+    height: 10px;
 }
 
 .listing_photo_height {
-    height: 249px;
+    height: 175px;
 }
 
 a.listing_photo_height {
@@ -72,8 +72,8 @@ a.listing_photo_height {
     font-weight: 600;
 }
 
-.fontsize22px {
-    font-size: 22px;
+.fontsize20px {
+    font-size: 20px;
 }
 
 .bold {
@@ -113,8 +113,8 @@ a.listing_photo_height {
   /*border: 1px solid black;*/
 }
 .photo_padding{
-  padding-left:20px;
-  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
 }
 .address_padding{
   padding-top:20px
@@ -126,10 +126,8 @@ a.listing_photo_height {
   text-align: left;
 }
 
-.gallery-dot-forsale {background-color:#FF0000;}
-.gallery-dot-distressed {background-color:#2F87D3;}
-.gallery-dot-sold {background-color:#FFD600;}
-.gallery-dot-openhouse {background-color:#32CD32;}
+.gallery-dot-distressed-false {background-color:#FF0000;}
+.gallery-dot-distressed-true {background-color:#2F87D3;}
 .gallery-proptype-dot{
   width: 14px;
   height: 14px;
