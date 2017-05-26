@@ -148,11 +148,17 @@
                                 </td>
                             </tr>
                             <tr>
-                              <!--TODO: Logic to change wording if only one lising will be shown -->
-                                <td align="center" valign="top" class="subheader_text_cell">
+                                <td align="center" valign="top" class="subheader_text_cell_{{MultipleListings}}">
+                                  {{#MultipleListings}}
                                     <span class="search_name">{{OpenHouseCount}}</span> listings have upcoming open houses in your</br>
-                                    <a href={{SearchLink}} class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
-                                    Login to HomeScout to <a href={{SearchLink}} class="search_name">see them all</a>.
+                                    <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}} class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
+                                    Login to HomeScout to <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}} class="search_name">see them all</a>.
+                                  {{/MultipleListings}}
+                                  {{^MultipleListings}}
+                                    There's an upcoming open house this week in your <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}} class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
+                                  {{/MultipleListings}}
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -191,7 +197,17 @@
                                     <!-- using another table to put some padding on left/right side of the text, within the white content area -->
                                     <table width="600" height="250" border="0" cellpadding="0" cellspacing="0" class="listing_card">
                                         <tr>
-                                          <td align="center" class="photo_padding"><img class="listing_photo_height" src={{PhotoPath}} alt={{Address1}}/></td>
+                                          <td align="center" class="photo_padding">
+                                            {{#PhotoAtHBM}}
+                                            <a href="{{ListingDetailURL}}">
+                                              <img class="listing_photo_height" src={{PhotoPath}} alt={{Address1}}/>
+                                            </a>
+                                            {{/PhotoAtHBM}}
+
+                                            {{^PhotoAtHBM}}
+                                              <img class="listing_photo_height" src={{NoPhotoPath}} alt="Photo Not Available"/>
+                                            {{/PhotoAtHBM}}
+                                          </td>
                                           <td width="350" valign="top">
                                             <table>
                                               <tr height="40"></tr>
@@ -207,12 +223,12 @@
                                               </tr>
                                               <tr>
                                                 <td  class=" blue_header_color address_padding">
-                                                    {{Address1}}
+                                                    <a href="{{ListingDetailURL}}">{{Address1}}</a>
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td class=" blue_header_color">
-                                                    {{Address2}}
+                                                    <a href="{{ListingDetailURL}}">{{Address2}}</a>
                                                 </td>
                                               </tr>
                                             </table>
@@ -241,8 +257,17 @@
                                             <w:anchorlock/>
                                             <center>
                                         <![endif]-->
-                                        <a href={{ListingLink}}
-                                           class="button">Go to the Listing</a>
+                                        <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}
+                                           class="button">
+
+                                           {{#MultipleListings}}
+                                             See the Listings
+                                             {{/MultipleListings}}
+                                           {{^MultipleListings}}
+                                             See the Listing
+                                           {{/MultipleListings}}
+
+                                         </a>
                                         <!--[if mso]>
                                         </center>
                                         </v:roundrect>

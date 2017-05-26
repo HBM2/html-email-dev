@@ -103,10 +103,17 @@ a.listing_photo_height {
   font-weight: 600;
   color:#fdb714;
 }
-.subheader_text_cell{
+.subheader_text_cell_true{
   padding-top:15px;
   line-height: 25px;
   font-size:18px;
+}
+.subheader_text_cell_false{
+  padding-top:15px;
+  line-height: 25px;
+  font-size:18px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .listing_card{
   background-color: #f5f5f5;
