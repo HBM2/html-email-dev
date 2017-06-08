@@ -3,10 +3,12 @@ body{
 }
 .blue_bg {
     background-color: #2a94ce;
+    background-repeat: no-repeat;
 }
 
 .gray_bg {
     background-color: #eaeaea;
+    background-repeat: no-repeat;
 }
 
 .white_bg {
@@ -120,7 +122,7 @@ a.listing_photo_height {
   /*border: 1px solid black;*/
 }
 .photo_padding{
-  padding-left:10px;
+  padding-left:25px;
   padding-right:10px;
 }
 .address_padding{
@@ -130,6 +132,14 @@ a.listing_photo_height {
   padding-top:10px;
 }
 .calendar_icon{
+  text-align: left;
+}
+
+.address_link{
+  font-family:"Open Sans",sans-serif;
+  color:#2a94ce;
+  font-size:20px;
+  padding-bottom: 3px;
   text-align: left;
 }
 
