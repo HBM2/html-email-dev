@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>For-Sale Alert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="schedule.css"/>
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+
+              DashURL: "http://dev.nexgenccmx.com/",
+              HomeScoutURL: "https://qa-01-homescouting.hbm2.com/",
+              NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
+              UserFname: "Tuomas",
+              UserLname: "Holopainen",
+              UserEmail: "tuomas@test.com",
+              UserPhone: "555-666-7777",                         //probably need to format
+              UserPhoneExists: true,
+              //UserBguid: "53ac707d-a786-4658-aad3-9a454343e1ad",
+
+              Address1: "2825 Little Orchard Way",
+              Address2: "Orono, MN 55391",
+              ListingDetailURL:"https://homescout.homescouting.com/detail?MLSID=3&MLSListingID=4694281&TeamId=4844484&l=4908646&q=654407",  //&Bguid=53ac707d-a786-4658-aad3-9a454343e1ad
+              NotesExist:false,
+              Notes: "test most of the parameters proposed there do not work on any device ",
+              PhotoAtHBM: true,
+              PhotoPath: "https://photos3.hbm2.com/000/3/1/8/2//HBMLG_4694281.jpg",
+              PriceString: "$11,900,000",
+              StartDate: "6/14/2017",
+              StartTime: "12:00 pm",
+              TeamID: 4844484,
+              User_EntityRoleId: 5329703
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+    <style>
+        /* override styles up to the inline width of the container. */
+        /* max-width here should match the .fixedwidth */
+        @media screen and (max-width: 500px) {
+            .listing_photo, .listing_info {
+                display: block !important;
+                width: 100% !important;
+            }
+            .listing_photo {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_photo img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_info {
+                padding-top: 20px;
+                padding-left: 0px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bgcolor">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#00688d" class="header_table">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="dash_logo.png" class="header_logo" alt="Home Scouting" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+              <tr>
+                <td class="orange-bar"></td>
+              </tr>
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="houses_table">
+                            <tr>
+                                <td align="center" class="key_container">
+                                    <img src="key.png" class="key_img" alt="Background" />
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="main_heading_txt">
+                                Yippee!
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="text_spacer">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="hero-content">
+                                  A customer has requested a showing
+                                  <br/><br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                              <td align="center">
+
+                                <table border="0" cellpadding="0" cellspacing="0" width="500" class="hero-content2">
+                                  <tbody style="box-shadow:0px 3px 8px 0px rgba(0,0,0,0.3);border-radius:8px;">
+                                    <tr>
+                                        <td align="center" class="content_padding2">
+                                            <!-- wrapper table - outlook needs a fixed width -->
+                                            <table border="0" cellpadding="0" cellspacing="0" width="500">
+                                              <tr>
+                                                  <td align="center"><a class="consumer_name" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1">{{UserFname}} {{UserLname}}</a>  <span class="name_text"> requested a showing</span></td>
+                                              </tr>
+                                            </table>
+
+                                            <table border="0" cellpadding="0" cellspacing="0" width="500">
+                                              <tr>
+                                                <td class="text_spacer">&nbsp;<br/></td>
+                                              </tr>
+                                              <tr>
+                                                  <td class="time_text">DATE REQUESTED: {{StartDate}}</td>
+                                                  <td class="time_text">TIME REQUESTED: {{StartTime}}</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="text_spacer">&nbsp;<br/></td>
+                                              </tr>
+                                              <tr>
+                                                <td class="notes_text" colspan="2">
+                                                  {{#NotesExist}}
+                                                  Notes: {{Notes}}
+                                                  {{/NotesExist}}
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="text_spacer">&nbsp;<br/><br/><br/><br/><br/></td>
+                                              </tr>
+                                            </table>
+
+                                            <table border="0" cellpadding="0" cellspacing="0" width="500" bgcolor="#00688d">
+
+                                              <tr>
+                                                  <td align="center" class="blue_info"><img src="Email_Icon.png" alt="Email" align="top"/> <a class="blue_info_txt" href="mailto:{{UserEmail}}">{{UserEmail}}</a></td>
+
+                                                  <td align="center" class="blue_info"><img src="Phone_Icon.png" alt="Phone" align="top"/>
+                                                    {{#UserPhoneExists}}
+                                                     <a class="blue_info_txt" href="tel:{{UserPhone}}">{{UserPhone}}</a>
+                                                     {{/UserPhoneExists}}
+                                                     {{^UserPhoneExists}}
+                                                     <span class="blue_info_txt">N/A</span>
+                                                     {{/UserPhoneExists}}
+                                                   </td>
+
+                                              </tr>
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="text_spacer">&nbsp;<br/><br/><br/></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="houses_table">
+                            <tr>
+                              <td align="center">
+
+                                <table border="0" cellpadding="0" cellspacing="0" width="500" class="hero-content2">
+                                  <tbody style="box-shadow:0px 3px 8px 0px rgba(0,0,0,0.3);border-radius:8px;">
+                                    <tr>
+                                        <td align="center" class="content_padding">
+                                            <!-- wrapper table - outlook needs a fixed width -->
+                                            <table border="0" cellpadding="0" cellspacing="0" width="500">
+                                                  <tr>
+                                                      <td>
+                                                          <div class="listing_photo">
+                                                              {{#PhotoAtHBM}}
+                                                              <a href="{{ListingDetailURL}}">
+                                                                <img src={{PhotoPath}} alt={{Address1}} width="200"/>
+                                                              </a>
+                                                              {{/PhotoAtHBM}}
+
+                                                              {{^PhotoAtHBM}}
+                                                                <img src={{NoPhotoPath}} alt="Photo Not Available" width="200"/>
+                                                              {{/PhotoAtHBM}}
+                                                          </div>
+                                                      </td>
+
+                                                    <td valign="top">
+                                                      <div class="listing_info">
+                                                          <!-- nested table for listing info -->
+                                                          <table border="0" cellspacing="0" cellpadding="0" class="container_table">
+                                                            <tr>
+                                                                <td class="td-spacer"><br/></td>
+                                                            </tr>
+                                                              <tr>
+                                                                  <td class="listprice">
+                                                                      {{PriceString}} {{Status}}
+                                                                  </td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td class="td-spacer"></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td class="listing_info_copy">{{Address1}}</a></td>
+                                                              </tr>
+                                                              <tr>
+                                                                <td class="listing_info_copy">{{Address2}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td><br/><a class="listing_info_copy2" href="{{ListingDetailURL}}">view listing</a></td>
+                                                              </tr>
+                                                          </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                              </table>
+                                        </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                          <td align="center" class="hero-content">
+                                            <br/><br/>
+                                            <div><!--[if mso]>
+                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#f47532">
+                                                  <w:anchorlock/>
+                                                  <center>
+                                                <![endif]-->
+                                                    <a href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1"
+                                              style="background-color:#f47532;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:50px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">View Activity</a>
+                                                <!--[if mso]>
+                                                  </center>
+                                                </v:roundrect>
+                                              <![endif]-->
+                                            </div>
+                                            <br/><br/>
+                                          </td>
+                                        </tr>
+                                </table>
+
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;<br/><br/></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+<!-- agent biz card  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="footer-content">
+        <br/><br/>
+        &copy; Nexgen HBM
+        <br/>
+        6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+        <br /><br />
+        To unsubscribe <a class="unsub" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1">click here</a> and toggle alerts to off.
+        <br/><br/><br/>
+      </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+</body>
+</html>
