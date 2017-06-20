@@ -30,7 +30,11 @@ a {text-decoration:none;}
   background-color:#00688d;
   height:90px;
 }
-.houses_table{
+.header_table_orange{
+  background-color:#f47532;
+  height:15px;
+}
+.white_table{
   background-color:#ffffff;
 }
 .main_heading_txt{
@@ -44,12 +48,13 @@ a {text-decoration:none;}
   font-size: 26px;
   font-weight:600;
   font-family:"Open Sans",sans-serif;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 .hero-content2{
-  height:165px;width:85%;
-
+  color:#00688d;
+  font-size: 20px;
+  font-weight:400;
+  font-family:"Open Sans",sans-serif;
+  padding-left:10px;padding-right:10px;
 }
 .hero-highlight{
   color:#fdb714;
@@ -64,7 +69,7 @@ a {text-decoration:none;}
 }
 .orange-bar{height:15px;width:100%;background-color:#f47532;}
 .text_spacer{font-size:6px;}
-.key_container{
+.table_600{
   width:600px;
   /*height:199px;*/
 }
@@ -150,7 +155,7 @@ a {text-decoration:none;}
     font-family:"Open Sans",sans-serif;
     padding-bottom: 4px;
 }
-.td-spacer{height:5px;}
+.td-spacer{height:5px;border:none;}
 .listing_info_copy {
   font-family:"Open Sans",sans-serif;
   font-size:16px;
@@ -162,7 +167,6 @@ a {text-decoration:none;}
   color:#2a94ce;
   font-size:16px;
   font-weight:600;
-  padding-bottom: 3px;
 }
 .consumer_name {
   font-family:"Open Sans",sans-serif;
