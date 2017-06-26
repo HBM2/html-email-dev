@@ -23,14 +23,17 @@
   "WebsitePath":"http://dev-01-homescouting.hbm2.com",
    "Bguid":"eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
    "OpenHouseCount":2,
-   "SearchName":"Mapfor2ListingsOpenHouse",
+    "SavedSearchEmailClickUrl":"",
+    "SearchName":"Mapfor2ListingsOpenHouse",
    "BuyerGuid":"eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
    "EntityRoleId":533772,
    "SavedSearchId":156,
    "MultipleListings":true,
+
    "Listings":[
      {
-        "ListingDetailURL":"http://dev-01-homescouting.hbm2.com/detail?MLSID=3&MLSListingID=4779951&l=12837200&q=654419&TeamId=4809326&EntityRoleID=533772&Bguid=eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+         // link #1
+        "ListingDetailEmailClickURL":"http://dev-01-homescouting.hbm2.com/detail?MLSID=3&MLSListingID=4779951&l=12837200&q=654419&TeamId=4809326&EntityRoleID=533772&Bguid=eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
          "ListingPrice":234900,
          "PriceString":"$234,900",
          "Status":"Active",
@@ -183,12 +186,12 @@
                             <tr>
                                 <td align="center" valign="top" class="subheader_text_cell_{{MultipleListings}}">
                                   {{#MultipleListings}}
-                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{OpenHouseCount}}</a> listings have upcoming open houses in your</br>
-                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
-                                    Login to HomeScout to <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">see them all</a>.
+                                    <a href="{{SavedSearchEmailClickURL}}" class="search_name">{{OpenHouseCount}}</a> listings have upcoming open houses in your</br>
+                                    <a href="{{SavedSearchEmailClickURL}}" class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
+                                    Login to HomeScout to <a href="{{SavedSearchEmailClickURL}}" class="search_name">see them all</a>.
                                   {{/MultipleListings}}
                                   {{^MultipleListings}}
-                                    There's an upcoming open house this week in your <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
+                                    There's an upcoming open house this week in your <a href="{{SavedSearchEmailClickURL}}" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
                                   {{/MultipleListings}}
 
 
@@ -232,7 +235,7 @@
                                         <tr>
                                           <td align="center" class="photo_padding">
                                             {{#PhotoAtHBM}}
-                                            <a href="{{ListingDetailURL}}">
+                                            <a href="{{ListingDetailEmailClickURL}}">
                                               <img class="listing_photo_height" src={{PhotoPath}} alt={{Address1}}/>
                                             </a>
                                             {{/PhotoAtHBM}}
@@ -262,12 +265,12 @@
                                               </tr>
                                               <tr>
                                                 <td  class=" blue_header_color address_padding">
-                                                    <a class="address_link" href="{{ListingDetailURL}}">{{Address1}}</a>
+                                                    <a class="address_link" href="{{ListingDetailEmailClickURL}}">{{Address1}}</a>
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td class=" blue_header_color">
-                                                    <a class="address_link" href="{{ListingDetailURL}}">{{Address2}}</a>
+                                                    <a class="address_link" href="{{ListingDetailEmailClickURL}}">{{Address2}}</a>
                                                 </td>
                                               </tr>
                                             </table>
@@ -288,7 +291,7 @@
                                     <div><!--[if mso]>
                                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                                      xmlns:w="urn:schemas-microsoft-com:office:word"
-                                                     href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true
+                                                     href="{{SavedSearchEmailClickURL}}"
                                                      style="height:62px;v-text-anchor:middle;width:252px;font-size:22px;"
                                                      arcsize="7%"
                                                      stroke="f"
@@ -296,7 +299,7 @@
                                             <w:anchorlock/>
                                             <center>
                                         <![endif]-->
-                                        <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true
+                                        <a href="{{SavedSearchEmailClickURL}}"
                                            class="button">
 
                                            {{#MultipleListings}}
