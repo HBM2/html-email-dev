@@ -22,7 +22,7 @@ table td {
 .header_logo {
     padding-top: 15px;
     padding-left: 25px;
-    padding-bottom: 2px;    
+    padding-bottom: 2px;
 }
 .header_table{
   background-color:#2a94ce;
@@ -34,4 +34,11 @@ table td {
 }
 .button_style {
   padding-bottom: 40px;
+}
+
+.unsub {
+  color:#47c6ab;
+  font-size: 9px;
+  font-family:"Open Sans",sans-serif;
+  text-decoration:none;
 }
