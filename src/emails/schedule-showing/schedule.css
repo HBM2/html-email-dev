@@ -1,0 +1,221 @@
+/* some default colors and stuff */
+table td {
+    color: #343434;
+}
+a {text-decoration:none;}
+.container_table {
+    width: 100%;
+}
+.content_padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.content_padding2 {
+    padding:20px;
+}
+
+.stack_column {
+    display: block !important;
+    width: 100% !important;
+}
+
+.bgcolor {
+    background-color: #00688d;
+}
+
+.fixedwidth {
+    width: 620px;
+}
+.header_table{
+  background-color:#00688d;
+  height:90px;
+}
+.header_table_orange{
+  background-color:#f47532;
+  height:15px;
+}
+.white_table{
+  background-color:#ffffff;
+}
+.main_heading_txt{
+  color:#00688d;
+  font-size: 34px;
+  font-weight:600;
+  font-family:"Open Sans",sans-serif;
+}
+.hero-content{
+  color:#00688d;
+  font-size: 26px;
+  font-weight:600;
+  font-family:"Open Sans",sans-serif;
+}
+.hero-content2{
+  color:#00688d;
+  font-size: 20px;
+  font-weight:400;
+  font-family:"Open Sans",sans-serif;
+  padding-left:10px;padding-right:10px;
+}
+.hero-highlight{
+  color:#fdb714;
+}
+.header_container {
+    padding-top: 20px;
+}
+
+.header_logo {
+    width: 222px;
+    height:64px;
+}
+.orange-bar{height:15px;width:100%;background-color:#f47532;}
+.text_spacer{font-size:6px;}
+.table_600{
+  width:600px;
+  /*height:199px;*/
+}
+.key_img{height:95px;width:95px;}
+.header_text {
+    padding-left: 10px;
+    font-size: 24px;
+    font-family:"Open Sans",sans-serif;
+    color:#ffffff;
+}
+.superscript{font-size:6px;}
+.topcopy {
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+    font-size: 18px;
+}
+
+.whitebg {
+    background-color: #ffffff;
+}
+
+.listing_photo {
+    width: 200px;
+    display: block;
+}
+
+.listing_photo img {
+    max-width: 200px;
+}
+
+.listing_info {
+    display: block;
+    width: 220px;
+    vertical-align:top;
+}
+.valign_top {
+    vertical-align: top;
+}
+.bizcard_padding {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.bizcard_photo {
+    width: 60px;
+}
+.bizcard_copy_td {
+    padding-left: 15px;
+}
+
+.bizcard_header {
+    font-weight: bold;
+    color: #363636;
+}
+
+.getapp {
+    color: #706e6e;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.appstore {
+    padding-right: 10px;
+}
+
+.unsub {
+  color:#ffffff;
+  font-size: 9px;
+  font-family:"Open Sans",sans-serif;
+  text-decoration:none;
+}
+
+.fineprint {
+    color: #989b9d;
+}
+
+.listprice {
+    font-size: 22px;
+    font-weight:bold;
+    font-family:"Open Sans",sans-serif;
+    padding-bottom: 4px;
+}
+.td-spacer{height:5px;border:none;}
+.listing_info_copy {
+  font-family:"Open Sans",sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  padding-bottom: 3px;
+}
+.listing_info_copy2 {
+  font-family:"Open Sans",sans-serif;
+  color:#2a94ce;
+  font-size:16px;
+  font-weight:600;
+}
+.consumer_name {
+  font-family:"Open Sans",sans-serif;
+  color:#2a94ce;
+  font-size:22px;
+  font-weight:600;
+  padding-bottom: 3px;
+}
+.name_text{font-family:"Open Sans",sans-serif;
+color:#000000;
+font-size:22px;
+font-weight:600;
+}
+.time_text{font-family:"Open Sans",sans-serif;
+color:#000000;
+font-size:16px;
+font-weight:600;
+}
+.notes_text{font-family:"Open Sans",sans-serif;
+color:#000000;
+font-size:14px;
+font-weight:400;
+}
+.blue_info{
+  background-color:#00688d;
+  border-right:1px solid #ffffff;
+  padding:20px;
+}
+.blue_info_txt{
+  font-family:"Open Sans",sans-serif;
+  color:#ffffff;
+  font-size:16px;
+}
+.listing_status {
+    color: #3da938;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer-content{
+  font-size:9px;
+  font-family:"Open Sans",sans-serif;
+  color:#bcbcbc;
+  padding-bottom:20px;
+}
+.team-photo{
+  width:100px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.team-link{
+  text-decoration: none;
+}

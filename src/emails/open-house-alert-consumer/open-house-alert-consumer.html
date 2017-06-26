@@ -20,52 +20,85 @@
         window.onload = function () {
             // TODO: define your mock email "object" that is used to render the template
             var templateData = {
-              WebsitePath: "http://local.hsr.com",
-              Bguid: "e6c1ede5-3713-4386-b126-51eaeec67d69",
-              OpenHouseCount: 5,
-              SearchName: "Malibu Homes",
-              EntityRoleId:"2720226",
-              SavedSearchId:"136",
-              MultipleListings:true,
-              Listings:[
-                {
-                    ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-                    PriceString:"$14,500,000",
-                    Status:"Active",
-                    Beds:5,
-                    Baths:4,
-                    SqFt:"8,545",
-                    Address1:"6736 Falcon Crescent",
-                    Address2: "Malibu, CA 90213",
-                    PhotoAtHBM:true,
-                    PhotoPath:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
-                    NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
-                    OHID:346346346,
-                    OHStartTime: "2017-11-06 13:00:00.000",
-                    OHEndTime: "2017-11-06 16:00:00.000",
-                    OHDateString: "Sat 4/19/17 2-5P",
-                    IsDistressed: true
-                },
-                {
-                    ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-                    PriceString:"$14,500,000",
-                    Status:"Active",
-                    Beds:5,
-                    Baths:4,
-                    SqFt:"8,545",
-                    Address1:"6736 Falcon Crescent",
-                    Address2: "Malibu, CA 90213",
-                    PhotoAtHBM:false,
-                    PhotoPath:"https://photos6.hbm2.com/001/35/2/7/7/HBMLG_16-166772.jpg",
-                    NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
-                    OHID:120821375617,
-                    OHStartTime: "2018-02-18 12:00:00.000",
-                    OHEndTime: "2018-02-18 16:00:00.000",
-                    OHDateString: "Mon 4/22/17 2-5P",
-                    IsDistressed: false
-                }
-            ]
-          };
+  "WebsitePath":"http://dev-01-homescouting.hbm2.com",
+   "Bguid":"eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+   "OpenHouseCount":2,
+   "SearchName":"Mapfor2ListingsOpenHouse",
+   "BuyerGuid":"eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+   "EntityRoleId":533772,
+   "SavedSearchId":156,
+   "MultipleListings":true,
+   "Listings":[
+     {
+        "ListingDetailURL":"http://dev-01-homescouting.hbm2.com/detail?MLSID=3&MLSListingID=4779951&l=12837200&q=654419&TeamId=4809326&EntityRoleID=533772&Bguid=eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+         "ListingPrice":234900,
+         "PriceString":"$234,900",
+         "Status":"Active",
+         "SqFt":2273,
+         "Beds":3,
+         "Baths":3.0,
+         "Address1":"8625 Stevens Ave S",
+         "Address2":"Bloomington, MN 55420",
+         "City":"Bloomington",
+         "Region":"MN",
+         "ZipCode":"55420",
+         "PhotoPath":"https://photos3.hbm2.com/000/3/1/5/9/4779951.jpg",
+         "ListingId":12837200,
+         "TerritoryID":3,
+         "ListingsSchemaStatusID":1,
+         "MLSListingID":"4779951",
+         "QuadKey11Long":654419,
+         "EntityRoleID":533772,
+         "TeamId":4809326,
+         "Bguid":"eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+         "AddressMDNormalizedID":25932132,
+         "ListDate":"2016-11-29T12:19:48.3433333",
+         "Latitude":44.846983,
+         "Longitude":-93.275507,
+         "NoPhotoPath":"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
+         "PhotoAtHBM":true,
+         "OHID":"4881286",
+         "OHStartTime":"2017-05-27T11:00:00",
+         "OHEndTime":"2017-05-27T16:00:00",
+         "OHDateString":"Sat 05/27/17 11-4 PM",
+         "IsDistressed":true
+      },
+      {
+        "ListingDetailURL":"http://dev-01-homescouting.hbm2.com/detail?MLSID=3&MLSListingID=4779861&l=12830309&q=654419&TeamId=4809326&EntityRoleID=533772&Bguid=eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+         "ListingPrice":194900,
+         "PriceString":"$194,900",
+         "Status":"Active",
+         "SqFt":1648,
+         "Beds":3,
+         "Baths":2.0,
+         "Address1":"8614 Stevens Ave S",
+         "Address2":"Bloomington, MN 55420",
+         "City":"Bloomington",
+         "Region":"MN",
+         "ZipCode":"55420",
+         "PhotoPath":"https://photos3.hbm2.com/000/3/1/6/8/4779861.jpg",
+         "ListingId":12830309,
+         "TerritoryID":3,
+         "ListingsSchemaStatusID":1,
+         "MLSListingID":"4779861",
+         "QuadKey11Long":654419,
+         "EntityRoleID":533772,
+         "TeamId":4809326,
+         "Bguid":"eaa005ff-c886-46cc-b7c0-bd050cbc3dcb",
+         "AddressMDNormalizedID":25927821,
+         "ListDate":"2016-11-28T20:17:56.3866667",
+         "Latitude":44.847335,
+         "Longitude":-93.276255,
+         "NoPhotoPath":"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
+         "PhotoAtHBM":true,
+         "OHID":"300162153145",
+         "OHStartTime":"2017-05-27T11:00:00",
+         "OHEndTime":"2017-05-27T13:00:00",
+         "OHDateString":"Sat 05/27/17 11-1 PM",
+         "IsDistressed":false
+      }
+   ]
+};
             // render the email with Mustache, using the above template data
             var html = Mustache.render(document.body.innerHTML, templateData);
             // write the rendered email template to the body, replacing the template
@@ -88,7 +121,7 @@
                         <!-- header above the white content area -->
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                                <td align="center" valign="top" height="60" class="empty_space_above_logo">
+                                <td align="center" valign="top" height="60" class="empty_space_above_logo blue_bg">
                                     &nbsp;<!-- empty space above logo -->
                                 </td>
                             </tr>
@@ -100,7 +133,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" valign="top" height="25" class="empty_space_below_logo">
+                                <td align="center" valign="top" height="25" class="empty_space_below_logo blue_bg">
                                     &nbsp;<!-- empty space below logo -->
                                 </td>
                             </tr>
@@ -127,7 +160,7 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
                             <tr>
                                 <td align="center" valign="top" height="34" class="padding_listing_photo">
-                                    &nbsp;<!-- empty space above listing photo -->
+                                    &nbsp;<!-- empty space above photo -->
                                 </td>
                             </tr>
                             <tr>
@@ -150,12 +183,12 @@
                             <tr>
                                 <td align="center" valign="top" class="subheader_text_cell_{{MultipleListings}}">
                                   {{#MultipleListings}}
-                                    <span class="search_name">{{OpenHouseCount}}</span> listings have upcoming open houses in your</br>
-                                    <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}} class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
-                                    Login to HomeScout to <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}} class="search_name">see them all</a>.
+                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{OpenHouseCount}}</a> listings have upcoming open houses in your</br>
+                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
+                                    Login to HomeScout to <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">see them all</a>.
                                   {{/MultipleListings}}
                                   {{^MultipleListings}}
-                                    There's an upcoming open house this week in your <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}} class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
+                                    There's an upcoming open house this week in your <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
                                   {{/MultipleListings}}
 
 
@@ -193,7 +226,7 @@
 
                             <!-- {{#Listings}} -->
                             <tr>
-                                <td align="center" valign="top" class="fontsize20px">
+                                <td align="left" valign="top" class="fontsize20px">
                                     <!-- using another table to put some padding on left/right side of the text, within the white content area -->
                                     <table width="600" height="250" border="0" cellpadding="0" cellspacing="0" class="listing_card">
                                         <tr>
@@ -213,22 +246,28 @@
                                               <tr height="40"></tr>
                                               <tr>
                                                 <td class="fontsize20px bold" valign="top">
-                                                  <div class="gallery-proptype-dot gallery-dot-distressed-{{IsDistressed}}"></div> {{PriceString}} Open House
+                                                  {{^IsDistressed}}
+                                                    <img src="orange-dot.png" />
+                                                  {{/IsDistressed}}
+                                                  {{#IsDistressed}}
+                                                    <img src="blue-dot.png" />
+                                                  {{/IsDistressed}} {{PriceString}} Open House
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td class="fontsize20px">
-                                                  <span >{{OHDateString}}</span> <img src="calendar.png" alt="Add date to your calendar" class=""/>
+                                                  <span >{{OHDateString}}
+                                                  </span>
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td  class=" blue_header_color address_padding">
-                                                    <a href="{{ListingDetailURL}}">{{Address1}}</a>
+                                                    <a class="address_link" href="{{ListingDetailURL}}">{{Address1}}</a>
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td class=" blue_header_color">
-                                                    <a href="{{ListingDetailURL}}">{{Address2}}</a>
+                                                    <a class="address_link" href="{{ListingDetailURL}}">{{Address2}}</a>
                                                 </td>
                                               </tr>
                                             </table>
@@ -249,7 +288,7 @@
                                     <div><!--[if mso]>
                                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                                      xmlns:w="urn:schemas-microsoft-com:office:word"
-                                                     href="http://homescout.com"
+                                                     href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true
                                                      style="height:62px;v-text-anchor:middle;width:252px;font-size:22px;"
                                                      arcsize="7%"
                                                      stroke="f"
@@ -257,7 +296,7 @@
                                             <w:anchorlock/>
                                             <center>
                                         <![endif]-->
-                                        <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}
+                                        <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true
                                            class="button">
 
                                            {{#MultipleListings}}
