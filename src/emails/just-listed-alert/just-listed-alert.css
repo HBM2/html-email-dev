@@ -35,3 +35,10 @@ table td {
 .button_style {
   padding-bottom: 40px;
 }
+
+.unsub {
+  color:#47c6ab;
+  font-size: 9px;
+  font-family:"Open Sans",sans-serif;
+  text-decoration:none;
+}
