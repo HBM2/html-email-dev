@@ -10,34 +10,40 @@
     <!-- scripts for rendering template during development -->
     <script src="../../scripts/mustache-2.3.0.js"></script>
     <script type="text/javascript">
-        window.onload = function() {
+        window.onload = function () {
             // mock "view model" object for mustache rendering engine
             var templateData = {
-              WebsitePath: "http://local.hsr.com",
-              Bguid: "e6c1ede5-3713-4386-b126-51eaeec67d69",
-              ListingCount: 1,
-              SearchName: "Malibu Homes",
-              BuyerGuid:"",
-              EntityRoleId:"2720226",
-              SavedSearchId:"136",
-              MultipleListings:false,
-              Listings:[
-                        {ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-                         PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
-                         Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213",
-                         PhotoAtHBM:true,
-                         PhotoPath:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
-                         NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"},
+                SavedSearchesLinkURL: "", // link to saved searches page on homescout - goes through email api first, redirects to homescout
+                WebsitePath: "http://local.hsr.com",
+                Bguid: "e6c1ede5-3713-4386-b126-51eaeec67d69",
+                ListingCount: 1,
+                SearchName: "Malibu Homes",
+                BuyerGuid: "",
+                EntityRoleId: "2720226",
+                SavedSearchId: "136",
+                MultipleListings: false,
+                Listings: [
+                    {
+                        ListingDetailEmailLinkURL: "",
+                        ListingDetailURL: "http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
+                        PriceString: "$14,500,000", Status: "Active", Beds: 5, Baths: 4, SqFt: "8,545",
+                        Address1: "6736 Falcon Crescent", Address2: "Malibu, CA 90213",
+                        PhotoAtHBM: true,
+                        PhotoPath: "https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+                        NoPhotoPath: "http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"
+                    },
 
 
-                         {ListingDetailURL:"http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
-                          PriceString:"$14,500,000", Status:"Active", Beds:5, Baths:4, SqFt:"8,545",
-                          Address1:"6736 Falcon Crescent", Address2: "Malibu, CA 90213",
-                          PhotoAtHBM:false,
-                          PhotoPath:"https://photos6.hbm2.com/001/35/2/7/7/HBMLG_16-166772.jpg",
-                          NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"}
-                        ]
-          };
+                    {
+                        ListingDetailURL: "http://local.hsr.com/detail?MLSID=3&MLSListingID=4746123&TeamId=1011225&l=8704425&q=654407&Bguid=c0120af9-d3a1-4708-aa0f-b049f5d288c9",
+                        PriceString: "$14,500,000", Status: "Active", Beds: 5, Baths: 4, SqFt: "8,545",
+                        Address1: "6736 Falcon Crescent", Address2: "Malibu, CA 90213",
+                        PhotoAtHBM: false,
+                        PhotoPath: "https://photos6.hbm2.com/001/35/2/7/7/HBMLG_16-166772.jpg",
+                        NoPhotoPath: "http://photos.hbm2.com/email-images/NoImageAvailable-Property.png"
+                    }
+                ]
+            };
             var html = Mustache.render(document.body.innerHTML, templateData);
             document.body.innerHTML = html;
         };
@@ -129,9 +135,9 @@
                             </tr>
                             <tr>
                                 <td align="center" class="hero-content">
-                                  <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"><span class="hero-highlight">{{ListingCount}}</span></a> {{#MultipleListings}}listings have{{/MultipleListings}}{{^MultipleListings}}listing has{{/MultipleListings}} been added to your
-                                  <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"><span class="hero-highlight">{{SearchName}}</span></a> search.
-                                  Here's a sneak peak.  Log in to HomeScout to <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"><span class="hero-highlight">see them all</span></a>.
+                                  <a href="{{SavedSearchesLinkURL}}"><span class="hero-highlight">{{ListingCount}}</span></a> {{#MultipleListings}}listings have{{/MultipleListings}}{{^MultipleListings}}listing has{{/MultipleListings}} been added to your
+                                  <a href="{{SavedSearchesLinkURL}}"><span class="hero-highlight">{{SearchName}}</span></a> search.
+                                  Here's a sneak peak.  Log in to HomeScout to <a href="{{SavedSearchesLinkURL}}"><span class="hero-highlight">see them all</span></a>.
                                   <br/><br/>
 
                                 </td>
@@ -170,13 +176,13 @@
                                             <td>
                                                 <div class="listing_photo">
                                                     {{#PhotoAtHBM}}
-                                                    <a href="{{ListingDetailURL}}">
+                                                    <a href="{{ListingDetailEmailLinkURL}}">
                                                       <img src={{PhotoPath}} alt={{Address1}} width="200"/>
                                                     </a>
                                                     {{/PhotoAtHBM}}
 
                                                     {{^PhotoAtHBM}}
-                                                      <img src={{NoPhotoPath}} alt="Photo Not Available" width="200"/>
+                                                      <img src={{ListingDetailEmailLinkURL}} alt="Photo Not Available" width="200"/>
                                                     {{/PhotoAtHBM}}
                                                 </div>
                                             </td>
@@ -197,10 +203,10 @@
                                                         <td class="td-spacer"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><a  class="listing_info_copy2" href="{{ListingDetailURL}}">{{Address1}}</a></td>
+                                                        <td><a  class="listing_info_copy2" href="{{ListingDetailEmailLinkURL}}">{{Address1}}</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><a class="listing_info_copy2" href="{{ListingDetailURL}}">{{Address2}}</a></td>
+                                                        <td><a class="listing_info_copy2" href="{{ListingDetailEmailLinkURL}}">{{Address2}}</a></td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -238,11 +244,11 @@
                                   <td align="center" class="hero-content">
                                     <br/><br/>
                                     <div><!--[if mso]>
-                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{WebsitePath}}/searches?Bguid={{Bguid}}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fdb714">
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{SavedSearchesLinkURL}}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#fdb714">
                                           <w:anchorlock/>
                                           <center>
                                         <![endif]-->
-                                            <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}"
+                                            <a href="{{SavedSearchesLinkURL}}"
                                       style="background-color:#fdb714;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">See them all</a>
                                         <!--[if mso]>
                                           </center>
