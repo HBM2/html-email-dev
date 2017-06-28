@@ -35,7 +35,14 @@
               StartDate: "6/14/2017",
               StartTime: "12:00 pm",
               TeamID: 4844484,
-              User_EntityRoleId: 5329703
+              User_EntityRoleId: 5329703,
+
+              ListingDetailURL1: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=2&EntityRoleId=12345&LinkClicked=1&ListingId=4694281&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FMLSID%3D3%26MLSListingID%3D4694281%26TeamId%3D4844484%26l%3D4908646%26q%3D654407",
+              ListingDetailURL2: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=2&EntityRoleId=12345&LinkClicked=1&ListingId=4694281&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FMLSID%3D3%26MLSListingID%3D4694281%26TeamId%3D4844484%26l%3D4908646%26q%3D654407",
+              ConsumerActivityURL1: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FHasOpenHouse%3Dfalse%26MLSID%3D3%26MLSListingID%3D4580781%26TeamId%3D4643563%26l%3D141836%26q%3D654419",
+              ConsumerActivityURL2: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FHasOpenHouse%3Dfalse%26MLSID%3D3%26MLSListingID%3D4580781%26TeamId%3D4643563%26l%3D141836%26q%3D654419",
+              UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FHasOpenHouse%3Dfalse%26MLSID%3D3%26MLSListingID%3D4580781%26TeamId%3D4643563%26l%3D141836%26q%3D654419"
+
           };
             var html = Mustache.render(document.body.innerHTML, templateData);
             document.body.innerHTML = html;
@@ -188,7 +195,7 @@
                   <td align="center" width="600">
                         <table border="0" cellpadding="0" cellspacing="0" width="500">
                           <tr>
-                              <td align="center"><a class="consumer_name" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1">{{UserFname}} {{UserLname}}</a>  <span class="name_text">&nbsp; requested a showing</span></td>
+                              <td align="center"><a class="consumer_name" href="{{ConsumerActivityURL1}}">{{UserFname}} {{UserLname}}</a>  <span class="name_text">&nbsp; requested a showing</span></td>
                           </tr>
                         </table>
 
@@ -314,7 +321,7 @@
                             <td>
                                  <div class="listing_photo">
                                      {{#PhotoAtHBM}}
-                                     <a href="{{ListingDetailURL}}">
+                                     <a href="{{ListingDetailURL1}}">
                                        <img src={{PhotoPath}} alt={{Address1}} width="200"/>
                                      </a>
                                      {{/PhotoAtHBM}}
@@ -350,7 +357,7 @@
                                             <td style="font-size:10px;">&nbsp;</td>
                                           </tr>
                                          <tr>
-                                             <td><a class="listing_info_copy2" href="{{ListingDetailURL}}">view listing</a></td>
+                                             <td><a class="listing_info_copy2" href="{{ListingDetailURL2}}">view listing</a></td>
                                          </tr>
                                          <tr>
                                             <td style="font-size:10px;">&nbsp;</td>
@@ -401,11 +408,11 @@
 
                       <br/><br/>
                       <div><!--[if mso]>
-                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#f47532">
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ConsumerActivityURL1}}" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#f47532">
                             <w:anchorlock/>
                             <center>
                           <![endif]-->
-                              <a href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1"
+                              <a href="{{ConsumerActivityURL1}}"
                         style="background-color:#f47532;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:50px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">View Activity</a>
                           <!--[if mso]>
                             </center>
@@ -432,7 +439,7 @@
         <br/>
         6066 Shingle Creek Pkwy, Minneapolis, MN 55430
         <br /><br />
-        To unsubscribe <a class="unsub" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1">click here</a> and toggle alerts to off.
+        To unsubscribe <a class="unsub" href="{{UnsubscribeURL}}">click here</a> and toggle alerts to off.
         <br/><br/><br/>
       </td>
     </tr>
