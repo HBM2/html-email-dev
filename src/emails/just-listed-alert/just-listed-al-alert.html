@@ -13,14 +13,18 @@
         window.onload = function() {
             // mock "view model" object for mustache rendering engine
             var templateData = {
-              CRMApiBaseURL: "http://localhost:1864", //"http://dev-01-crmentityapi.hbm2.com",
-              JustListedBaseUrl:"http://local.openhouse.com",
+              UniqueEmailGUID: "30275e82-380c-4825-978a-dad0e79edccd",
+              CRMApiBaseURL: "http://localhost:33359", //"http://dev-01-crmentityapi.hbm2.com",
+              DestinationUrl: "http://local.justlisted.com/detail?m=98969%26t=547%26tid=53651",
+              OptOutDestinationUrl: "http://local.justlisted.com/options?LenderERID=LenderERID=3369%26AgentERID=44114",
+              JustListedBaseUrl: "http://local.justlisted.com",
               ListingTinyURL: "http://tinyurl.com/78873",
               Address:"6736 Falcon Crescent",
               LenderEntityRoleID:"1216130",
               AgentEntityRoleID:"5218814",
               MLSListingID:"91123",
               TerritoryID:"528",
+              ListingID:"12345",
               TeamID:"786"
           };
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -98,7 +102,7 @@
                                         <table border="0" cellspacing="0" cellpadding="0">
                                           <tr>
                                             <td bgcolor="#fdb714" style="padding: 12px 18px 12px 18px; -webkit-border-radius:4px; border-radius:4px" align="center">
-                                              <a href="{{JustListedBaseUrl}}/detail?m={{MLSListingID}}&t={{TerritoryID}}&tid={{TeamID}}" target="_blank" style="font-size: 24px; font-family: sans-serif; font-weight: bold; color: #ffffff; text-decoration: none; display: inline-block;">See the Listing</a>
+                                              <a href="{{CRMApiBaseURL}}/EmailClick?EmailUniqueID=30275e82-380c-4825-978a-dad0e79edccd&EmailTemplateId=8&EntityRoleId={{LenderEntityRoleID}}&LinkClicked=1&ListingId={{ListingID}}&DestinationURL={{DestinationUrl}}" target="_blank" style="font-size: 24px; font-family: sans-serif; font-weight: bold; color: #ffffff; text-decoration: none; display: inline-block;">See the Listing</a>
                                             </td>
                                           </tr>
                                         </table>
@@ -248,7 +252,7 @@
                                 <br/>
                                 6066 Shingle Creek Pkwy, Minneapolis, MN 55430
                                 <br/><br/><br/>
-                                To unsubscribe from communication email <a class="unsub" target="_blank" href="{{JustListedBaseUrl}}/options?LenderERID={{LenderEntityRoleID}}&AgentERID={{AgentEntityRoleID}}">click here</a>
+                                To unsubscribe from communication email <a class="unsub" target="_blank" href="{{CRMApiBaseURL}}/EmailClick?EmailUniqueID=30275e82-380c-4825-978a-dad0e79edccd&EmailTemplateId=8&EntityRoleId={{LenderEntityRoleID}}&LinkClicked=3&ListingId={{ListingID}}&DestinationURL={{OptOutDestinationUrl}}">click here</a>
                                 <br/><br/><br/>
                               </td>
                           </tr>
