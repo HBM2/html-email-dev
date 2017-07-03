@@ -29,7 +29,6 @@
    "EntityRoleId":533772,
    "SavedSearchId":156,
    "MultipleListings":true,
-
    "Listings":[
      {
          // link #1
@@ -186,12 +185,12 @@
                             <tr>
                                 <td align="center" valign="top" class="subheader_text_cell_{{MultipleListings}}">
                                   {{#MultipleListings}}
-                                    <a href="{{SavedSearchEmailClickURL}}" class="search_name">{{OpenHouseCount}}</a> listings have upcoming open houses in your</br>
-                                    <a href="{{SavedSearchEmailClickURL}}" class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
-                                    Login to HomeScout to <a href="{{SavedSearchEmailClickURL}}" class="search_name">see them all</a>.
+                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{OpenHouseCount}}</a> listings have upcoming open houses in your</br>
+                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search within the next week. </br> Here&#8217;s a sneak peek.
+                                    Login to HomeScout to <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">see them all</a>.
                                   {{/MultipleListings}}
                                   {{^MultipleListings}}
-                                    There's an upcoming open house this week in your <a href="{{SavedSearchEmailClickURL}}" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
+                                    There's an upcoming open house in your <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
                                   {{/MultipleListings}}
 
 
@@ -282,8 +281,8 @@
                             <!-- {{/Listings}} -->
 
                             <tr>
-                                <td align="center" valign="top" height="60">
-                                    &nbsp; <!-- padding -->
+                                <td align="center" valign="top" height="60" class="above_button_text">
+                                    The addition of new Open Houses is on-going. Tap below to see the latest open houses that matter to you, and check back for updated listings.
                                 </td>
                             </tr>
                             <tr>
@@ -300,16 +299,7 @@
                                             <center>
                                         <![endif]-->
                                         <a href="{{SavedSearchEmailClickURL}}"
-                                           class="button">
-
-                                           {{#MultipleListings}}
-                                             See the Listings
-                                             {{/MultipleListings}}
-                                           {{^MultipleListings}}
-                                             See the Listing
-                                           {{/MultipleListings}}
-
-                                         </a>
+                                           class="button">All Open Houses</a>
                                         <!--[if mso]>
                                         </center>
                                         </v:roundrect>
