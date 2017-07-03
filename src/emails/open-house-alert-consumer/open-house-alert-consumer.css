@@ -108,14 +108,14 @@ a.listing_photo_height {
 .subheader_text_cell_true{
   padding-top:15px;
   line-height: 25px;
-  font-size:18px;
+  font-size:20px;
 }
 .subheader_text_cell_false{
-  padding-top:15px;
+  padding-top: 15px;
   line-height: 25px;
-  font-size:18px;
-  padding-left: 100px;
-  padding-right: 100px;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .listing_card{
   background-color: #f5f5f5;
@@ -133,6 +133,15 @@ a.listing_photo_height {
 }
 .calendar_icon{
   text-align: left;
+}
+
+.above_button_text{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 25px;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .address_link{

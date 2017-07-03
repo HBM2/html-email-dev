@@ -184,11 +184,11 @@
                                 <td align="center" valign="top" class="subheader_text_cell_{{MultipleListings}}">
                                   {{#MultipleListings}}
                                     <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{OpenHouseCount}}</a> listings have upcoming open houses in your</br>
-                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search within the next week. Here&#8217;s a sneak peek. </br>
+                                    <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search within the next week. </br> Here&#8217;s a sneak peek.
                                     Login to HomeScout to <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">see them all</a>.
                                   {{/MultipleListings}}
                                   {{^MultipleListings}}
-                                    There's an upcoming open house this week in your <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
+                                    There's an upcoming open house in your <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true" class="search_name">{{SearchName}}</a> search. Here's a sneak peek.
                                   {{/MultipleListings}}
 
 
@@ -279,8 +279,8 @@
                             <!-- {{/Listings}} -->
 
                             <tr>
-                                <td align="center" valign="top" height="60">
-                                    &nbsp; <!-- padding -->
+                                <td align="center" valign="top" height="60" class="above_button_text">
+                                    The addition of new Open Houses is on-going. Tap below to see the latest open houses that matter to you, and check back for updated listings.
                                 </td>
                             </tr>
                             <tr>
@@ -288,7 +288,7 @@
                                     <div><!--[if mso]>
                                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                                      xmlns:w="urn:schemas-microsoft-com:office:word"
-                                                     href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true
+                                                     href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true"
                                                      style="height:62px;v-text-anchor:middle;width:252px;font-size:22px;"
                                                      arcsize="7%"
                                                      stroke="f"
@@ -296,17 +296,8 @@
                                             <w:anchorlock/>
                                             <center>
                                         <![endif]-->
-                                        <a href={{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true
-                                           class="button">
-
-                                           {{#MultipleListings}}
-                                             See the Listings
-                                             {{/MultipleListings}}
-                                           {{^MultipleListings}}
-                                             See the Listing
-                                           {{/MultipleListings}}
-
-                                         </a>
+                                        <a href="{{WebsitePath}}/savedSearch?Bguid={{Bguid}}&e={{EntityRoleId}}&s={{SavedSearchId}}&o=true"
+                                           class="button">All Open Houses</a>
                                         <!--[if mso]>
                                         </center>
                                         </v:roundrect>
