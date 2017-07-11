@@ -26,6 +26,7 @@
 
               Address1: "2825 Little Orchard Way",
               Address2: "Orono, MN 55391",
+              MLSListingID: "2342344",
               ListingDetailURL:"https://homescout.homescouting.com/detail?MLSID=3&MLSListingID=4694281&TeamId=4844484&l=4908646&q=654407",  //&Bguid=53ac707d-a786-4658-aad3-9a454343e1ad
               NotesExist:true,
               Notes: "test most of the parameters proposed there do  ",
@@ -344,9 +345,7 @@
                                                {{PriceString}} {{Status}}
                                            </td>
                                        </tr>
-                                       <tr>
-                                          <td style="font-size:10px;">&nbsp;</td>
-                                        </tr>
+
                                          <tr>
                                              <td class="listing_info_copy">{{Address1}}</a></td>
                                          </tr>
@@ -355,7 +354,13 @@
                                          </tr>
                                          <tr>
                                             <td style="font-size:10px;">&nbsp;</td>
-                                          </tr>
+                                         </tr>
+                                         <tr>
+                                           <td class="listing_info_copy">MLS ID: {{MLSListingID}}</td>
+                                         </tr>
+                                         <tr>
+                                            <td style="font-size:10px;">&nbsp;</td>
+                                         </tr>
                                          <tr>
                                              <td><a class="listing_info_copy2" href="{{ListingDetailURL2}}">view listing</a></td>
                                          </tr>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
-    <link rel="stylesheet" href="schedule.css"/>
+    <link rel="stylesheet" href="new-user.css"/>
 
     <!-- scripts for rendering template during development -->
     <script src="../../scripts/mustache-2.3.0.js"></script>
@@ -14,36 +14,18 @@
             // mock "view model" object for mustache rendering engine
             var templateData = {
 
-              DashURL: "http://dev.nexgenccmx.com/",
-              HomeScoutURL: "https://qa-01-homescouting.hbm2.com/",
-              NoPhotoPath:"http://photos.hbm2.com/email-images/NoImageAvailable-Property.png",
-              LOFname: "Cathy R.",
               UserFname: "Tuomas",
               UserLname: "Holopainen",
               UserEmail: "tuomas@test.com",
-              UserPhone: "555-666-7777",                         //probably need to format
+              UserPhone: "555-666-7777",
               UserPhoneExists: true,
               //UserBguid: "53ac707d-a786-4658-aad3-9a454343e1ad",
-
-              Address1: "2825 Little Orchard Way",
-              Address2: "Orono, MN 55391",
-              MLSListingID: "2342344",
-              //ListingDetailURL:"https://homescout.homescouting.com/detail?MLSID=3&MLSListingID=4694281&TeamId=4844484&l=4908646&q=654407",  //&Bguid=53ac707d-a786-4658-aad3-9a454343e1ad
-              NotesExist:true,
-              Notes: "test most of the parameters proposed there do  ",
-              PhotoAtHBM: true,
-              PhotoPath: "https://photos3.hbm2.com/000/3/1/8/2//HBMLG_4694281.jpg",
-              PriceString: "$11,900,000",
               StartDate: "6/14/2017",
               StartTime: "12:00 pm",
-              TeamID: 4844484,
-              User_EntityRoleId: 5329703,
 
-              ListingDetailURL1: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=2&EntityRoleId=12345&LinkClicked=1&ListingId=4694281&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FMLSID%3D3%26MLSListingID%3D4694281%26TeamId%3D4844484%26l%3D4908646%26q%3D654407",
-              ListingDetailURL2: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=2&EntityRoleId=12345&LinkClicked=1&ListingId=4694281&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FMLSID%3D3%26MLSListingID%3D4694281%26TeamId%3D4844484%26l%3D4908646%26q%3D654407",
-              ConsumerActivityURL1: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FHasOpenHouse%3Dfalse%26MLSID%3D3%26MLSListingID%3D4580781%26TeamId%3D4643563%26l%3D141836%26q%3D654419",
-              ConsumerActivityURL2: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FHasOpenHouse%3Dfalse%26MLSID%3D3%26MLSListingID%3D4580781%26TeamId%3D4643563%26l%3D141836%26q%3D654419",
-              UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=https%3A%2F%2Fhomescout.homescouting.com%2Fdetail%3FHasOpenHouse%3Dfalse%26MLSID%3D3%26MLSListingID%3D4580781%26TeamId%3D4643563%26l%3D141836%26q%3D654419"
+              ConsumerActivityURL1: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              ConsumerActivityURL2: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever"
 
           };
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -140,24 +122,23 @@
                           </tr>
                             <tr>
                                 <td align="center" width="600">
-                                    <img src="key.png" class="key_img" alt="Background" />
+                                    <img src="New_User_Icon.png" class="key_img" alt="Background" />
                                 </td>
                             </tr>
                             <tr>
                               <td>&nbsp;</td>
                             </tr>
                             <tr>
+                              <td align="center" class="main_heading_txt">
+                                Hooray!
+                              </td>
+                            </tr>
+                            <tr>
                               <td class="text_spacer">&nbsp;</td>
                             </tr>
                             <tr>
-                                <td align="center" class="hero-content">A customer has requested a showing</td>
-                            </tr>
-                            <tr>
-                              <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td align="center" class="hero-content2">
-                                  {{LOFname}}, now is a good time to introduce this buyer to an agent to set up this showing request.
+                                <td align="center" class="hero-content">
+                                  A new customer registered with HomeScout
                                   <br/><br/>
                                 </td>
                             </tr>
@@ -198,8 +179,7 @@
                   <td align="center" width="600">
                         <table border="0" cellpadding="0" cellspacing="0" width="500">
                           <tr>
-                              <!-- <td align="center"><a class="consumer_name" href="{{DashURL}}buyer-activity/{{User_EntityRoleId}}?y=1">{{UserFname}} {{UserLname}}</a>  <span class="name_text">&nbsp; requested a showing</span></td> -->
-                              <td align="center"><a class="consumer_name" href="{{ConsumerActivityURL1}}">{{UserFname}} {{UserLname}}</a>  <span class="name_text">&nbsp; requested a showing</span></td>
+                              <td align="center"><a class="consumer_name" href="{{ConsumerActivityURL1}}">{{UserFname}} {{UserLname}}</a>  <span class="name_text">&nbsp; registered</span></td>
                           </tr>
                         </table>
 
@@ -208,8 +188,7 @@
                             <td class="text_spacer">&nbsp;<br/></td>
                           </tr>
                           <tr>
-                              <td class="time_text">DATE REQUESTED: {{StartDate}}</td>
-                              <td class="time_text">TIME REQUESTED: {{StartTime}}</td>
+                              <td class="time_text" align="center">on {{StartDate}} at {{StartTime}}</td>
                           </tr>
                         </table>
                   </td>
@@ -217,37 +196,6 @@
               </table>
     </td>
   </tr>
-</table>
-
-
-
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
-  <tr>
-    <td align="center" class="content_padding">
-            <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-                <tr>
-                  <td align="center" width="600">
-                        <table border="0" cellpadding="0" cellspacing="0" width="500">
-                          <tr>
-                              <td class="notes_text">
-                              {{#NotesExist}}
-                              Notes: {{Notes}}
-                              {{/NotesExist}}
-                            </td>
-                          </tr>
-                        </table>
-                </td>
-              </tr>
-            </table>
-</td>
-</tr>
 </table>
 
 
@@ -306,101 +254,7 @@
  </table>
 
 
- <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
-   <tr>
-     <td align="center" class="content_padding">
-             <!-- wrapper table - outlook needs a fixed width -->
-             <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-               <tr>
-                 <td>&nbsp;</td>
-               </tr>
-               <tr>
-                 <td>&nbsp;</td>
-               </tr>
-               <tr>
-                 <td align="center" width="600">
-                   <table border="0" cellpadding="0" cellspacing="0" width="500" >
-                     <tbody>
-                       <tr>
-                            <td>
-                                 <div class="listing_photo">
-                                     {{#PhotoAtHBM}}
-                                     <a href="{{ListingDetailURL1}}">
-                                       <img src={{PhotoPath}} alt={{Address1}} width="200"/>
-                                     </a>
-                                     {{/PhotoAtHBM}}
 
-                                     {{^PhotoAtHBM}}
-                                       <img src={{NoPhotoPath}} alt="Photo Not Available" width="200"/>
-                                     {{/PhotoAtHBM}}
-                                 </div>
-                             </td>
-
-                               <td valign="top">
-
-                                     <!-- nested table for listing info -->
-                                     <table border="0" cellspacing="0" cellpadding="0" class="container_table">
-                                       <tr>
-                                         <td>&nbsp;</td>
-                                       </tr>
-                                       <tr>
-                                           <td class="listprice">
-                                               {{PriceString}} {{Status}}
-                                           </td>
-                                       </tr>
-
-                                         <tr>
-                                             <td class="listing_info_copy">{{Address1}}</a></td>
-                                         </tr>
-                                         <tr>
-                                           <td class="listing_info_copy">{{Address2}}</td>
-                                         </tr>
-                                         <tr>
-                                            <td style="font-size:10px;">&nbsp;</td>
-                                         </tr>
-                                         <tr>
-                                           <td class="listing_info_copy">MLS ID: {{MLSListingID}}</td>
-                                         </tr>
-                                         <tr>
-                                            <td style="font-size:10px;">&nbsp;</td>
-                                         </tr>
-                                         <tr>
-                                             <td><a class="listing_info_copy2" href="{{ListingDetailURL2}}">view listing</a></td>
-                                         </tr>
-                                         <tr>
-                                            <td style="font-size:10px;">&nbsp;</td>
-                                          </tr>
-                                     </table>
-
-                               </td>
-                           </tr>
-                         </tbody>
-                       </table>
-             </td>
-           </tr>
-         </table>
-</td>
-</tr>
-</table>
-
-
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
-  <tr>
-    <td align="center" class="content_padding">
-            <!-- wrapper table - outlook needs a fixed width -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-                <tr>
-                  <td align="center" width="600" style="border-bottom:2px solid #dedede;">
-                    &nbsp;
-                </td>
-              </tr>
-            </table>
-</td>
-</tr>
-</table>
 
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
