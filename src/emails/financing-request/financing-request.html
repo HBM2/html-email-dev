@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Financing Request</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="financing-request.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+              FirstName: "David",
+              UserFname: "Tuomas",
+              UserLname: "Holopainen",
+              UserEmail: "tuomas@test.com",
+              UserPhone: "555-666-7777",
+              UserPhoneExists: true,
+              RequestedAmount: "$120,000",
+              DownPayment: "$10,000",
+              CreditScore: "Average",
+              VAEligibility : "N/A",
+              MLSListingID:"91123",
+              TerritoryID:"528",
+              Address:"6736 Falcon Crescent",
+              City: "Malibu",
+              State: "CA",
+              FullStateName: "California",
+              Zip: "90213",
+              ListingPrice:"$14,500,000",
+              ListingPhotoUrl:"https://photos6.hbm2.com/001/35/2/4/6/HBMLG_16-170642.jpg",
+              State: "MN",
+              NoLoanOfficer: false,
+              HasListing: true,
+              //UserBguid: "53ac707d-a786-4658-aad3-9a454343e1ad",
+              StartDate: "6/14/2017",
+              StartTime: "12:00 pm",
+              ListingDetailURL1: "http://",
+              ListingDetailURL2: "http://",
+              ConsumerActivityURL1: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              ConsumerActivityURL2: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              DownPaymentPercentage: "(20%)"
+
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+    <style>
+        /* override styles up to the inline width of the container. */
+        /* max-width here should match the .fixedwidth */
+        @media screen and (max-width: 500px) {
+            .listing_photo, .listing_info {
+                display: block !important;
+                width: 100% !important;
+            }
+            .listing_photo {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_photo img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .listing_info {
+                padding-top: 20px;
+                padding-left: 0px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bgcolor">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#00688d" class="header_table">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="dash_logo.png" class="header_logo" alt="Dash Nexgen HBM" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+    <tr>
+        <td align="center">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#f47532" class="header_table_orange">
+                <tr>
+                    <td class="orange-bar">&nbsp;<br/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        {{#NoLoanOfficer}}
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="white_table">
+                          <tr>
+                            <td>&nbsp;</td>
+                          </tr>
+                            <tr>
+                                <td align="center" width="600">
+                                    <img src="Financing_Request_Icon.png" class="key_img" alt="Background" />
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="main_heading_txt">
+                                A customer has requested financing
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="text_spacer">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="hero-content">
+                                  {{FirstName}}, now is a good time to indroduce this buyer to a loan officer to assist with their request. <span class="contact-us" style="color:#2a94ce;"><a style="color:#2a94ce !important;" href="mailto:support@hbm2.com?subject=HomeScout%20LO%20Introduction%20Needed">Contact our office</a></span> if you would like an introduction to a local lender participating in HomeScout.
+                                  <br/><br/>
+                                </td>
+                            </tr>
+                          </table>
+                          {{/NoLoanOfficer}}
+                          {{^NoLoanOfficer}}
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="white_table">
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                              <tr>
+                                  <td align="center" width="600">
+                                      <img src="Financing_Request_Icon.png" class="key_img" alt="Background" />
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td>&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td align="center" class="main_heading_txt">
+                                  Good news!
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text_spacer">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                  <td align="center" class="hero-content">
+                                    A customer has requested financing
+                                    <br/><br/>
+                                  </td>
+                              </tr>
+                            </table>
+                          {{/NoLoanOfficer}}
+                </td>
+              </tr>
+            </table>
+    </td>
+  </tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+                <tr>
+                  <td align="center" width="600" style="border-bottom:3px solid #dedede;">
+                    &nbsp;
+                </td>
+              </tr>
+            </table>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+                <tr>
+                  <td align="center" width="600">
+                        <table border="0" cellpadding="0" cellspacing="0" width="500">
+                          <tr>
+                              <td align="center"><a class="consumer_name" href="{{ConsumerActivityURL1}}">{{UserFname}} {{UserLname}}</a><span class="name_text">&nbsp;requested financing</span></td>
+                          </tr>
+                        </table>
+
+                        <table border="0" cellpadding="0" cellspacing="0" width="500">
+                          <tr>
+                            <td class="text_spacer">&nbsp;<br/></td>
+                          </tr>
+                          <tr>
+                              <td class="time_text" align="center">on {{StartDate}} at {{StartTime}}</td>
+                          </tr>
+                          <tr>
+                              <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td align="center"><span class="info-header">{{^HasListing}}Requested Amount:{{/HasListing}}{{#HasListing}}Purchase Price: {{/HasListing}}</span> {{RequestedAmount}}</td>
+                          </tr>
+                          <tr>
+                            <td align="center"><span class="info-header">Down Payment:</span> {{DownPayment}} {{DownPaymentPercentage}}</td>
+                          </tr>
+                          <tr>
+                            <td align="center"><span class="info-header">Customer Supplied Credit Score:</span> {{CreditScore}}</td>
+                          </tr>
+                          <tr>
+                            <td align="center"><span class="info-header">VA/Military Loan Eligible:</span> {{VAEligibility}}</td>
+                          </tr>
+                          <tr>
+                            <td align="center"><span class="info-header">State:</span> {{FullStateName}}</td>
+                          </tr>
+                        </table>
+                  </td>
+                </tr>
+              </table>
+    </td>
+  </tr>
+</table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+                <tr>
+                  <td align="center" width="600">
+                        <table border="0" cellpadding="0" cellspacing="0" width="500">
+                          <tr>
+                              <td align="center" class="blue_info left-corner"><img src="Email_Icon.png" alt="Email" align="top" style="padding-top:2px;"/> &nbsp;<a class="blue_info_txt" href="mailto:{{UserEmail}}">{{UserEmail}}</a></td>
+
+                              <td align="center" class="blue_info right-corner"><img src="Phone_Icon.png" alt="Phone" align="top" style="padding-top:2px;"/>
+                                {{#UserPhoneExists}}
+                                 &nbsp;<a class="blue_info_txt" href="tel:{{UserPhone}}">{{UserPhone}}</a>
+                                 {{/UserPhoneExists}}
+                                 {{^UserPhoneExists}}
+                                 <span class="blue_info_txt">&nbsp;N/A</span>
+                                 {{/UserPhoneExists}}
+                               </td>
+                             </tr>
+                           </table>
+                 </td>
+               </tr>
+             </table>
+ </td>
+ </tr>
+ </table>
+
+
+
+
+
+ <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+   <tr>
+     <td align="center" class="content_padding">
+             <!-- wrapper table - outlook needs a fixed width -->
+             <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+               <tr>
+                 <td>&nbsp;</td>
+               </tr>
+                 <tr>
+                   <td align="center" width="600" style="border-bottom:3px solid #dedede;">
+                     &nbsp;
+                 </td>
+               </tr>
+             </table>
+ </td>
+ </tr>
+ </table>
+ {{#HasListing}}
+ <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+     <tr>
+         <td align="center" class="content_padding">
+             <!-- wrapper table - outlook needs a fixed width -->
+             <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_table">
+                 <tr>
+                     <td>
+                         <!-- content table -->
+                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                             <tr>
+                                 <!-- content padding -->
+                                 <td align="center" style="padding: 20px;">
+
+                                     <!-- ########inner table for property information responsive columns########### -->
+                                     <table border="0" cellpadding="0" cellspacing="0">
+                                       <tr>
+                                           <td>&nbsp;</td>
+                                       </tr>
+                                       <tr>
+                                         <td>&nbsp;</td>
+                                       </tr>
+                                         <tr>
+                                             <td align="center">
+                                                 <div class="listing_photo">
+                                                     <img height="200" width="200" src={{ListingPhotoUrl}}
+                                                          alt={{Address}}/>
+                                                 </div>
+                                             </td>
+                                             <td>
+                                               <div class="listing_info">
+                                                   <!-- nested table for listing info -->
+                                                   <table border="0" cellspacing="0" cellpadding="0" class="container_table">
+                                                       <tr>
+                                                           <td style="padding-left:20px;" align="left" class="listprice">
+                                                             {{ListingPrice}}
+                                                           </td>
+                                                       </tr>
+                                                       <tr>
+                                                           <td style="padding-left:20px;" align="left" class="listing_info_copy">{{Address}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                           <td style="padding-left:20px;" align="left" class="listing_info_copy">{{City}}, {{State}} {{Zip}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td style="padding-left:20px;" align="left" class="listing_info_copy">MLS: {{MLSListingID}}</td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td style="padding-left:20px;" align="left"><a href={{ListingDetailURL2}} class="property-link">View Listing</a></td>
+                                                       </td>
+                                                   </table>
+                                               </div>
+                                             </td>
+                                         </tr>
+                                         <tr>
+                                           <td>&nbsp;</td>
+                                         </tr>
+                                     </table>
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+             </table>
+         </td>
+     </tr>
+ </table>
+{{/HasListing}}
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+                <tr>
+                  <td align="center" width="600">
+
+                      <br/><br/>
+                      <div><!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ConsumerActivityURL2}}" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#f47532">
+                            <w:anchorlock/>
+                            <center>
+                          <![endif]-->
+                              <a href="{{ConsumerActivityURL2}}"
+                        style="background-color:#f47532;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:50px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">View Activity</a>
+                          <!--[if mso]>
+                            </center>
+                          </v:roundrect>
+                        <![endif]-->
+                      </div>
+                      <br/><br/>
+
+                </td>
+              </tr>
+            </table>
+</td>
+</tr>
+</table>
+
+
+
+<!-- agent biz card  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="footer-content">
+        <br/><br/>
+        &copy; Nexgen HBM
+        <br/>
+        6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+        <br /><br />
+        To unsubscribe <a class="unsub" href="{{UnsubscribeURL}}">click here</a> and toggle alerts to off.
+        <br/><br/><br/>
+      </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+</body>
+</html>
