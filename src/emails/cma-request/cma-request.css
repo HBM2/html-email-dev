@@ -41,13 +41,12 @@ a {text-decoration:none;}
   color:#00688d;
   font-size: 30px;
   font-weight:600;
-  font-family:"Open Sans",sans-serif;
 }
 .hero-content{
   color:#00688d;
   font-size: 24px;
   font-weight:600;
-  font-family:"Open Sans",sans-serif;
+
   padding-left: 20px;
 padding-right: 20px;
 }
@@ -55,7 +54,7 @@ padding-right: 20px;
   color:#00688d;
   font-size: 20px;
   font-weight:400;
-  font-family:"Open Sans",sans-serif;
+
   padding-left:10px;padding-right:10px;
 }
 .hero-highlight{
@@ -79,7 +78,7 @@ padding-right: 20px;
 .header_text {
     padding-left: 10px;
     font-size: 24px;
-    font-family:"Open Sans",sans-serif;
+
     color:#ffffff;
 }
 .superscript{font-size:6px;}
@@ -150,7 +149,7 @@ padding-right: 20px;
 .unsub {
   color:#ffffff;
   font-size: 9px;
-  font-family:"Open Sans",sans-serif;
+
   text-decoration:none;
 }
 
@@ -161,18 +160,18 @@ padding-right: 20px;
 .listprice {
     font-size: 22px;
     font-weight:bold;
-    font-family:"Open Sans",sans-serif;
+
     padding-bottom: 4px;
 }
 .td-spacer{height:5px;border:none;}
 .listing_info_copy {
-  font-family:"Open Sans",sans-serif;
+
   font-size:16px;
   font-weight:bold;
   padding-bottom: 3px;
 }
 .listing_info_copy2 {
-  font-family:"Open Sans",sans-serif;
+
   color:#2a94ce;
   font-size:16px;
   font-weight:600;
@@ -182,13 +181,13 @@ padding-right: 20px;
     cursor: pointer;
 }
 .consumer_name {
-  font-family:"Open Sans",sans-serif;
+
   color:#2a94ce;
   font-size:18px;
   padding-bottom: 3px;
   font-weight:600;
 }
-.name_text{font-family:"Open Sans",sans-serif;
+.name_text{
 color:#000000;
 font-size:18px;
 }
@@ -196,18 +195,18 @@ font-size:18px;
   font-weight: 600;
 }
 .property-link{
-  font-family:"Open Sans",sans-serif;
+
   color:#2a94ce;
   font-size:16px;
   padding-bottom: 3px;
   font-weight:600;
 }
-.time_text{font-family:"Open Sans",sans-serif;
+.time_text{
 color:#000000;
 font-size:16px;
 font-weight:600;
 }
-.notes_text{font-family:"Open Sans",sans-serif;
+.notes_text{
 color:#000000;
 font-size:14px;
 font-weight:400;
@@ -218,7 +217,7 @@ font-weight:400;
   padding:20px;
 }
 .blue_info_txt{
-  font-family:"Open Sans",sans-serif;
+
   color:#ffffff;
   font-size:16px;
 }
@@ -229,7 +228,7 @@ font-weight:400;
 }
 .footer-content{
   font-size:9px;
-  font-family:"Open Sans",sans-serif;
+
   color:#bcbcbc;
   padding-bottom:20px;
 }
