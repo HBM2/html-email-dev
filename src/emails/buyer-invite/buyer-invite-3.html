@@ -357,6 +357,39 @@
 </table>
 
 
+{{#SBPs}}
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
+    <tr>
+        <td align="center" class="content_padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+              <tr>
+                  <td height="150" class="blue-left" bgcolor="#1b5b7e">Additional questions?</td>
+                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                      <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
+                  </td>
+                  <td><span class="name-company">{{Name}} {{Company}}</span>
+                      <br/>
+                      {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
+                       {{#Mobile}}<span class="office-mobile">Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
+                      <br/>
+                      {{#Email}}<a href="mailto:{{Email}}?subject=HomeScout User Inquiry - Strategic Business Partner" class="email-link">{{Email}}</a>{{/Email}}
+                      <br/>
+                      {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a>{{/Website}}
+                  </td>
+                  <td class="brown-right" bgcolor="#bea486"></td>
+                </tr>
+          </table>
+        <td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<div class="table-spacer blue_bg"></div>
+{{/SBPs}}
+
+
 {{#Agents}}
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
@@ -449,39 +482,6 @@
 <!-- spacer -->
 <div class="table-spacer blue_bg"></div>
 {{/LoanOfficers}}
-
-
-{{#SBPs}}
-<!-- container table -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
-    <tr>
-        <td align="center" class="content_padding">
-          <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
-              <tr>
-                  <td height="150" class="blue-left" bgcolor="#1b5b7e">Additional questions?</td>
-                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
-                      <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
-                  </td>
-                  <td><span class="name-company">{{Name}} {{Company}}</span>
-                      <br/>
-                      {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
-                       {{#Mobile}}<span class="office-mobile">Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
-                      <br/>
-                      {{#Email}}<a href="mailto:{{Email}}?subject=HomeScout User Inquiry - Strategic Business Partner" class="email-link">{{Email}}</a>{{/Email}}
-                      <br/>
-                      {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a>{{/Website}}
-                  </td>
-                  <td class="brown-right" bgcolor="#bea486"></td>
-                </tr>
-          </table>
-        <td>
-    </tr>
-</table>
-
-<!-- spacer -->
-<div class="table-spacer blue_bg"></div>
-{{/SBPs}}
 
 
 

@@ -357,49 +357,6 @@
 </table>
 
 
-{{#Agents}}
-<!-- container table -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
-    <tr>
-        <td align="center" class="content_padding">
-          <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
-              <tr>
-                <td class="blue-left" bgcolor="#1b5b7e"></td>
-                <td colspan="3" align="right" class="right-title">{{#showTitle}}HBM2 Cooperating Agent{{/showTitle}}</td>
-                <td class="blue-right" bgcolor="#2fb6ef"></td>
-              </tr>
-              <tr>
-                  <td height="150" class="blue-left" bgcolor="#1b5b7e">Property questions?<br/>Talk to an<br/>Agent.</td>
-                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
-                      <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
-                  </td>
-                  <td><span class="name-company">{{Name}} {{Company}}</span>
-                      <br/>
-                      {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
-                       {{#Mobile}}<span class="office-mobile">Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
-                      <br/>
-                      {{#Email}}<a href="mailto:{{Email}}?subject=HomeScout User Inquiry - Real Estate Agent" class="email-link">{{Email}}</a>
-                      <br/>{{/Email}}
-                      {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a>{{/Website}}
-                      <br/>
-                      {{#LicenseNumbers}}
-                        <span class="office-mobile">{{State}} {{LicenseNumber}}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                      {{/LicenseNumbers}}
-                  </td>
-                  <td valign="bottom">{{#showRealtorLogo}}<img src="realtor-logo.png" height="20" width="20" />{{/showRealtorLogo}}</td>
-                  <td class="blue-right" bgcolor="#2fb6ef"></td>
-                </tr>
-          </table>
-        <td>
-    </tr>
-</table>
-
-<!-- spacer -->
-<div class="table-spacer blue_bg"></div>
-{{/Agents}}
-
-
 {{#LoanOfficers}}
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
@@ -482,6 +439,48 @@
 <!-- spacer -->
 <div class="table-spacer blue_bg"></div>
 {{/SBPs}}
+
+{{#Agents}}
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
+    <tr>
+        <td align="center" class="content_padding">
+          <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+              <tr>
+                <td class="blue-left" bgcolor="#1b5b7e"></td>
+                <td colspan="3" align="right" class="right-title">{{#showTitle}}HBM2 Cooperating Agent{{/showTitle}}</td>
+                <td class="blue-right" bgcolor="#2fb6ef"></td>
+              </tr>
+              <tr>
+                  <td height="150" class="blue-left" bgcolor="#1b5b7e">Property questions?<br/>Talk to an<br/>Agent.</td>
+                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                      <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
+                  </td>
+                  <td><span class="name-company">{{Name}} {{Company}}</span>
+                      <br/>
+                      {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
+                       {{#Mobile}}<span class="office-mobile">Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
+                      <br/>
+                      {{#Email}}<a href="mailto:{{Email}}?subject=HomeScout User Inquiry - Real Estate Agent" class="email-link">{{Email}}</a>
+                      <br/>{{/Email}}
+                      {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a>{{/Website}}
+                      <br/>
+                      {{#LicenseNumbers}}
+                        <span class="office-mobile">{{State}} {{LicenseNumber}}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                      {{/LicenseNumbers}}
+                  </td>
+                  <td valign="bottom">{{#showRealtorLogo}}<img src="realtor-logo.png" height="20" width="20" />{{/showRealtorLogo}}</td>
+                  <td class="blue-right" bgcolor="#2fb6ef"></td>
+                </tr>
+          </table>
+        <td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<div class="table-spacer blue_bg"></div>
+{{/Agents}}
 
 
 
