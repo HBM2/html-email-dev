@@ -237,10 +237,12 @@
               </tr>
               <tr>
                   <td height="150" class="blue-left" bgcolor="#1b5b7e"><div class="title-spacer">Property questions?<br/>Talk to an<br/>Agent.</div></td>
-                  <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                  <td width="120">
+                      <img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
                   </td>
-                  <td><span class="name-company">{{Name}} {{Company}}</span>
+                  <td width="310" align="left">
+                      <span class="name-company">{{Name}} {{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
@@ -263,6 +265,7 @@
 </table>
 
 <!-- spacer -->
+<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
@@ -283,10 +286,11 @@
               <tr>
                 <td height="150" class="blue-left" bgcolor="#1b5b7e"><div class="title-spacer">
                     Ready to buy?<br/>Talk to a<br/>Loan Officer.</div></td>
-                  <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                  <td width="120">
+                      <img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
                   </td>
-                  <td><span class="name-company">{{Name}} {{Company}}</span>
+                  <td width="310" align="left"><span class="name-company">{{Name}} {{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
@@ -317,10 +321,12 @@
 </table>
 
 <!-- spacer -->
+<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
 {{/LoanOfficers}}
+
 
 
 {{#SBPs}}
@@ -331,10 +337,11 @@
           <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
               <tr>
                   <td height="150" class="blue-left" bgcolor="#1b5b7e">Additional questions?</td>
-                  <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                  <td width="120">
+                      <img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} height="30" width="100" class="bizcard-logo" />
                   </td>
-                  <td><span class="name-company">{{Name}} {{Company}}</span>
+                  <td align="left"><span class="name-company">{{Name}} {{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
@@ -352,8 +359,9 @@
 </table>
 
 <!-- spacer -->
+<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
-    <tr><td height="5">&nbsp;</td></tr>
+    <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
 {{/SBPs}}
 
