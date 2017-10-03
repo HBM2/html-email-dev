@@ -20,26 +20,25 @@
         window.onload = function () {
             // TODO: define your mock email "object" that is used to render the template
             var templateData = {
-              "UserFirstName":"John",
-              "UserLastName": "Doe",
+              "UserFullName":"John Doe",
               "SmartLink":"https://homescout.homescouting.com",
               "UnsubscribeURL":"http://dev.nexgenccmx.com/my-info/my-profile?alerts=true",
               "AppStoreLink": "http://apple.com",
               "PlayStoreLink": "http://google.com",
-              AgentInfo: [
+              Agents: [
                   {
                       CirclePhotoURL: "https://photos.hbm2.com/Circled/EntityRoleID/7085.jpg",
                       Name: "Gilly Wilson", Company: "The Real Estate Company",
                       Office: "6515555555", Mobile: "6515555555",
                       OfficeDisplay: "(651) 555-5555", MobileDisplay: "(651) 555-5555",
                       Email: "gwilson@therealestatecompany.com", Website: "www.websitelink.com",
-                      LogoURL: "https://photos.hbm2.com/Logos/7115113a-855b-40a7-9ce5-20c3dc302201.png",
+                      LogoURL: "https://photos.hbm2.com/Logos/Agent_32718_155635.jpg",
                       showTitle: true, showRealtorLogo: true,
                       LicenseNumbers: [{State: "MN", LicenseNumber: 234234},
                                      {State: "WI", LicenseNumber:123344}]
                   }
               ],
-              LoanOfficerInfo:[
+              LoanOfficers:[
                   {
                       CirclePhotoURL: "https://photos.hbm2.com/Circled/EntityRoleID/57576.jpg",
                       Name: "Gilly Wilson", Company: "The Real Estate Company",
@@ -52,7 +51,7 @@
                       showLicenseLink: false, LicensingLink: "http://www.somewhere.com"
                   }
                 ],
-             AGCInfo: [
+             SBPs: [
                   {
                       CirclePhotoURL: "https://photos.hbm2.com/Circled/EntityRoleID/3369.jpg",
                       Name: "Gilly Wilson", Company: "The Real Estate Company",
@@ -96,6 +95,11 @@
                                     </a>
                                 </td>
                             </tr>
+                            <tr>
+                                <td align="center" valign="top" height="25" class="empty_space_below_logo blue_bg">
+                                    &nbsp;<!-- empty space below logo -->
+                                </td>
+                            </tr>
                         </table>
                     </td>
                     <td width="20">
@@ -118,7 +122,7 @@
                         <!-- white content area, blue background  -->
                         <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
                             <tr>
-                                <td align="center" valign="top" height="325" >
+                                <td align="center" valign="top" height="350" >
                                     <a href="#" >
                                       <img src="HS Invite Image.png" alt="HomeScout"/>
                                     </a>
@@ -130,9 +134,14 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td align="center" valign="top" height="34" class="padding_listing_photo">
+                                    &nbsp;<!-- empty space between headers -->
+                                </td>
+                            </tr>
+                            <tr>
                                 <td align="center" valign="top" class="subheader_text_cell">
-                                  {{UserFirstName}} wants you to have <span class="search_name">exclusive VIP acess to </span><br/>
-                                  <span class="search_name">HomeScout&reg;</span>, the best home search platform on the <br/>
+                                  {{UserFullName}} wants you to have <a href="https://homescout.homescouting.com" class="search_name">exclusive VIP acess to </a><br/>
+                                  <a href="https://homescout.homescouting.com" class="search_name">HomeScout&reg;</a>, the best home search platform on the <br/>
                                   market. Be nosy. Aspire. Dream. You'll find it here.
                                 </td>
                             </tr>
@@ -242,7 +251,7 @@
                                                   <img src="Every Listing Icon.png" alt="HomeScout"/>
                                                 </td>
                                                 <td align="center" valign="top" height="30" >
-                                                  <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                  <table width="410" align="center" border="0" cellpadding="0" cellspacing="0" >
                                                     <tr>
                                                       <td class="description_header">
                                                         All the property listings, really!
@@ -274,7 +283,7 @@
                                                     <img src="Search Icon.png" alt="HomeScout"/>
                                                 </td>
                                                 <td align="center" valign="top" height="30" >
-                                                  <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                  <table width="410" align="center" border="0" cellpadding="0" cellspacing="0" >
                                                   <tr>
                                                     <td class="description_header">
                                                       Search, save favorites & get updates
@@ -306,7 +315,7 @@
                                                   <img src="Private Secure Icon.png" alt="HomeScout"/>
                                                 </td>
                                                 <td align="center" valign="top" height="30" >
-                                                  <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                  <table width="410" align="center" border="0" cellpadding="0" cellspacing="0" >
                                                     <tr>
                                                       <td class="description_header">
                                                         Completely private and secure
@@ -348,7 +357,7 @@
 </table>
 
 
-{{#AgentInfo}}
+{{#Agents}}
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
     <tr>
@@ -360,11 +369,11 @@
                 <td class="blue-right" bgcolor="#2fb6ef"></td>
               </tr>
               <tr>
-                  <td height="150" class="blue-left" bgcolor="#1b5b7e"><div class="title-spacer">Property questions?<br/>Talk to an<br/>Agent.</div></td>
-                  <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                  <td height="150" class="blue-left" bgcolor="#1b5b7e">Property questions?<br/>Talk to an<br/>Agent.</td>
+                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} height="35" width="100" class="bizcard-logo" />
                   </td>
-                  <td width="310" align="left"><span class="name-company">{{Name}} {{Company}}</span>
+                  <td><span class="name-company">{{Name}} {{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
@@ -387,14 +396,11 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
-<table border="0" cellspacing="0" cellspacing="0" width="100%" class="blue_bg">
-    <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
-</table>
-{{/AgentInfo}}
+<div class="table-spacer blue_bg"></div>
+{{/Agents}}
 
 
-{{#LoanOfficerInfo}}
+{{#LoanOfficers}}
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
     <tr>
@@ -403,14 +409,14 @@
             <tr>
               <td class="blue-left" bgcolor="#1b5b7e"></td>
               <td colspan="3" align="right" class="right-title">Advertisement</td>
-              <td class="green-right" bgcolor="#2fb6ef"></td>
+              <td class="blue-right" bgcolor="#2fb6ef"></td>
             </tr>
               <tr>
-                  <td height="150" class="blue-left" bgcolor="#1b5b7e"><div class="title-spacer">Ready to buy?<br/>Talk to a<br/>Loan Officer.</div></td>
-                  <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                  <td height="150" class="blue-left" bgcolor="#1b5b7e">Ready to buy?<br/>Talk to a<br/>Loan Officer.</td>
+                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} height="35" width="100" class="bizcard-logo" />
                   </td>
-                  <td width="310" align="left"><span class="name-company">{{Name}} {{Company}}</span>
+                  <td><span class="name-company">{{Name}} {{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
@@ -441,14 +447,11 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
-<table border="0" cellspacing="0" cellspacing="0" width="100%" class="blue_bg">
-    <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
-</table>
-{{/LoanOfficerInfo}}
+<div class="table-spacer blue_bg"></div>
+{{/LoanOfficers}}
 
 
-{{#AGCInfo}}
+{{#SBPs}}
 <!-- container table -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table blue_bg">
     <tr>
@@ -456,10 +459,10 @@
           <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
               <tr>
                   <td height="150" class="blue-left" bgcolor="#1b5b7e">Additional questions?</td>
-                  <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
+                  <td><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} height="35" width="100" class="bizcard-logo" />
                   </td>
-                  <td align="left"><span class="name-company">{{Name}} {{Company}}</span>
+                  <td><span class="name-company">{{Name}} {{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a>
                         &nbsp;&nbsp;|&nbsp;&nbsp; </span>{{/Office}}
@@ -477,11 +480,9 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
-<table border="0" cellspacing="0" cellspacing="0" width="100%" class="blue_bg">
-    <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
-</table>
-{{/AGCInfo}}
+<div class="table-spacer blue_bg"></div>
+{{/SBPs}}
+
 
 
 
