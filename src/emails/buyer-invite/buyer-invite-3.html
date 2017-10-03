@@ -20,7 +20,8 @@
         window.onload = function () {
             // TODO: define your mock email "object" that is used to render the template
             var templateData = {
-              "UserFullName":"John Doe",
+              "UserFirstName":"John",
+              "UserLastName": "Doe",
               "SmartLink":"https://homescout.homescouting.com",
               "UnsubscribeURL":"http://dev.nexgenccmx.com/my-info/my-profile?alerts=true",
               "AppStoreLink": "http://apple.com",
@@ -95,11 +96,6 @@
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td align="center" valign="top" height="25" class="empty_space_below_logo blue_bg">
-                                    &nbsp;<!-- empty space below logo -->
-                                </td>
-                            </tr>
                         </table>
                     </td>
                     <td width="20">
@@ -122,7 +118,7 @@
                         <!-- white content area, blue background  -->
                         <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
                             <tr>
-                                <td align="center" valign="top" height="350" >
+                                <td align="center" valign="top" height="325" >
                                     <a href="#" >
                                       <img src="HS Invite Image.png" alt="HomeScout"/>
                                     </a>
@@ -134,14 +130,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" valign="top" height="34" class="padding_listing_photo">
-                                    &nbsp;<!-- empty space between headers -->
-                                </td>
-                            </tr>
-                            <tr>
                                 <td align="center" valign="top" class="subheader_text_cell">
-                                  {{UserFullName}} wants you to have <a href="https://homescout.homescouting.com" class="search_name">exclusive VIP acess to </a><br/>
-                                  <a href="https://homescout.homescouting.com" class="search_name">HomeScout&reg;</a>, the best home search platform on the <br/>
+                                  {{UserFirstName}} wants you to have <span class="search_name">exclusive VIP acess to </span><br/>
+                                  <span class="search_name">HomeScout&reg;</span>, the best home search platform on the <br/>
                                   market. Be nosy. Aspire. Dream. You'll find it here.
                                 </td>
                             </tr>
@@ -251,7 +242,7 @@
                                                   <img src="Every Listing Icon.png" alt="HomeScout"/>
                                                 </td>
                                                 <td align="center" valign="top" height="30" >
-                                                  <table width="410" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                  <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" >
                                                     <tr>
                                                       <td class="description_header">
                                                         All the property listings, really!
@@ -283,7 +274,7 @@
                                                     <img src="Search Icon.png" alt="HomeScout"/>
                                                 </td>
                                                 <td align="center" valign="top" height="30" >
-                                                  <table width="410" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                  <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" >
                                                   <tr>
                                                     <td class="description_header">
                                                       Search, save favorites & get updates
@@ -315,7 +306,7 @@
                                                   <img src="Private Secure Icon.png" alt="HomeScout"/>
                                                 </td>
                                                 <td align="center" valign="top" height="30" >
-                                                  <table width="410" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                  <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" >
                                                     <tr>
                                                       <td class="description_header">
                                                         Completely private and secure
