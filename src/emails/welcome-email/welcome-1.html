@@ -197,15 +197,15 @@
                   <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} width="100" class="bizcard-logo" />
                   </td>
-                  <td width="310" align="left"><span class="name-company">{{Name}}{{#Company}}{{#Name}},{{/Name}} {{Company}}{{/Company}}</span>
+                  <td width="310" align="left"><span class="name-company">{{Name}}{{#Company}}{{#Name}},{{/Name}} {{/Company}}{{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a></span>{{/Office}}
                        {{#Mobile}}<span class="office-mobile">{{#Office}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/Office}}Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
                       <br/>
                       {{#Email}}<a href="mailto:{{Email}}?subject=HomeScout User Inquiry - Real Estate Agent" class="email-link">{{Email}}</a>
                       <br/>{{/Email}}
-                      {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a>{{/Website}}
-                      <br/>
+                      {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a><br/>{{/Website}}
+
                       {{#AgentLicensesString}}
                         <span class="office-mobile">{{AgentLicensesString}}</span>
                       {{/AgentLicensesString}}
@@ -242,7 +242,7 @@
                   <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} width="100" class="bizcard-logo" />
                   </td>
-                  <td width="310" align="left"><span class="name-company">{{Name}}{{#Company}}{{#Name}},{{/Name}} {{Company}}{{/Company}}</span>
+                  <td width="310" align="left"><span class="name-company">{{Name}}{{#Company}}{{#Name}},{{/Name}} {{/Company}}{{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a></span>{{/Office}}
                        {{#Mobile}}<span class="office-mobile">{{#Office}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/Office}}Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
@@ -294,7 +294,7 @@
                   <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} width="100" class="bizcard-logo" />
                   </td>
-                  <td align="left"><span class="name-company">{{Name}}{{#Company}}{{#Name}},{{/Name}} {{Company}}{{/Company}}</span>
+                  <td align="left"><span class="name-company">{{Name}}{{#Company}}{{#Name}},{{/Name}} {{/Company}}{{Company}}</span>
                       <br/>
                       {{#Office}}<span class="office-mobile">Office: <a href="tel:{{Office}}" class="tel-link">{{OfficeDisplay}}</a></span>{{/Office}}
                        {{#Mobile}}<span class="office-mobile">{{#Office}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/Office}}Mobile: <a href="tel:{{Mobile}}" class="tel-link">{{MobileDisplay}}</a></span>{{/Mobile}}
