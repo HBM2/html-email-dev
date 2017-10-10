@@ -23,6 +23,7 @@
                       Email: "gwilson@therealestatecompany.com", Website: "http://www.websitelink.com",
                       LogoURL: "https://photos.hbm2.com/Logos/HBM_Logo_Horizontal.png",
                       showTitle: true, showRealtorLogo: true,
+                      AgentLicensesString: "MN 234234 | SD 234234 | MT 34323",
                       LicenseNumbers: [{State: "MN", LicenseNumber: 234234},
                                      {State: "WI", LicenseNumber:123344}]
                   }
@@ -205,9 +206,9 @@
                       <br/>{{/Email}}
                       {{#Website}}<a href="{{Website}}" class="email-link">{{Website}}</a>{{/Website}}
                       <br/>
-                      {{#LicenseNumbers}}
-                        <span class="office-mobile">{{LicenseNumber}}</span>
-                      {{/LicenseNumbers}}
+                      {{#AgentLicensesString}}
+                        <span class="office-mobile">{{AgentLicensesString}}</span>
+                      {{/AgentLicensesString}}
                   </td>
                   <td valign="bottom">{{#showRealtorLogo}}<img src="realtor-logo.png" height="20" width="20" />{{/showRealtorLogo}}</td>
                   <td class="blue-right" bgcolor="#2fb6ef"></td>
