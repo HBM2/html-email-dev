@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>For-Sale Alert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="customer-service-error.css"/>
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+               UserFirstName:"Agent",
+  						 UserLastName:"TestUser",
+  						 UserEmail:"dashuseremail@test.com",
+  						 BuyerFirstName:"Mr.",
+  						 BuyerLastName:"TestBuyer",
+  						 BuyerEmail:"buyeremail@test.com",
+  						 SmartLinkUrl:"smart.link",
+               ErrorDate: "1/1/1970"
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+</head>
+<body>
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="container_table">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+    <tr>
+        <td align="left" class="label_text">
+          Dash User First Name:
+        </td>
+        <td align="left">
+          {{UserFirstName}}
+        </td>
+    </tr>
+    <tr>
+      <td align="left" class="label_text">
+        Dash User Last Name:
+      </td>
+      <td align="left">
+        {{UserLastName}}
+      </td>
+    </tr>
+    <tr>
+      <td align="left" class="label_text">
+        Dash User Email:
+      </td>
+      <td align="left">
+        {{UserEmail}}
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td align="left" class="label_text">
+          SmartLink Used:
+        </td>
+        <td align="left">
+          {{SmartLinkUrl}}
+        </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left" class="label_text">
+        Buyer First Name:
+      </td>
+      <td align="left">
+        {{BuyerFirstName}}
+      </td>
+    </tr>
+    <tr>
+      <td align="left" class="label_text">
+        Buyer Last Name:
+      </td>
+      <td align="left">
+        {{BuyerLastName}}
+      </td>
+    </tr>
+    <tr>
+      <td align="left" class="label_text">
+        Buyer Email:
+      </td>
+      <td align="left">
+        {{BuyerEmail}}
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td align="left" class="label_text">
+          Date/Time of Submission:
+        </td>
+        <td align="left">
+          {{ErrorDate}}
+        </td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* some default colors and stuff */
+table td {
+    /*color: #343434;*/
+}
+
+.container_table {
+    width: 600px;
+    font-family: sans-serif;
+}
+
+.label_text{
+  font-weight: 600;
+}
