@@ -252,7 +252,6 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
@@ -298,7 +297,6 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
@@ -342,7 +340,7 @@
                         {{/showLicenseLink}}
                         </span>
                         <br/>
-                      {{#CompanyNMLS}}<span class="nmls">Company NMLS: #{{CompanyNMLS}}&nbsp;&nbsp;|&nbsp;&nbsp;</span>{{/CompanyNMLS}}
+                      {{#CompanyNMLS}}<span class="nmls">Company NMLS: #{{CompanyNMLS}}{{#BranchNMLS}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/BranchNMLS}}</span>{{/CompanyNMLS}}
                       {{#BranchNMLS}}<span class="nmls">Branch NMLS: #{{BranchNMLS}}</span>{{/BranchNMLS}}
                   </td>
                   <td valign="bottom">
@@ -357,7 +355,6 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>

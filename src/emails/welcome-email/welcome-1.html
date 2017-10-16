@@ -36,7 +36,7 @@
                       OfficeDisplay: "(651) 555-5555", MobileDisplay: "(651) 555-5555",
                       Email: "gwilson@therealestatecompany.com", Website: "www.websitelink.com",
                       LogoURL: "https://photos.hbm2.com/Logos/LO_9560_154800.jpg",
-                      NMLS: 012345, CompanyNMLS: 545454, BranchNMLS: 446466,
+                      NMLS: 012345, CompanyNMLS: 234324, BranchNMLS: 234234,
                       showSpecialEHLogo: false,
                       showLicenseLink: false, LicensingLink: "http://www.somewhere.com"
                   }
@@ -219,7 +219,6 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
@@ -261,7 +260,7 @@
                         {{/showLicenseLink}}
                         </span>
                         <br/>
-                      {{#CompanyNMLS}}<span class="nmls">Company NMLS: #{{CompanyNMLS}}&nbsp;&nbsp;|&nbsp;&nbsp;</span>{{/CompanyNMLS}}
+                      {{#CompanyNMLS}}<span class="nmls">Company NMLS: #{{CompanyNMLS}}{{#BranchNMLS}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/BranchNMLS}}</span>{{/CompanyNMLS}}
                       {{#BranchNMLS}}<span class="nmls">Branch NMLS: #{{BranchNMLS}}</span>{{/BranchNMLS}}
                   </td>
                   <td valign="bottom">
@@ -276,7 +275,6 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
@@ -311,7 +309,6 @@
 </table>
 
 <!-- spacer -->
-<div style="clear:both;">
 <table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
     <tr><td height="5" class="spacer-size">&nbsp;</td></tr>
 </table>
