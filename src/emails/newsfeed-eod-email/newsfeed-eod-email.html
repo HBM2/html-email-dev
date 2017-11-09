@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>open-house-alert-consumer.html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <!-- TODO: CSS file with styles for this email template -->
+    <link rel="stylesheet" href="newsfeed-eod.css">
+
+    <!-- mustache for front-end javascript template rendering - removed during gulp build -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+
+    <!-- script for rendering template during development - this is removed during gulp build -->
+    <script type="text/javascript">
+        window.onload = function () {
+            // TODO: define your mock email "object" that is used to render the template
+            var templateData = {
+              HeaderDateText: 'FRIDAY AUGUST 25, 2017',
+            	UnsubscribeLinkURL: '',
+            	BubbleTemplate1: false,
+            	BubbleTemplate2: true,
+            	BubbleTemplate3: false,
+            	BubbleTemplate4: false,
+            	BubbleTemplate5: false,
+            	BubbleTemplate6: false,
+            	Bubble1: {
+            		Count: 13,
+            		Text: 'NEW BUYERS',
+                BubbleLinkURL:'http://emailsAPI.hbm2.com/',
+            		BuyerRegistration: true,
+            		BuyerLogin: false,
+            		BuyerViewingProperty: false,
+            		BuyerFavoriteProperty: false,
+            		BuyerRequestingFinancing: false,
+            		BuyerScheduledShowing: false
+            	},
+            	Bubble2: {
+                Count: 21,
+                Text: 'LOGINS',
+                BubbleLinkURL:'http://emailsAPI.hbm2.com/',
+                BuyerRegistration: false,
+                BuyerLogin: true,
+                BuyerViewingProperty: false,
+                BuyerFavoriteProperty: false,
+                BuyerRequestingFinancing: false,
+                BuyerScheduledShowing: false
+            	},
+            	Bubble3: {
+                Count: 12,
+                Text: 'PROPERTY VIEWS',
+                BubbleLinkURL:'http://emailsAPI.hbm2.com/',
+                BuyerRegistration: false,
+                BuyerLogin: false,
+                BuyerViewingProperty: true,
+                BuyerFavoriteProperty: false,
+                BuyerRequestingFinancing: false,
+                BuyerScheduledShowing: false
+            	},
+            	Bubble4: {
+                Count: 8,
+                Text: 'FAVORITES',
+                BubbleLinkURL:'http://emailsAPI.hbm2.com/',
+                BuyerRegistration: false,
+                BuyerLogin: false,
+                BuyerViewingProperty: false,
+                BuyerFavoriteProperty: true,
+                BuyerRequestingFinancing: false,
+                BuyerScheduledShowing: false
+            	},
+            	Bubble5: {
+                Count: 5,
+                Text: 'FINANCING',
+                BubbleLinkURL:'http://emailsAPI.hbm2.com/',
+                BuyerRegistration: false,
+                BuyerLogin: false,
+                BuyerViewingProperty: false,
+                BuyerFavoriteProperty: false,
+                BuyerRequestingFinancing: true,
+                BuyerScheduledShowing: false
+            	},
+            	Bubble6: {
+                Count: 2,
+                Text: 'SHOWINGS',
+                BubbleLinkURL:'http://emailsAPI.hbm2.com/',
+                BuyerRegistration: false,
+                BuyerLogin: false,
+                BuyerViewingProperty: false,
+                BuyerFavoriteProperty: false,
+                BuyerRequestingFinancing: false,
+                BuyerScheduledShowing: true
+            	},
+            	ViewAllActivityLinkURL: 'http://emailsAPI.hbm2.com/',
+            	TopBuyers: [
+            		{
+            			BuyerName: 'Thomas Johnson',
+            			ActivityCountText: '29 activities',
+            			ViewMostRecentLinkURL: 'http://emailsAPI.hbm2.com/',
+            			Email: 'tjohnson@gmail.com',
+            			PhoneNumber: '612-423-6449',
+            			TopActivities: [
+            				{
+            					ActivityCount: 20,
+            					LoggedInActivity: true,
+            					SavedPropertyActivty: false,
+            					ViewedPropertyActivity: false,
+            					RequestedShowingActivity: false,
+            					UsedCalculatorActivity: false,
+            					SavedSearchActivity: false,
+            					EditedSearchCriteriaActivity: false,
+            					RequestedPreapprovalActivity: false,
+            					RequestedCMAActivity: false,
+            					ContactedTeamActivity: false,
+            					CommentedOnPropertyActivity: false,
+            					CreatedAccountActivity: false
+            				},
+                    {
+                      ActivityCount: 12,
+                      LoggedInActivity: false,
+                      SavedPropertyActivty: false,
+                      ViewedPropertyActivity: true,
+                      RequestedShowingActivity: false,
+                      UsedCalculatorActivity: false,
+                      SavedSearchActivity: false,
+                      EditedSearchCriteriaActivity: false,
+                      RequestedPreapprovalActivity: false,
+                      RequestedCMAActivity: false,
+                      ContactedTeamActivity: false,
+                      CommentedOnPropertyActivity: false,
+                      CreatedAccountActivity: false
+                    }
+            			]
+            		},
+                {
+                  BuyerName: 'Jack Jones',
+            			ActivityCountText: '54 activities',
+            			ViewMostRecentLinkURL: 'http://emailsAPI.hbm2.com/',
+            			Email: 'jjones@gmail.com',
+            			PhoneNumber: '612-434-2146',
+            			TopActivities: [
+            				{
+            					ActivityCount: 32,
+            					LoggedInActivity: true,
+            					SavedPropertyActivty: false,
+            					ViewedPropertyActivity: false,
+            					RequestedShowingActivity: false,
+            					UsedCalculatorActivity: false,
+            					SavedSearchActivity: false,
+            					EditedSearchCriteriaActivity: false,
+            					RequestedPreapprovalActivity: false,
+            					RequestedCMAActivity: false,
+            					ContactedTeamActivity: false,
+            					CommentedOnPropertyActivity: false,
+            					CreatedAccountActivity: false
+            				}
+            			]
+                },
+                {
+                  BuyerName: 'Tyreek Hill',
+                  ActivityCountText: '5 activities',
+                  ViewMostRecentLinkURL: 'http://emailsAPI.hbm2.com/',
+                  Email: 'thill@gmail.com',
+                  PhoneNumber: '851-123-9988',
+                  TopActivities: [
+                    {
+                      ActivityCount: 21,
+                      LoggedInActivity: true,
+                      SavedPropertyActivty: false,
+                      ViewedPropertyActivity: false,
+                      RequestedShowingActivity: false,
+                      UsedCalculatorActivity: false,
+                      SavedSearchActivity: false,
+                      EditedSearchCriteriaActivity: false,
+                      RequestedPreapprovalActivity: false,
+                      RequestedCMAActivity: false,
+                      ContactedTeamActivity: false,
+                      CommentedOnPropertyActivity: false,
+                      CreatedAccountActivity: false
+                    }
+                  ]
+                }
+            	]
+            };
+            // render the email with Mustache, using the above template data
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            // write the rendered email template to the body, replacing the template
+            document.body.innerHTML = html;
+        };
+    </script>
+</head>
+<body class="">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="blue_bg">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td width="auto" valign="top">
+                        <!-- content area -->
+                        <!-- header above the white content area -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="center" valign="top" height="40" class="empty_space_above_logo blue_bg">
+                                    &nbsp;<!-- empty space above logo -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top" height="55">
+                                    <a href="#" class="logo_link">
+                                        <img src="Dash_Logo_Desktop_Gray.png" alt="Dash" />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td align="center" valign="top" height="5">
+                                  &nbsp;
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="blue_bg">
+    <tr>
+      <td align="center" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+              <td align="center" valign="top" height="5" class="orangeLine">
+                  &nbsp;
+              </td>
+            </tr>
+                <tr>
+                    <td width="auto">
+                        <!-- white content area, blue background  -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <!-- using another table to put some padding on left/right side of the text, within the white content area -->
+                                    <table width="600" align="center" height="130" border="0" cellpadding="0" cellspacing="0" >
+                                        <tr>
+                                          <td class="description_card">
+                                            <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                              <tr>
+                                                <td width="50">
+                                                    &nbsp;<!-- padding on left side of content -->
+                                                </td>
+                                                <td align="center" valign="top" width="150">
+                                                  <img src="Fishbowl_Icon.jpg" alt="Fishbowl" height="30" width="110"/>
+                                                </td>
+                                                <td align="center" valign="top" height="30" >
+                                                  <table width="400" align="center" border="0" cellpadding="0" cellspacing="0" >
+                                                    <tr>
+                                                      <td class="description_header">
+                                                        The Fish Bowl
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="description_text">
+                                                        Newsfeed of buyer activity - past 3 days
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="date_text">
+                                                        {{HeaderDateText}}
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+      <td align="center" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="600" height="670" class="bubbles_bg">
+                <tr>
+                    <td width="auto">
+                      {{#BubbleTemplate1}}
+                        <table border="0" cellpadding="0" cellspacing="0" width="600">
+                            <tr>
+                                <td align="center" valign="top">
+                                  1 bubble
+                                </td>
+                            </tr>
+                        </table>
+                        {{/BubbleTemplate1}}
+                        {{#BubbleTemplate2}}
+                        <table border="0" cellpadding="0" cellspacing="0" width="600">
+                            <tr>
+                                <td align="center" valign="top">
+                                  2 bubbles
+                                </td>
+                            </tr>
+                        </table>
+                        {{/BubbleTemplate2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td width="auto" align="center" valign="bottom">
+                        <img src="Guy.png" alt="professional" height="50" width="230"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="600" height="165" class="button_bg">
+            <tr>
+              <td align="center" valign="top" height="52" >
+                  &nbsp; <!-- padding -->
+              </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top">
+                    <div><!--[if mso]>
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                     xmlns:w="urn:schemas-microsoft-com:office:word"
+                                     href="{{SmartLink}}"
+                                     style="height:60px;v-text-anchor:middle;width:252px;font-size:20px;"
+                                     arcsize="7%"
+                                     stroke="f"
+                                     fillcolor="#fdb714">
+                            <w:anchorlock/>
+                            <center>
+                        <![endif]-->
+                        <a href="{{ViewAllActivityLinkURL}}"
+                           class="button">View All Activity</a>
+                           <!--[if mso]>
+                           </center>
+                           </v:roundrect>
+                           <![endif]-->
+                    </div>
+                </td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" height="20" >
+          &nbsp; <!-- padding -->
+      </td>
+    </tr>
+    <!--Start of Active Buyers Section-->
+    <tr>
+      <td align="center" valign="top" height="900">
+        <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_bg">
+          <tr>
+            <td align="center" valign="top" height="5" class="orangeLine">
+                &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" class="active-buyers-header blueText">
+              Most Active Buyers - Past 3 Days
+            </td>
+          </tr>
+          <!--Start of Active Buyers-->
+          <tr>
+            <td align="center" valign="top">
+              {{#TopBuyers}}<!--Loop through top 3 or less buyers-->
+              <table border="0" cellpadding="0" cellspacing="0" width="560" height="260" class="table-border">
+                <tr>
+                <td align="center" valign="top" height="30" colspan="3" class="blueText active_buyer">
+                  {{BuyerName}} has {{ActivityCountText}}
+                </td>
+                </tr>
+                <tr>
+                  <!--Horizontal activity icons-->
+                    <td align="center" valign="top" height="70" colspan="3">
+                      <table>
+                        <tr>
+                          {{#TopActivities}}<!--Loop through top activities-->
+                          <td>
+                              {{ActivityCount}}
+                          </td>
+                          {{/TopActivities}}
+                        </tr>
+                      </table>
+                    </td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top" height="60" colspan="3">
+                    <div><!--[if mso]>
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                     xmlns:w="urn:schemas-microsoft-com:office:word"
+                                     href="{{SmartLink}}"
+                                     style="height:60px;v-text-anchor:middle;width:252px;font-size:20px;"
+                                     arcsize="7%"
+                                     stroke="f"
+                                     fillcolor="#fdb714">
+                            <w:anchorlock/>
+                            <center>
+                        <![endif]-->
+                        <a href="{{ViewMostRecentLinkURL}}"
+                           class="view_most_recent_button">View Most Recent</a>
+                           <!--[if mso]>
+                           </center>
+                           </v:roundrect>
+                           <![endif]-->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <!--Email and Phone bar-->
+                  <td align="center" valign="middle" height="67" width="278" class="blueBar">
+                      {{#Email}}<a href="mailto:{{Email}}" class="">{{Email}}</a>{{/Email}}
+                  </td>
+                  <td align="center" valign="top" height="67" width="4">
+                  </td>
+                  <td align="center" valign="middle" height="67" width="278" class="blueBar">
+                      {{#PhoneNumber}}<a href="tel:{{PhoneNumber}}" class="tel-link">{{PhoneNumber}}</a>{{/PhoneNumber}}
+                  </td>
+                </tr>
+              </table>
+              <!--Space between buyers-->
+              <table border="0" cellpadding="0" cellspacing="0"><tr><td align="center" valign="top" height="20">&nbsp;</td></tr></table>
+              {{/TopBuyers}}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <!--Footer-->
+      <td align="center" valign="middle" width="600" class="bottom">
+        <br/><br/>
+          &copy; Nexgen HBM
+        <br/>
+          6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+        <br /><br/>
+          To unsubscribe <a class="unsub" href="{{UnsubscribeLinkURL}}">click here</a> and toggle alerts to off.
+        <br/><br/><br/>
+      </td>
+    </tr>
+</table>
+</body>
+</html>
