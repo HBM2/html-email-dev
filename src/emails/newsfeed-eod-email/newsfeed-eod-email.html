@@ -331,11 +331,11 @@
                     <div><!--[if mso]>
                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                      xmlns:w="urn:schemas-microsoft-com:office:word"
-                                     href="{{SmartLink}}"
-                                     style="height:60px;v-text-anchor:middle;width:252px;font-size:20px;"
+                                     href="{{ViewAllActivityLinkURL}}"
+                                     style="height:60px;v-text-anchor:middle;width:225px;font-size:20px;"
                                      arcsize="7%"
                                      stroke="f"
-                                     fillcolor="#fdb714">
+                                     fillcolor="#f47532">
                             <w:anchorlock/>
                             <center>
                         <![endif]-->
@@ -399,11 +399,11 @@
                     <div><!--[if mso]>
                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                      xmlns:w="urn:schemas-microsoft-com:office:word"
-                                     href="{{SmartLink}}"
-                                     style="height:60px;v-text-anchor:middle;width:252px;font-size:20px;"
+                                     href="{{ViewMostRecentLinkURL}}"
+                                     style="height:42px;v-text-anchor:middle;width:225px;font-size:18px;"
                                      arcsize="7%"
                                      stroke="f"
-                                     fillcolor="#fdb714">
+                                     fillcolor="#333333">
                             <w:anchorlock/>
                             <center>
                         <![endif]-->
@@ -419,12 +419,12 @@
                 <tr>
                   <!--Email and Phone bar-->
                   <td align="center" valign="middle" height="67" width="278" class="blueBar">
-                      {{#Email}}<a href="mailto:{{Email}}" class="">{{Email}}</a>{{/Email}}
+                      {{#Email}}<img src="Email_Icon.png" alt="email" height="15" class="blueBarIcons" /><a href="mailto:{{Email}}" class="">{{Email}}</a>{{/Email}}
                   </td>
                   <td align="center" valign="top" height="67" width="4">
                   </td>
                   <td align="center" valign="middle" height="67" width="278" class="blueBar">
-                      {{#PhoneNumber}}<a href="tel:{{PhoneNumber}}" class="tel-link">{{PhoneNumber}}</a>{{/PhoneNumber}}
+                      {{#PhoneNumber}}<img src="Phone_Icon.png" alt="phone" height="15" class="blueBarIcons" /><a href="tel:{{PhoneNumber}}" class="tel-link">{{PhoneNumber}}</a>{{/PhoneNumber}}
                   </td>
                 </tr>
               </table>

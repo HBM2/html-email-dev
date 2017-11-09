@@ -180,7 +180,9 @@ a.listing_photo_height {
   font-weight: 600;
   color:#fdb714;
 }
-
+.blueBarIcons {
+  padding-right:10px;
+}
 .subheader_text_cell{
   padding-top:15px;
   line-height: 25px;
