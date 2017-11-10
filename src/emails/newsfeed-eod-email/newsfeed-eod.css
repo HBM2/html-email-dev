@@ -139,7 +139,6 @@ a.listing_photo_height {
 }
 .blueBar {
   background-color: #00688c;
-  line-height: 67px;
   font-size: 18px;
   color:#ffffff;
 }
@@ -179,9 +178,6 @@ a.listing_photo_height {
 .search_name{
   font-weight: 600;
   color:#fdb714;
-}
-.blueBarIcons {
-  padding-right:10px;
 }
 .subheader_text_cell{
   padding-top:15px;
