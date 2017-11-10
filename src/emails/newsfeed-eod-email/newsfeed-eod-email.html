@@ -130,6 +130,36 @@
                       ContactedTeamActivity: false,
                       CommentedOnPropertyActivity: false,
                       CreatedAccountActivity: false
+                    },
+                    {
+                      ActivityCount: 10,
+                      LoggedInActivity: false,
+                      SavedPropertyActivty: false,
+                      ViewedPropertyActivity: false,
+                      RequestedShowingActivity: false,
+                      UsedCalculatorActivity: true,
+                      SavedSearchActivity: false,
+                      EditedSearchCriteriaActivity: false,
+                      RequestedPreapprovalActivity: false,
+                      RequestedCMAActivity: false,
+                      ContactedTeamActivity: false,
+                      CommentedOnPropertyActivity: false,
+                      CreatedAccountActivity: false
+                    },
+                    {
+                      ActivityCount: 2,
+                      LoggedInActivity: false,
+                      SavedPropertyActivty: false,
+                      ViewedPropertyActivity: false,
+                      RequestedShowingActivity: true,
+                      UsedCalculatorActivity: false,
+                      SavedSearchActivity: false,
+                      EditedSearchCriteriaActivity: false,
+                      RequestedPreapprovalActivity: false,
+                      RequestedCMAActivity: false,
+                      ContactedTeamActivity: false,
+                      CommentedOnPropertyActivity: false,
+                      CreatedAccountActivity: false
                     }
             			]
             		},
@@ -384,14 +414,47 @@
                   <!--Horizontal activity icons-->
                     <td align="center" valign="top" height="70" colspan="3">
                       <table>
-                        <tr>
-                          {{#TopActivities}}<!--Loop through top activities-->
-                          <td>
-                              {{ActivityCount}}
-                          </td>
-                          {{/TopActivities}}
+                          <tr>
+                          <!--{{#TopActivities}}-->
+                            <!--{{#LoggedInActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/LoggedInActivity}}-->
+                            <!--{{#SavedPropertyActivty}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/SavedPropertyActivty}}-->
+                            <!--{{#ViewedPropertyActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/ViewedPropertyActivity}}-->
+                            <!--{{#RequestedShowingActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/RequestedShowingActivity}}-->
+                            <!--{{#UsedCalculatorActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/UsedCalculatorActivity}}-->
+                            <!--{{#SavedSearchActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/SavedSearchActivity}}-->
+                            <!--{{#EditedSearchCriteriaActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/EditedSearchCriteriaActivity}}-->
+                            <!--{{#RequestedPreapprovalActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/RequestedPreapprovalActivity}}-->
+                            <!--{{#RequestedCMAActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/RequestedCMAActivity}}-->
+                            <!--{{#ContactedTeamActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/ContactedTeamActivity}}-->
+                            <!--{{#CommentedOnPropertyActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/CommentedOnPropertyActivity}}-->
+                            <!--{{#CreatedAccountActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/CreatedAccountActivity}}-->
+                          <!--{{/TopActivities}}-->
                         </tr>
-                      </table>
+                    </table>
                     </td>
                 </tr>
                 <tr>
