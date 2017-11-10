@@ -119,8 +119,8 @@
                     {
                       ActivityCount: 12,
                       LoggedInActivity: false,
-                      SavedPropertyActivty: false,
-                      ViewedPropertyActivity: true,
+                      SavedPropertyActivty: true,
+                      ViewedPropertyActivity: false,
                       RequestedShowingActivity: false,
                       UsedCalculatorActivity: false,
                       SavedSearchActivity: false,
@@ -135,9 +135,9 @@
                       ActivityCount: 10,
                       LoggedInActivity: false,
                       SavedPropertyActivty: false,
-                      ViewedPropertyActivity: false,
+                      ViewedPropertyActivity: true,
                       RequestedShowingActivity: false,
-                      UsedCalculatorActivity: true,
+                      UsedCalculatorActivity: false,
                       SavedSearchActivity: false,
                       EditedSearchCriteriaActivity: false,
                       RequestedPreapprovalActivity: false,
@@ -417,16 +417,72 @@
                           <tr>
                           <!--{{#TopActivities}}-->
                             <!--{{#LoggedInActivity}}-->
-                            <td>{{ActivityCount}}</td>
+                            <td valign="middle" height="36" background="Login_Icon.png" style="height:34px; width:46px; background-image:url(Login_Icon.png);">
+                              <!--[if gte mso 9]>
+                              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block; width: 46px; height: 34px;" src="Login_Icon.png" />
+                              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block;position: absolute; width: 46px; height: 34px;">
+                              <v:fill  opacity="0%" color="#f7901e"  />
+                              <v:textbox inset="0,0,0,0">
+                              <![endif]-->
+                              <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              <!--[if gte mso 9]>
+                                 </v:textbox>
+                                 </v:fill>
+                               </v:rect>
+                               </v:image>
+                               <![endif]-->
+                            </td>
                             <!--{{/LoggedInActivity}}-->
                             <!--{{#SavedPropertyActivty}}-->
-                            <td>{{ActivityCount}}</td>
+                            <td valign="middle" height="36" background="Favorited_Property.png" style="height:34px; width:46px; background-image:url(Favorited_Property.png);">
+                              <!--[if gte mso 9]>
+                              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block; width: 46px; height: 34px;" src="Favorited_Property.png" />
+                              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block;position: absolute; width: 46px; height: 34px;">
+                              <v:fill  opacity="0%" color="#f7901e"  />
+                              <v:textbox inset="0,0,0,0">
+                              <![endif]-->
+                              <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              <!--[if gte mso 9]>
+                                 </v:textbox>
+                                 </v:fill>
+                               </v:rect>
+                               </v:image>
+                               <![endif]-->
+                            </td>
                             <!--{{/SavedPropertyActivty}}-->
                             <!--{{#ViewedPropertyActivity}}-->
-                            <td>{{ActivityCount}}</td>
+                            <td valign="middle" height="36" background="Favorited_Property.png" style="height:34px; width:46px; background-image:url(Viewed_Property.png);">
+                              <!--[if gte mso 9]>
+                              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block; width: 46px; height: 34px;" src="Viewed_Property.png" />
+                              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block;position: absolute; width: 46px; height: 34px;">
+                              <v:fill  opacity="0%" color="#f7901e"  />
+                              <v:textbox inset="0,0,0,0">
+                              <![endif]-->
+                              <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              <!--[if gte mso 9]>
+                                 </v:textbox>
+                                 </v:fill>
+                               </v:rect>
+                               </v:image>
+                               <![endif]-->
+                            </td>
                             <!--{{/ViewedPropertyActivity}}-->
                             <!--{{#RequestedShowingActivity}}-->
-                            <td>{{ActivityCount}}</td>
+                            <td valign="middle" height="36" background="Favorited_Property.png" style="height:34px; width:46px; background-image:url(Showing_Icon.png);">
+                              <!--[if gte mso 9]>
+                              <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block; width: 46px; height: 34px;" src="Showing_Icon.png" />
+                              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block;position: absolute; width: 46px; height: 34px;">
+                              <v:fill  opacity="0%" color="#f7901e"  />
+                              <v:textbox inset="0,0,0,0">
+                              <![endif]-->
+                              <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              <!--[if gte mso 9]>
+                                 </v:textbox>
+                                 </v:fill>
+                               </v:rect>
+                               </v:image>
+                               <![endif]-->
+                            </td>
                             <!--{{/RequestedShowingActivity}}-->
                             <!--{{#UsedCalculatorActivity}}-->
                             <td>{{ActivityCount}}</td>

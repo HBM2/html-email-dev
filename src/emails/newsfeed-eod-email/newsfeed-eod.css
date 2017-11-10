@@ -115,7 +115,9 @@ a.listing_photo_height {
     font-size: 30px;
     font-weight: 600;
 }
-
+.icon_count {
+  font-size:11px;
+}
 .fontsize20px {
     font-size: 20px;
 }
