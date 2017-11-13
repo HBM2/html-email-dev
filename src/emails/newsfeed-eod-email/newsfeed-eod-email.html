@@ -119,9 +119,39 @@
                     {
                       ActivityCount: 12,
                       LoggedInActivity: false,
+                      SavedPropertyActivty: true,
+                      ViewedPropertyActivity: false,
+                      RequestedShowingActivity: false,
+                      UsedCalculatorActivity: false,
+                      SavedSearchActivity: false,
+                      EditedSearchCriteriaActivity: false,
+                      RequestedPreapprovalActivity: false,
+                      RequestedCMAActivity: false,
+                      ContactedTeamActivity: false,
+                      CommentedOnPropertyActivity: false,
+                      CreatedAccountActivity: false
+                    },
+                    {
+                      ActivityCount: 10,
+                      LoggedInActivity: false,
                       SavedPropertyActivty: false,
                       ViewedPropertyActivity: true,
                       RequestedShowingActivity: false,
+                      UsedCalculatorActivity: false,
+                      SavedSearchActivity: false,
+                      EditedSearchCriteriaActivity: false,
+                      RequestedPreapprovalActivity: false,
+                      RequestedCMAActivity: false,
+                      ContactedTeamActivity: false,
+                      CommentedOnPropertyActivity: false,
+                      CreatedAccountActivity: false
+                    },
+                    {
+                      ActivityCount: 2,
+                      LoggedInActivity: false,
+                      SavedPropertyActivty: false,
+                      ViewedPropertyActivity: false,
+                      RequestedShowingActivity: true,
                       UsedCalculatorActivity: false,
                       SavedSearchActivity: false,
                       EditedSearchCriteriaActivity: false,
@@ -289,7 +319,7 @@
       <td align="center" valign="top">
           <table border="0" cellpadding="0" cellspacing="0" width="600" height="670" class="bubbles_bg">
                 <tr>
-                    <td width="auto">
+                    <td width="auto" height="395">
                       {{#BubbleTemplate1}}
                         <table border="0" cellpadding="0" cellspacing="0" width="600">
                             <tr>
@@ -311,8 +341,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="auto" align="center" valign="bottom">
-                        <img src="Guy.png" alt="professional" height="50" width="230"/>
+                    <td width="auto" align="center" valign="bottom" height="275">
+                        <img src="Guy.png" alt="professional" height="275" width="230"/>
                     </td>
                 </tr>
             </table>
@@ -327,7 +357,7 @@
               </td>
             </tr>
             <tr>
-                <td align="center" valign="top">
+                <td align="center" valign="top" valign="middle">
                     <div><!--[if mso]>
                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                      xmlns:w="urn:schemas-microsoft-com:office:word"
@@ -384,14 +414,125 @@
                   <!--Horizontal activity icons-->
                     <td align="center" valign="top" height="70" colspan="3">
                       <table>
-                        <tr>
-                          {{#TopActivities}}<!--Loop through top activities-->
-                          <td>
-                              {{ActivityCount}}
-                          </td>
-                          {{/TopActivities}}
+                          <tr>
+                          <!--{{#TopActivities}}-->
+                            <!--{{#LoggedInActivity}}-->
+                            <td valign="middle" height="36" background="Login_Icon.png" style="height:34px; width:46px; background='Login_Icon.png'">
+                              <!--[if gte mso 9]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                                <v:fill type="tile" src="Login_Icon.png" color="#eb7f7b" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                              <div>
+                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              </div>
+                                <!--[if gte mso 9]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                            <!--{{/LoggedInActivity}}-->
+                            <!--{{#SavedPropertyActivty}}-->
+                            <td valign="middle" height="36" background="Favorited_Property.png" style="height:34px; width:46px; background='Favorited_Property.png'">
+                              <!--[if gte mso 9]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                                <v:fill type="tile" src="Favorited_Property.png" color="#eb7f7b" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                              <div>
+                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              </div>
+                                <!--[if gte mso 9]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                            <!--{{/SavedPropertyActivty}}-->
+                            <!--{{#ViewedPropertyActivity}}-->
+                            <td valign="middle" height="36" background="Viewed_Property.png" style="height:34px; width:46px; background='Viewed_Property.png'">
+                              <!--[if gte mso 9]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                                <v:fill type="tile" src="Viewed_Property.png" color="#eb7f7b" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                              <div>
+                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              </div>
+                                <!--[if gte mso 9]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                            <!--{{/ViewedPropertyActivity}}-->
+                            <!--{{#RequestedShowingActivity}}-->
+                            <td valign="middle" height="36" background="Showing_Icon.png" style="height:34px; width:46px; background='Showing_Icon.png'">
+                              <!--[if gte mso 9]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                                <v:fill type="tile" src="Showing_Icon.png" color="#eb7f7b" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                              <div>
+                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              </div>
+                                <!--[if gte mso 9]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                            <!--{{/RequestedShowingActivity}}-->
+                            <!--{{#UsedCalculatorActivity}}-->
+                            <td valign="middle" height="36" background="Calculator_Icon.png" style="height:34px; width:46px; background='Calculator_Icon.png'">
+                              <!--[if gte mso 9]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                                <v:fill type="tile" src="Calculator_Icon.png" color="#eb7f7b" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                              <div>
+                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              </div>
+                                <!--[if gte mso 9]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                            <!--{{/UsedCalculatorActivity}}-->
+                            <!--{{#SavedSearchActivity}}-->
+                            <td valign="middle" height="36" background="Saved_Search_Icon.png" style="height:34px; width:46px; background='Saved_Search_Icon.png'">
+                              <!--[if gte mso 9]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                                <v:fill type="tile" src="Saved_Search_Icon.png" color="#eb7f7b" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                              <div>
+                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              </div>
+                                <!--[if gte mso 9]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                            <!--{{/SavedSearchActivity}}-->
+                            <!--{{#EditedSearchCriteriaActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/EditedSearchCriteriaActivity}}-->
+                            <!--{{#RequestedPreapprovalActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/RequestedPreapprovalActivity}}-->
+                            <!--{{#RequestedCMAActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/RequestedCMAActivity}}-->
+                            <!--{{#ContactedTeamActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/ContactedTeamActivity}}-->
+                            <!--{{#CommentedOnPropertyActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/CommentedOnPropertyActivity}}-->
+                            <!--{{#CreatedAccountActivity}}-->
+                            <td>{{ActivityCount}}</td>
+                            <!--{{/CreatedAccountActivity}}-->
+                          <!--{{/TopActivities}}-->
                         </tr>
-                      </table>
+                    </table>
                     </td>
                 </tr>
                 <tr>
@@ -419,12 +560,12 @@
                 <tr>
                   <!--Email and Phone bar-->
                   <td align="center" valign="middle" height="67" width="278" class="blueBar">
-                      {{#Email}}<img src="Email_Icon.png" alt="email" height="15" class="blueBarIcons" /><a href="mailto:{{Email}}" class="">{{Email}}</a>{{/Email}}
+                      {{#Email}}<img src="Email_Icon.png" alt="email" height="15" />&nbsp;<a href="mailto:{{Email}}" class="">{{Email}}</a>{{/Email}}
                   </td>
                   <td align="center" valign="top" height="67" width="4">
                   </td>
                   <td align="center" valign="middle" height="67" width="278" class="blueBar">
-                      {{#PhoneNumber}}<img src="Phone_Icon.png" alt="phone" height="15" class="blueBarIcons" /><a href="tel:{{PhoneNumber}}" class="tel-link">{{PhoneNumber}}</a>{{/PhoneNumber}}
+                      {{#PhoneNumber}}<img src="Phone_Icon.png" alt="phone" height="15" />&nbsp;<a href="tel:{{PhoneNumber}}" class="tel-link">{{PhoneNumber}}</a>{{/PhoneNumber}}
                   </td>
                 </tr>
               </table>
