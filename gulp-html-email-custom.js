@@ -48,13 +48,31 @@ module.exports = function() {
         } else if (file.isBuffer()) {
             // file.contents is a Buffer - https://nodejs.org/api/buffer.html
 
-            // var filePath = file.path;
-            // if (filePath.indexOf('newsfeed-eod-email') > -1) {
-            //     var ok = true;
-            // }
+            var filePath = file.path;
+            if (filePath.indexOf('newsfeed-eod-email') > -1) {
+                var ok = true;
+            }
+
+            // get html from file
+            var rawHtml = file.contents.toString();
+
+            // save images that are in v:fill elements... do this before loading HTML into cheerio..
+            var vFillRegex = /(<v:fill\s*.*src=['|"]?)(.[^'|"]*)(['|"]?\s*\/?>)/g;
+            var retArr = [];
+            rawHtml = rawHtml.replace(vFillRegex, function(match, p1, p2, p3) {
+                // p2 is capture group that has the image file name, the part we want to replace
+                if (p2) {
+                    // save image out
+                    var newImage = saveImage(p2, file);
+                    // replace original filename
+                    return p1 + newImage + p3;
+                }
+
+                return match;
+            });
 
             // load html into cheerio, its similar to jQuery CSS selector engine
-            var $ = cheerio.load(file.contents.toString());
+            var $ = cheerio.load(rawHtml);
 
             var html = $.html();
 
