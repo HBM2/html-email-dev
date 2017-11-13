@@ -190,6 +190,16 @@ a.listing_photo_height {
 .description_card{
   color:#00688c;
 }
+.bubble_count {
+  color:#ffffff;
+  font-size:50px;
+}
+.bubble_description {
+  font-size:12px;
+  font-weight: bold;
+  color:#ffffff;
+  text-align: right;
+}
 .active-buyers-header {
   font-size: 30px;
   font-weight: bold;
