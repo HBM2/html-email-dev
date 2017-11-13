@@ -20,8 +20,8 @@
             var templateData = {
               HeaderDateText: 'FRIDAY AUGUST 25, 2017',
             	UnsubscribeLinkURL: '',
-            	BubbleTemplate1: false,
-            	BubbleTemplate2: true,
+            	BubbleTemplate1: true,
+            	BubbleTemplate2: false,
             	BubbleTemplate3: false,
             	BubbleTemplate4: false,
             	BubbleTemplate5: false,
@@ -319,31 +319,36 @@
       <td align="center" valign="top">
           <table border="0" cellpadding="0" cellspacing="0" width="600" height="670" class="bubbles_bg">
                 <tr>
-                    <td width="auto" height="395">
-                      {{#BubbleTemplate1}}
-                        <table border="0" cellpadding="0" cellspacing="0" width="600">
-                            <tr>
-                                <td align="center" valign="top">
-                                  1 bubble
-                                </td>
-                            </tr>
-                        </table>
-                        {{/BubbleTemplate1}}
-                        {{#BubbleTemplate2}}
-                        <table border="0" cellpadding="0" cellspacing="0" width="600">
-                            <tr>
-                                <td align="center" valign="top">
-                                  2 bubbles
-                                </td>
-                            </tr>
-                        </table>
-                        {{/BubbleTemplate2}}
-                    </td>
-                </tr>
-                <tr>
-                    <td width="auto" align="center" valign="bottom" height="275">
-                        <img src="Guy.png" alt="professional" height="275" width="230"/>
-                    </td>
+                  <td valign="middle" height="670" background="bubbles-bg-1.png" style="height:670px; width:600px; background-image:url('bubbles-bg-1.png'); background-repeat:no-repeat;">
+                    <!--[if gte mso 9]>
+                      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                      <v:fill type="tile" src="bubbles-bg-1.png"  />
+                      <v:textbox inset="0,0,0,0">
+                      <![endif]-->
+                    <div style="text-align:center;">
+                      <table border="0" cellpadding="0" cellspacing="0" width="600">
+
+                        <tr>
+                            <td align="center" valign="bottom" height="130" width="600">
+                                <img src="New_Buyers_Blue.png" alt="New Buyers" />  <span class="bubble_count">{{Count}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="bottom" height="20" width="600">
+                                <span class="bubble_description">{{Text}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td align="center" height="500" width="600">
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                      <!--[if gte mso 9]>
+                      </v:textbox>
+                      </v:rect>
+                      <![endif]-->
+                  </td>
                 </tr>
             </table>
         </td>
