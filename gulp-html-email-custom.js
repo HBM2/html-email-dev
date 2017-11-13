@@ -48,10 +48,10 @@ module.exports = function() {
         } else if (file.isBuffer()) {
             // file.contents is a Buffer - https://nodejs.org/api/buffer.html
 
-            var filePath = file.path;
-            if (filePath.indexOf('newsfeed-eod-email') > -1) {
-                var ok = true;
-            }
+            // var filePath = file.path;
+            // if (filePath.indexOf('newsfeed-eod-email') > -1) {
+            //     var ok = true;
+            // }
 
             // load html into cheerio, its similar to jQuery CSS selector engine
             var $ = cheerio.load(file.contents.toString());
