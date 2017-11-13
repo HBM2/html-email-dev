@@ -85,7 +85,7 @@ module.exports = function() {
                 // upload image to destination
                 // for now copy to \\hbmphotoprod01\HBMPhotos\email-images
                 fs.createReadStream(imageFilePath)
-                    .pipe(fs.createWriteStream('\\\\hbmphotoprod01\\HBMPhotos\\email-images\\' + newFileName));
+                    .pipe(fs.createWriteStream('\\\\hbmphotoprod01.hbm2.com\\HBMPhotos\\email-images\\' + newFileName));
 
                 // update the img.src to point at the destination
                 images[i].attribs.src = 'http://photos.hbm2.com/email-images/' + newFileName;
