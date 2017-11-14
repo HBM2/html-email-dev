@@ -1,20 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:v="urn:schemas-microsoft-com:vml"
-      xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en">
 <head>
     <title>open-house-alert-consumer.html</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width"/>
-
-    <!-- for correct DPI scaling in outlook -->
-    <!--[if gte mso 9]><xml>
-    <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-    </o:OfficeDocumentSettings>
-    </xml><![endif]-->
 
     <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
     <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
@@ -328,15 +317,17 @@
 
     <tr>
       <td align="center" valign="top">
+          {{#BubbleTemplate1}}
           <table border="0" cellpadding="0" cellspacing="0" width="600" height="670" class="bubbles_bg">
                 <tr>
-                  <td valign="middle" height="670" background="bubbles-bg-1.png" style="height:670px; width:600px; background-image:url('bubbles-bg-1.png'); background-repeat:no-repeat;">
+                  <td valign="middle" height="670"  width="600" background="bubbles-bg-1.png" style="height:670px; width:600px; background-image:url('bubbles-bg-1.png'); background-repeat:no-repeat;">
                     <!--[if gte mso 9]>
-                      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:670px;">
                       <v:fill type="tile" src="bubbles-bg-1.png"  />
                       <v:textbox inset="0,0,0,0">
                       <![endif]-->
                     <div style="text-align:center;">
+                      {{#Bubble1}}
                       <table border="0" cellpadding="0" cellspacing="0" width="600">
 
                         <tr>
@@ -354,6 +345,7 @@
                           </td>
                         </tr>
                       </table>
+                      {{/Bubble1}}
                     </div>
                       <!--[if gte mso 9]>
                       </v:textbox>
@@ -362,6 +354,33 @@
                   </td>
                 </tr>
             </table>
+            {{/BubbleTemplate1}}
+            {{#BubbleTemplate2}}
+            <table border="0" cellpadding="0" cellspacing="0" width="600" height="670" class="bubbles_bg">
+                  <tr>
+                    <td valign="middle" height="670" background="bubbles-bg-2.png" style="height:670px; width:600px; background-image:url('bubbles-bg-2.png'); background-repeat:no-repeat;">
+                      <!--[if gte mso 9]>
+                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:46px;height:34px;">
+                        <v:fill type="tile" src="bubbles-bg-2.png"  />
+                        <v:textbox inset="0,0,0,0">
+                        <![endif]-->
+                      <div style="text-align:center;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="600">
+                            <tr>
+                                <td align="center" valign="top">
+
+                                </td>
+                            </tr>
+                        </table>
+                      </div>
+                        <!--[if gte mso 9]>
+                        </v:textbox>
+                        </v:rect>
+                        <![endif]-->
+                    </td>
+                  </tr>
+              </table>
+              {{/BubbleTemplate2}}
         </td>
     </tr>
     <tr>
@@ -433,19 +452,33 @@
                 </tr>
                 <tr>
                   <!--Horizontal activity icons-->
-                    <td align="center" valign="top" colspan="3">
-                      <table border="0" cellpadding="0" cellspacing="0">
+                    <td align="center" valign="top" height="70" colspan="3">
+                      <table>
                           <tr>
                           <!--{{#TopActivities}}-->
                             <!--{{#LoggedInActivity}}-->
-                            <td valign="middle" background="Login_Icon.png" width="48" height="36" style="background-image:url('Login_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Login_Icon.png" style="height:36px; width:48px; background-image:url('Login_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Login_Icon.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Login_Icon.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
+                              <div style="text-align:right;">
+                                <table>
+                                  <tr height="6">
+                                    <td width="16">
+                                    </td>
+                                    <td width="16">
+                                    </td>
+                                    <td width="16" align="center">
+                                      <span class="icon_count">{{ActivityCount}}</span>
+                                    </td>
+                                  </tr>
+                                  <tr colspan="3">
+                                    <td height="30">
+                                    </td>
+                                  <tr>
+                                </table>
                               </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
@@ -454,15 +487,29 @@
                             </td>
                             <!--{{/LoggedInActivity}}-->
                             <!--{{#SavedPropertyActivty}}-->
-                            <td valign="middle" background="Favorited_Property.png" width="48" height="36" style="background-image:url('Favorited_Property.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Favorited_Property.png" style="height:36px; width:48px; background-image:url('Favorited_Property.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Favorited_Property.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Favorited_Property.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -470,15 +517,29 @@
                             </td>
                             <!--{{/SavedPropertyActivty}}-->
                             <!--{{#ViewedPropertyActivity}}-->
-                            <td valign="middle" background="Viewed_Property.png" width="48" height="36" style="background-image:url('Viewed_Property.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Viewed_Property.png" style="height:36px; width:48px; background-image:url('Viewed_Property.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Viewed_Property.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Viewed_Property.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -486,15 +547,29 @@
                             </td>
                             <!--{{/ViewedPropertyActivity}}-->
                             <!--{{#RequestedShowingActivity}}-->
-                            <td valign="middle" background="Showing_Icon.png" width="48" height="36" style="background-image:url('Showing_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Showing_Icon.png" style="height:36px; width:48px; background-image:url('Showing_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Showing_Icon.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Showing_Icon.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -502,15 +577,29 @@
                             </td>
                             <!--{{/RequestedShowingActivity}}-->
                             <!--{{#UsedCalculatorActivity}}-->
-                            <td valign="middle" background="Calculator_Icon.png" width="48" height="36" style="background-image:url('Calculator_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Calculator_Icon.png" style="height:36px; width:48px; background-image:url('Calculator_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Calculator_Icon.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Calculator_Icon.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -518,15 +607,29 @@
                             </td>
                             <!--{{/UsedCalculatorActivity}}-->
                             <!--{{#SavedSearchActivity}}-->
-                            <td valign="middle" background="Saved_Search_Icon.png" width="48" height="36" style="background-image:url('Saved_Search_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Saved_Search_Icon.png" style="height:36px; width:48px; background-image:url('Saved_Search_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Saved_Search_Icon.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Saved_Search_Icon.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -534,15 +637,29 @@
                             </td>
                             <!--{{/SavedSearchActivity}}-->
                             <!--{{#EditedSearchCriteriaActivity}}-->
-                            <td valign="middle" background="Edited_Search.png" width="48" height="36" style="background-image:url('Edited_Search.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Edited_Search.png" style="height:36px; width:48px; background-image:url('Edited_Search.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Edited_Search.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Edited_Search.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -550,15 +667,29 @@
                             </td>
                             <!--{{/EditedSearchCriteriaActivity}}-->
                             <!--{{#RequestedPreapprovalActivity}}-->
-                            <td valign="middle" background="Financing_Icon.png" width="48" height="36" style="background-image:url('Financing_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Financing_Icon.png" style="height:36px; width:48px; background-image:url('Financing_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Financing_Icon.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Financing_Icon.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -566,15 +697,29 @@
                             </td>
                             <!--{{/RequestedPreapprovalActivity}}-->
                             <!--{{#RequestedCMAActivity}}-->
-                            <td valign="middle" background="Request_CMA_Icon.png" width="48" height="36" style="background-image:url('Request_CMA_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Request_CMA_Icon.png" style="height:36px; width:48px; background-image:url('Request_CMA_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Request_CMA_Icon.png" />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Request_CMA_Icon.png" />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -582,15 +727,29 @@
                             </td>
                             <!--{{/RequestedCMAActivity}}-->
                             <!--{{#ContactedTeamActivity}}-->
-                            <td valign="middle" background="Contacted_Team.png" width="48" height="36" style="background-image:url('Contacted_Team.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Contacted_Team.png" style="height:36px; width:48px; background-image:url('Contacted_Team.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Contacted_Team.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Contacted_Team.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -598,15 +757,29 @@
                             </td>
                             <!--{{/ContactedTeamActivity}}-->
                             <!--{{#CommentedOnPropertyActivity}}-->
-                            <td valign="middle" background="Comment_Icon.png" width="48" height="36" style="background-image:url('Comment_Icon.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="Comment_Icon.png" style="height:36px; width:48px; background-image:url('Comment_Icon.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="Comment_Icon.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="Comment_Icon.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
@@ -614,15 +787,29 @@
                             </td>
                             <!--{{/CommentedOnPropertyActivity}}-->
                             <!--{{#CreatedAccountActivity}}-->
-                            <td valign="middle" background="New_User.png" width="48" height="36" style="background-image:url('New_User.png'); background-repeat:no-repeat;">
+                            <td valign="middle" height="36" background="New_User.png" style="height:36px; width:48px; background-image:url('New_User.png'); background-repeat:no-repeat;">
                               <!--[if gte mso 9]>
-                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:64px;height:48px;">
-                                <v:fill type="tile" src="New_User.png"  />
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:48px;height:36px;">
+                                <v:fill type="frame" src="New_User.png"  />
                                 <v:textbox inset="0,0,0,0">
                                 <![endif]-->
-                              <div style="text-align:center;">
-                                <span class="icon_count">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ActivityCount}}</span>
-                              </div>
+                                <div style="text-align:right;">
+                                  <table>
+                                    <tr height="6">
+                                      <td width="16">
+                                      </td>
+                                      <td width="16">
+                                      </td>
+                                      <td width="16" align="center">
+                                        <span class="icon_count">{{ActivityCount}}</span>
+                                      </td>
+                                    </tr>
+                                    <tr colspan="3">
+                                      <td height="30">
+                                      </td>
+                                    <tr>
+                                  </table>
+                                </div>
                                 <!--[if gte mso 9]>
                                 </v:textbox>
                                 </v:rect>
