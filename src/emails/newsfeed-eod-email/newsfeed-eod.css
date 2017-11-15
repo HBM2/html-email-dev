@@ -53,7 +53,8 @@ body{
   background-color: #73acc0;
 }
 .table-border {
-  border:solid 2px lightgray;
+  margin:auto;
+  box-shadow:0 0 8px #090909;
 }
 .white_header_color{
   color:white;
