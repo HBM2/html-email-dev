@@ -112,6 +112,18 @@ a.listing_photo_height {
     height: 55px;
 }
 
+.blue_bubble {
+    display: block;
+    width: 128px;
+    height: 128px;
+}
+
+.orange_bubble {
+    display: block;
+    width: 118px;
+    height: 118px;
+}
+
 .header_text_cell {
     font-size: 30px;
     font-weight: 600;
