@@ -1,51 +1,21 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* --------- bizcard stuff --------------*/
-.blue-left{width:120px;background-color:#1b5b7e;color:#ffffff;font-weight:400;
-  font-family:"Open Sans",sans-serif;padding-left:15px;line-height:22px;}
-.table-spacer{width:100%;height:10px;}
-.circle-photo{margin-left:25px;}
-.name-company{font-family:"Open Sans",sans-serif;font-weight:600;font-size:14px;}
-.office-mobile{font-family:"Open Sans",sans-serif;font-size:12px;}
-.tel-link{color:#ffffff;}
-.email-link{font-family:"Open Sans",sans-serif;font-size:12px;color:#3d9dd2;}
-.blue-right{width:5px;background-color:#2fb6ef;}
-.green-right{width:5px;background-color:#12bc25;}
-.brown-right{width:5px;background-color:#bea486;}
-.right-title{font-family:"Open Sans",sans-serif;font-size:12px;padding-right:5px;font-style:italic;}
-.nmls{font-family:"Open Sans",sans-serif;font-size:12px;}
-.nmls-link{font-family:"Open Sans",sans-serif;color:#3d9dd2;}
-.spacer-size{font-size:8px;}
-.title-spacer{margin-bottom:15px;}
-/* --------- bizcard stuff --------------*/
-
-
 .blue_bg {
     background-color: #00688c;
     background-repeat: no-repeat;
 }
-
 .dark_blue_bg {
     background-color: #1b5b7d;
     background-repeat: no-repeat;
     color:white;
 }
-
-.gray_bg {
-    background-color: #eaeaea;
-    background-repeat: no-repeat;
-}
-
 .white_bg {
     background-color: #ffffff;
 }
-
 .orange_bg {
     background-color: #fdb714;
 }
-
 .bubbles_bg {
     background-color: #a6cad7;
 }
@@ -55,18 +25,6 @@ body{
 .table-border {
   margin:auto;
   box-shadow:0 0 8px #090909;
-}
-.white_header_color{
-  color:white;
-  font-weight:bold;
-  padding-bottom:10px;
-}
-.padding_right_app_link{
-  padding-right:5px;
-}
-
-.padding_left_app_link{
-  padding-left:5px;
 }
 
 a {
@@ -79,71 +37,26 @@ a img {
     border: 0;
     outline: none;
 }
-
 .empty_space_above_logo {
     height: 40px;
 }
-
-.empty_space_below_logo {
-    height: 25px;
-}
-
-.padding_listing_photo {
-    height: 10px;
-}
-
-.listing_photo_height {
-    height: 175px;
-}
-
-a.listing_photo_height {
-    display: block;
-
-}
-
-.listing_photo_img {
-    /* style this alt text */
-    color: #0076b9;
-    font-size: 22px;
-}
-
 .logo_link {
     display: block;
     height: 55px;
 }
-
 .blue_bubble {
     display: block;
     width: 128px;
     height: 128px;
 }
-
 .orange_bubble {
     display: block;
     width: 118px;
     height: 118px;
 }
-
-.header_text_cell {
-    font-size: 30px;
-    font-weight: 600;
-}
 .icon_count {
   font-size:11px;
   color:#ffffff;
-}
-.fontsize20px {
-    font-size: 20px;
-}
-.fontsize18px {
-    font-size: 18px;
-}
-
-.lineheight10px{
-  line-height: 10px;
-}
-.lineheight5px{
-  line-height: 5px;
 }
 .orangeLine{
   line-height: 9px;
@@ -183,22 +96,8 @@ a.listing_photo_height {
   width: 225px;
   -webkit-text-size-adjust: none;
 }
-.footer_text {
-    font-size: 10px;
-    color: #b3d9ee;
-    line-height: 12.5px;
-}
 .blueText {
   color:#00688c;
-}
-.search_name{
-  font-weight: 600;
-  color:#fdb714;
-}
-.subheader_text_cell{
-  padding-top:15px;
-  line-height: 25px;
-  font-size:20px;
 }
 .description_card{
   color:#00688c;
@@ -244,51 +143,4 @@ a.listing_photo_height {
   font-size: 20px;
   color:#f47532;
   font-weight: 600;
-}
-.photo_padding{
-  padding-left:25px;
-  padding-right:10px;
-}
-.address_padding{
-  padding-top:20px
-}
-.unsubscribe_padding{
-  padding-top:10px;
-}
-.footer_padding{
-  padding-top:40px;
-}
-.calendar_icon{
-  text-align: left;
-}
-
-.above_button_text{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  line-height: 25px;
-  font-size: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.address_link{
-  font-family:"Open Sans",sans-serif;
-  color:#2a94ce;
-  font-size:20px;
-  padding-bottom: 3px;
-  text-align: left;
-}
-
-.gallery-dot-distressed-false {background-color:#FF0000;}
-.gallery-dot-distressed-true {background-color:#2F87D3;}
-.gallery-proptype-dot{
-  width: 14px;
-  height: 14px;
-  position: relative;
-  display: inline-block;
-  border-radius: 50%;
-  margin: 0px 2px 0px 2px;
-  vertical-align: middle;
-  margin-top: -3.5px;
-  margin-right: 5px;
 }
