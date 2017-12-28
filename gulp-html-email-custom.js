@@ -182,7 +182,7 @@ function saveImage(image, file) {
     console.log(image + ' uploaded to ' + 'http://photos.hbm2.com/email-images/' + newFileName);
 
     // update the img.src to point at the destination
-    return 'http://photos.hbm2.com/email-images/' + newFileName;
+    return 'https://photos.hbm2.com/email-images/' + newFileName;
 }
 
 function isComment(index, node) {
