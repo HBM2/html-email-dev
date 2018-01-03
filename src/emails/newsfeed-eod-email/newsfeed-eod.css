@@ -1,0 +1,146 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.blue_bg {
+    background-color: #00688c;
+    background-repeat: no-repeat;
+}
+.dark_blue_bg {
+    background-color: #1b5b7d;
+    background-repeat: no-repeat;
+    color:white;
+}
+.white_bg {
+    background-color: #ffffff;
+}
+.orange_bg {
+    background-color: #fdb714;
+}
+.bubbles_bg {
+    background-color: #a6cad7;
+}
+.button_bg {
+  background-color: #73acc0;
+}
+.table-border {
+  margin:auto;
+  box-shadow:0 0 8px #090909;
+}
+
+a {
+    text-decoration: none;
+    border: 0;
+    color:white;
+}
+
+a img {
+    border: 0;
+    outline: none;
+}
+.empty_space_above_logo {
+    height: 40px;
+}
+.logo_link {
+    display: block;
+    height: 55px;
+}
+.blue_bubble {
+    display: block;
+    width: 128px;
+    height: 128px;
+}
+.orange_bubble {
+    display: block;
+    width: 118px;
+    height: 118px;
+}
+.icon_count {
+  font-size:11px;
+  color:#ffffff;
+}
+.orangeLine{
+  line-height: 9px;
+  background-color: #f47532;
+  background-repeat: no-repeat;
+}
+.bold {
+    font-weight: bold;
+}
+.blueBar {
+  background-color: #00688c;
+  font-size: 18px;
+  color:#ffffff;
+}
+.button {
+    background-color: #f47532;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 225px;
+    -webkit-text-size-adjust: none;
+}
+.view_most_recent_button {
+  background-color: #333333;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 42px;
+  text-align: center;
+  text-decoration: none;
+  width: 225px;
+  -webkit-text-size-adjust: none;
+}
+.blueText {
+  color:#00688c;
+}
+.description_card{
+  color:#00688c;
+}
+.bubble_count {
+  color:#ffffff;
+}
+.bubble_description {
+  font-size:12px;
+  font-weight: bold;
+  color:#ffffff;
+  text-align: right;
+}
+.active-buyers-header {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom:12px;
+}
+.unsub {
+  font-weight: bold;
+}
+.bottom {
+  font-size:9px;
+  color: #ffffff;
+}
+.active_buyer {
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom:8px;
+}
+.description_header{
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 8px;
+}
+.description_text{
+  font-size: 20px;
+  font-weight: bold;
+}
+.date_text {
+  font-size: 20px;
+  color:#f47532;
+  font-weight: 600;
+}

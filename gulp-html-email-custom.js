@@ -48,50 +48,77 @@ module.exports = function() {
         } else if (file.isBuffer()) {
             // file.contents is a Buffer - https://nodejs.org/api/buffer.html
 
-            // load html into cheerio, its similar to jQuery CSS selector engine
-            var $ = cheerio.load(file.contents.toString());
-            var images = $('img');
-            if (images.length) {
-                console.log(images.length + ' images found in ' + file.path)
+            var filePath = file.path;
+            if (filePath.indexOf('newsfeed-eod-email') > -1) {
+                var ok = true;
             }
+
+            // get html from file
+            var rawHtml = file.contents.toString();
+
+            // save images that are in v:fill elements... do this before loading HTML into cheerio..
+            var vFillRegex = /(<v:fill\s*.*src=['|"]?)(.[^'|"]*)(['|"]?\s*\/?>)/g;
+            var retArr = [];
+            rawHtml = rawHtml.replace(vFillRegex, function(match, p1, p2, p3) {
+                // p2 is capture group that has the image file name, the part we want to replace
+                if (p2) {
+                    // save image out
+                    var newImage = saveImage(p2, file);
+                    // replace original filename
+                    return p1 + newImage + p3;
+                }
+
+                return match;
+            });
+
+            // load html into cheerio, its similar to jQuery CSS selector engine
+            var $ = cheerio.load(rawHtml);
 
             var html = $.html();
 
-            // for each image in the HTML...
+            // find images in the HTML
+            var imageArray = [];
+
+            // look for image tags
+            var images = $('img');
+
+            // put any images in the imageArray
             for(var i = 0; i < images.length; i++) {
                 // we have the HTML - relative image path in the src...
                 var originalImgSrc = images[i].attribs.src;
 
-                //if originalImgSrc starts with {{ then skip
-                if(originalImgSrc.indexOf('{{') >= 0){
-                  continue;
+                // save image, replace image src
+                images[i].attribs.src = saveImage(originalImgSrc, file);
+            }
+
+            // look for images in background attributes
+            var backgroundAttributes = $('[background]');
+            for(var i = 0; i < backgroundAttributes.length; i++) {
+                // save image out, replace background with new image url
+                backgroundAttributes[i].attribs.background = saveImage(backgroundAttributes[i].attribs.background, file);
+            }
+
+            // look for images in background-image css styles..
+            // find all elements with a style attribute
+            var styleElements = $('[style]');
+            for (var i = 0; i < styleElements.length; i++) {
+                var style = styleElements[i].attribs.style;
+                var regex = /(.*)(background-image:\s*url\s*\(\s*["|']?)(.[^']*)\s*(["|']?\s*\))(.*)/;
+
+                var result = regex.exec(style);
+                // result[3] is capturing group with the image file name
+                if (result && result[3].length){
+                    // save file out, get url to file
+                    var newImageUrl = saveImage(result[3], file);
+
+                    // update style attribute with new absolute url
+                    styleElements[i].attribs.style = styleElements[i].attribs.style.replace(regex, "$1$2" + newImageUrl + "$4$5");
                 }
-                // skip images that are already hosted externally
-                if(originalImgSrc.indexOf('http') >= 0) {
-                    continue;
-                }
+            }
 
-                // convert HTML relative image path to absolute filesystem path
-                var imageFilePath = path.resolve(file.dirname, images[i].attribs.src);
-
-                // create cache-buster filename
-                var timestamp = moment().unix();
-
-                // append timestamp to filename
-                var newFileName = path.basename(file.path, '.html') + '-' +
-                    path.parse(imageFilePath).name + '-' +
-                    timestamp + path.parse(imageFilePath).ext;
-
-                // upload image to destination
-                // for now copy to \\hbmphotoprod01\HBMPhotos\email-images
-                fs.createReadStream(imageFilePath)
-                    .pipe(fs.createWriteStream('\\\\hbmphotoprod01\\HBMPhotos\\email-images\\' + newFileName));
-
-                // update the img.src to point at the destination
-                images[i].attribs.src = 'http://photos.hbm2.com/email-images/' + newFileName;
-
-                console.log(originalImgSrc + ' uploaded to ' + images[i].attribs.src);
-
+            // save the images out
+            for(var i = 0; i < imageArray.length; i++) {
+                saveImage(imageArray[i], file);
             }
 
             // get rid of any script tags in the html
@@ -125,6 +152,38 @@ module.exports = function() {
         }
     });
 };
+
+function saveImage(image, file) {
+    //if originalImgSrc starts with {{ then skip
+    if(image.indexOf('{{') >= 0){
+        return image;
+    }
+    // skip images that are already hosted externally
+    if(image.indexOf('http') >= 0) {
+        return image;
+    }
+
+    // convert HTML relative image path to absolute filesystem path
+    var imageFilePath = path.resolve(file.dirname, image);
+
+    // create cache-buster filename
+    var timestamp = moment().unix();
+
+    // append timestamp to filename
+    var newFileName = path.basename(file.path, '.html') + '-' +
+        path.parse(imageFilePath).name + '-' +
+        timestamp + path.parse(imageFilePath).ext;
+
+    // upload image to destination
+    // for now copy to \\hbmphotoprod01\HBMPhotos\email-images
+    fs.createReadStream(imageFilePath)
+        .pipe(fs.createWriteStream('\\\\hbmphotoprod01.hbm2.com\\HBMPhotos\\email-images\\' + newFileName));
+
+    console.log(image + ' uploaded to ' + 'http://photos.hbm2.com/email-images/' + newFileName);
+
+    // update the img.src to point at the destination
+    return 'https://photos.hbm2.com/email-images/' + newFileName;
+}
 
 function isComment(index, node) {
     return node.type === 'comment';
