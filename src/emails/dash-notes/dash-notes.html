@@ -15,6 +15,7 @@
             var templateData = {
               OwnerFirstName: "David",
               OwnerLastName: "Tobeck",
+              BusinessSourcesURL:"https://dev-hbmdash.hbm2.com/relationships/my-business",
               BuyerFirstName: "Tuomas",
               BuyerLastName: "Holopainen",
               DateString: "6/14/2017",
@@ -142,7 +143,7 @@
                         <table cellpadding="0" cellspacing="0" width="500" class="table-border">
                           <tr>
                               <td align="center" class="td-padding1">
-                                  <a class="consumer_name" href="{{ConsumerActivityURL1}}">{{OwnerFirstName}} {{OwnerLastName}}</a>
+                                  <a class="consumer_name" href="{{BusinessSourcesURL}}">{{OwnerFirstName}} {{OwnerLastName}}</a>
                                 <span class="name_text">&nbsp;copied you in a note on {{BuyerFirstName}} {{BuyerLastName}}'s buyer record on <b>{{DateString}}</b> at <b>{{TimeString}}</b></span>
                               </td>
                           </tr>
