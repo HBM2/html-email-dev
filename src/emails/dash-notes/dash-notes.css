@@ -1,0 +1,231 @@
+/* some default colors and stuff */
+table td {
+    color: #343434;
+    font-family: "Nunito Sans", sans-serif;
+}
+a {text-decoration:none;}
+.container_table {
+    width: 100%;
+}
+.content_padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.content_padding2 {
+    padding:20px;
+}
+
+.stack_column {
+    display: block !important;
+    width: 100% !important;
+}
+
+.bgcolor {
+    background-color: #00688c;
+}
+
+.fixedwidth {
+    width: 620px;
+}
+.header_table{
+  background-color:#00688c;
+  height:90px;
+}
+.header_table_orange{
+  background-color:#f47532;
+  height:9px;
+}
+.white_table{
+  background-color:#ffffff;
+}
+.main_heading_txt{
+  color:#00688c;
+  font-size: 34px;
+  font-weight:600;
+}
+.hero-content{
+  color:#00688c;
+  font-size: 30px;
+  font-weight:600;
+
+  padding-left: 20px;
+padding-right: 20px;
+}
+.hero-content2{
+  color:#00688c;
+  font-size: 20px;
+  font-weight:400;
+
+  padding-left:10px;padding-right:10px;
+}
+.hero-highlight{
+  color:#fdb714;
+}
+.header_container {
+    padding-top: 20px;
+}
+
+.header_logo {
+    width: 222px;
+    height:64px;
+}
+.orange-bar{height:15px;width:100%;background-color:#f47532;}
+.text_spacer{font-size:6px;}
+.table_600{
+  width:600px;
+  /*height:199px;*/
+}
+.key_img{height:56px;width:58px;}
+.header_text {
+    padding-left: 10px;
+    font-size: 24px;
+    color:#ffffff;
+}
+.superscript{font-size:6px;}
+.topcopy {
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+    font-size: 18px;
+}
+
+.whitebg {
+    background-color: #ffffff;
+}
+
+.listing_photo {
+    width: 200px !important;
+    max-width: 200px !important;
+    display: block;
+}
+
+.listing_photo img {
+    max-width: 200px !important;
+}
+
+.listing_info {
+    display: block;
+    width: 220px;
+    vertical-align:top;
+}
+.valign_top {
+    vertical-align: top;
+}
+.bizcard_padding {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.bizcard_photo {
+    width: 60px;
+}
+
+.bizcard_copy_td {
+    padding-left: 15px;
+}
+
+.bizcard_header {
+    font-weight: bold;
+    color: #363636;
+}
+
+.getapp {
+    color: #706e6e;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.appstore {
+    padding-right: 10px;
+}
+
+.unsub {
+  color:#ffffff;
+  font-size: 9px;
+
+  text-decoration:none;
+}
+
+.fineprint {
+    color: #989b9d;
+}
+
+.listprice {
+    font-size: 22px;
+    font-weight:bold;
+
+    padding-bottom: 4px;
+}
+.td-spacer{height:5px;border:none;}
+.listing_info_copy {
+
+  font-size:16px;
+  font-weight:bold;
+  padding-bottom: 3px;
+}
+.listing_info_copy2 {
+
+  color:#2a94ce;
+  font-size:16px;
+  font-weight:600;
+}
+.contact-us{
+    color:#2a94ce !important;
+    cursor: pointer;
+}
+.consumer_name {
+  color:#2898e9;
+  font-size:22px;
+  padding-bottom: 3px;
+  font-weight:600;
+}
+.name_text{
+color:#000000;
+font-size:22px;
+}
+.info-header{
+  font-weight: 600;
+}
+.property-link{
+
+  color:#2a94ce;
+  font-size:16px;
+  padding-bottom: 3px;
+  font-weight:600;
+}
+.time_text{
+color:#000000;
+font-size:22px;
+font-weight:400;
+}
+.notes_text{
+color:#000000;
+font-size:14px;
+font-weight:400;
+}
+
+.table-border{border:1px solid gray;border-radius:10px 10px 10px 10px;}
+.td-padding1{padding-top:20px;padding-left:10px;padding-right:10px;}
+.td-padding2{padding-bottom:20px;padding-left:10px;padding-right:10px;}
+
+.listing_status {
+    color: #3da938;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer-content{
+  font-size:9px;
+
+  color:#bcbcbc;
+  padding-bottom:20px;
+}
+.team-photo{
+  width:100px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.team-link{
+  text-decoration: none;
+}
