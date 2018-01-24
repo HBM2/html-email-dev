@@ -57,7 +57,8 @@
                         Office: "6515555555", Mobile: "6515555555",
                         OfficeDisplay: "(651) 555-5555", MobileDisplay: "(651) 555-5555",
                         Email: "gwilson@therealestatecompany.com", Website: "www.websitelink.com",
-                        LogoURL: "https://photos.hbm2.com/Logos/BuildingBlunders.jpg"
+                        LogoURL: "https://photos.hbm2.com/Logos/BuildingBlunders.jpg",
+                        Advertisement:true
                     }
                 ]
           };
@@ -287,8 +288,13 @@
     <tr>
         <td align="center" class="content_padding">
           <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+            <tr>
+              <td width="120" class="blue-left" bgcolor="#1b5b7e"></td>
+              <td colspan="2" align="right" class="right-title">{{#Advertisement}}Advertisement{{/Advertisement}}</td>
+              <td class="brown-right" bgcolor="#bea486"></td>
+            </tr>
               <tr>
-                  <td height="150" width="120" class="blue-left" bgcolor="#1b5b7e">Additional questions?</td>
+                  <td height="150" width="120" class="blue-left" bgcolor="#1b5b7e"><div class="title-spacer">Additional questions?</div></td>
                   <td width="120"><img src={{CirclePhotoURL}} height="75" width="75" class="circle-photo" />
                       <br/><img src={{LogoURL}} width="100" class="bizcard-logo" />
                   </td>
