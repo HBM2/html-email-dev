@@ -69,7 +69,7 @@ padding-right: 20px;
     width: 222px;
     height:64px;
 }
-.orange-bar{height:15px;width:100%;background-color:#f47532;}
+.orange-bar{height:9px;width:100%;background-color:#f47532;font-size:5px;}
 .text_spacer{font-size:6px;}
 .table_600{
   width:600px;
