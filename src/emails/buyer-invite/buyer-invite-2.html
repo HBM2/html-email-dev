@@ -35,9 +35,7 @@
                       Email: "gwilson@therealestatecompany.com", Website: "www.websitelink.com",
                       LogoURL: "https://photos.hbm2.com/Logos/Agent_32718_155635.jpg",
                       showTitle: true, showRealtorLogo: true,
-                      AgentLicensesString: "MN 234234 | SD 234234 | MT 34323",
-                      LicenseNumbers: [{State: "MN", LicenseNumber: 234234},
-                                     {State: "WI", LicenseNumber:123344}]
+                      AgentLicensesString: "MN #234234 | SD #234234 | MT #34323"
                   }
               ],
               LoanOfficerInfo:[
@@ -50,7 +48,10 @@
                       LogoURL: "https://photos.hbm2.com/Logos/HBM_Logo_Horizontal.png",
                       NMLS: 012345, CompanyNMLS: 545454, BranchNMLS: 446466,
                       showSpecialEHLogo: false,
-                      showLicenseLink: false, LicensingLink: "http://www.somewhere.com"
+                      showLicenseLink: false, LicensingLink: "http://www.somewhere.com",
+                      LOLicensesString: "MN #234234 | SD #234234 | MT #34323",
+                      MortgageCompanyAddrString: "6066 Shingle Creek Parkway, 190 Brooklyn Center MN 55430",
+                      ComplianceText: "Illinois Mortgage Licensee"
                   }
                 ],
              AGCInfo: [
@@ -377,6 +378,10 @@
                       <br/>{{/Website}}
 
                       {{#NMLS}}<span class="nmls">NMLS: #{{NMLS}}  &nbsp;|&nbsp;</span>{{/NMLS}}
+                      {{#LOLicensesString}}
+                        <span class="office-mobile">{{LOLicensesString}}</span>
+                      {{/LOLicensesString}}
+                      <br/>
                       <span class="nmls">
                         {{#showLicenseLink}}Licensing Info: <a href="{{LicensingLink}}" class="nmls-link">{{LicensingLink}}</a>{{/showLicenseLink}}
                         {{^showLicenseLink}}
@@ -387,6 +392,8 @@
                       <br/>
                       {{#CompanyNMLS}}<span class="nmls">Company NMLS: #{{CompanyNMLS}}{{#BranchNMLS}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/BranchNMLS}}</span>{{/CompanyNMLS}}
                       {{#BranchNMLS}}<span class="nmls">Branch NMLS: #{{BranchNMLS}}</span>{{/BranchNMLS}}
+                      {{#MortgageCompanyAddrString}}<span class="nmls">{{MortgageCompanyAddrString}}</span>{{/MortgageCompanyAddrString}}
+                      {{#ComplianceText}}<br/><span class="nmls">{{ComplianceText}}</span>{{/ComplianceText}}
                   </td>
                   <td valign="bottom">
                     {{#showSpecialEHLogo}}<img src="eho.png" height="20" width="20" />{{/showSpecialEHLogo}}
