@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pdf</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
+    <link rel="stylesheet" href="../shared/styles/mailchimp-reset.css"/>
+
+    <!-- TODO: CSS file with styles for this email template -->
+    <link rel="stylesheet" href="pdf1.css">
+
+    <!-- mustache for front-end javascript template rendering - removed during gulp build -->
+    <script src="../scripts/mustache-2.3.0.js"></script>
+
+    <!-- script for rendering template during development - this is removed during gulp build -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var templateData = {
+              listing:{Beds:3, Baths:4, Acres:0.37, SqFt: "8,655",FormattedListingPrice:"$3,995,000", Address:"4807 Sheridan Ave S",
+                       City: "Minneapolis", Region: "MN", ZipCode: "55410", MLSListingID: "4702924",ListAgentInfo: "Barry L Berg of Coldwell Banker Burnet",
+                       INetRemarks: "Outstanding landmark residence in exceptional condition with Lake Harriet views. Superbly renovated. Gracious public rooms. Exquisitely detailed. Center island kitchen with outdoor terrace/fireplace and adjoining family room. Elevator. Gorgeous master suite. Walkout lower level with terrazzo floors. Private rear yard and pool.",
+                     },
+              miniSmartUrl: "https://goo.gl/zrD7wQ",
+              PricePerSqFt:"$583",
+              Photo0: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924.jpg",
+              Photo1: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924a.jpg",
+              Photo2: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924b.jpg",
+              Photo3: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924c.jpg",
+              Photo4: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924d.jpg",
+              Logo: "http://photos.hbm2.com/email-images/pdfTemplates/HomeScout_logo.png"
+            };
+            // render with Mustache, using the above template data
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            // write the rendered template to the body, replacing the template
+            document.body.innerHTML = html;
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito Sans:400,500,600,700,800,900" rel="stylesheet" type="text/css">
+</head>
+<body class="">
+
+
+<div class="ss-detail-container">
+                  <div class="ss-detail-left-column">
+                    <div style="background-image:url('{{Logo}}')"  class="ss-detail-logo"></div>
+                    <div class="ss-circle-photo-container">
+                      <div class="ss-circle-spacer"></div>
+
+                      <div class="ss-circle ss-circle-red">
+                        <div class="ss-circle-center">
+                          <div class="ss-circle-text">{{PricePerSqFt}}</div>
+                          <div class="ss-circle-text2">/sqft</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-yellow">
+                        <div class="ss-circle-center">
+                          <div class="ss-circle-text">{{listing.Acres}}</div>
+                          <div class="ss-circle-text2">acres</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-blue">
+                        <div class="ss-circle-center">
+                          <div class="ss-circle-text">{{listing.SqFt}}</div>
+                          <div class="ss-circle-text2">sqft</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-green">
+                        <div class="ss-circle-center">
+                          <div class="ss-circle-text">{{listing.Baths}}</div>
+                          <div class="ss-circle-text2">baths</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-purple">
+                        <div class="ss-circle-center">
+                          <div class="ss-circle-text">{{listing.Beds}}</div>
+                          <div class="ss-circle-text2">beds</div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div style="background-image:url('{{Photo0}}')" class="ss-detail-main-photo"></div>
+                    <div style="background-image:url('{{Photo1}}')" class="ss-detail-photo-sm1 ss-center-cropped1"></div>
+                    <div style="background-image:url('{{Photo2}}')" class="ss-detail-photo-sm1 ss-center-cropped2"></div>
+                    <div style="background-image:url('{{Photo3}}')" class="ss-detail-photo-sm1 ss-center-cropped3"></div>
+                    <div style="background-image:url('{{Photo4}}')" class="ss-detail-photo-sm1 ss-center-cropped4"></div>
+                  </div>
+
+                  <div class="ss-detail-right">
+                    <div class="ss-detail-broker">Listed By: {{listing.ListAgentInfo}}</div>
+                    <div class="ss-detail-prop-info">{{listing.INetRemarks}}</div>
+                  </div>
+
+                  <div class="ss-clear-both"></div>
+
+                  <div class="ss-detail-ltblue">
+                    <div class="ss-detail-offer">offered at</div>
+                    <div class="ss-detail-price">{{listing.FormattedListingPrice}}</div>
+                  </div>
+                  <div class="ss-detail-dkblue">
+                    <div class="ss-detail-address1">{{listing.Address}}</div>
+                    <div class="ss-detail-address2">{{listing.City}}, {{listing.Region}} {{listing.ZipCode}} | MLS#{{listing.MLSListingID}}</div>
+                  </div>
+                  <div class="ss-detail-ltblue">
+                    <div class="ss-detail-text1">View this property online:</div>
+                    <div class="ss-detail-text2"><a class="ss-detail-link1" href={{miniSmartUrl}}>{{miniSmartUrl}}</a></div>
+                  </div>
+                </div>
+
+
+                 {{{BizCardContent}}}
+
+</body>
+</html>

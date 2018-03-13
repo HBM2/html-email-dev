@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Open Sans',sans-serif; height: 100%; margin: 0; max-width: 100%; min-height: 100%; min-width: 100%; overflow-x: hidden; padding: 0; width: 100%;">
+<head>
+    <title>pdf</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
+    
+
+    <!-- TODO: CSS file with styles for this email template -->
+    
+
+    <!-- mustache for front-end javascript template rendering - removed during gulp build -->
+    <script src="../scripts/mustache-2.3.0.js"></script>
+
+    <!-- script for rendering template during development - this is removed during gulp build -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var templateData = {
+              listing:{Beds:3, Baths:4, Acres:0.37, SqFt: "8,655",FormattedListingPrice:"$3,995,000", Address:"4807 Sheridan Ave S",
+                       City: "Minneapolis", Region: "MN", ZipCode: "55410", MLSListingID: "4702924",ListAgentInfo: "Barry L Berg of Coldwell Banker Burnet",
+                       INetRemarks: "Outstanding landmark residence in exceptional condition with Lake Harriet views. Superbly renovated. Gracious public rooms. Exquisitely detailed. Center island kitchen with outdoor terrace/fireplace and adjoining family room. Elevator. Gorgeous master suite. Walkout lower level with terrazzo floors. Private rear yard and pool.",
+                     },
+              miniSmartUrl: "https://goo.gl/zrD7wQ",
+              PricePerSqFt:"$583",
+              Photo0: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924.jpg",
+              Photo1: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924a.jpg",
+              Photo2: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924b.jpg",
+              Photo3: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924c.jpg",
+              Photo4: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924d.jpg",
+              Logo: "http://photos.hbm2.com/email-images/HomeScout_logo.png"
+            };
+            // render with Mustache, using the above template data
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            // write the rendered template to the body, replacing the template
+            document.body.innerHTML = html;
+        };
+    </script>
+    
+</head>
+<body class="" style="font-family: 'Open Sans',sans-serif; height: 100%; margin: 0; max-width: 100%; min-height: 100%; min-width: 100%; overflow-x: hidden; padding: 0; width: 100%;">
+
+
+<div class="ss-detail-container" style="border: 1px solid red; margin-left: auto; margin-right: auto; position: relative; width: 995px;">
+                  <div class="ss-detail-left-column" style="display: inline-block; height: 667px; position: relative; width: 660px;">
+                    <div style="background-image: url('{{Logo}}'); background-repeat: no-repeat; background-size: 215px 96px; height: 96px; left: 25px; position: absolute; top: 0; width: 215px; z-index: 999;" class="ss-detail-logo"></div>
+                    <div class="ss-circle-photo-container" style="height: 75px; position: absolute; top: 315px; width: 660px;">
+                      <div class="ss-circle-spacer" style="float: right; height: 75px; width: 25px;"></div>
+
+                      <div class="ss-circle ss-circle-red" style="background: #e1415a; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
+                        <div class="ss-circle-center" style="margin-top: 15px;">
+                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{PricePerSqFt}}</div>
+                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">/sqft</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-yellow" style="background: #dab043; border-radius: 50%; color: #000000; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
+                        <div class="ss-circle-center" style="margin-top: 15px;">
+                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.Acres}}</div>
+                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">acres</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-blue" style="background: #2194d2; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
+                        <div class="ss-circle-center" style="margin-top: 15px;">
+                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.SqFt}}</div>
+                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">sqft</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-green" style="background: #93c25d; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
+                        <div class="ss-circle-center" style="margin-top: 15px;">
+                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.Baths}}</div>
+                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">baths</div>
+                        </div>
+                      </div>
+                      <div class="ss-circle ss-circle-purple" style="background: #76519d; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
+                        <div class="ss-circle-center" style="margin-top: 15px;">
+                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.Beds}}</div>
+                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">beds</div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div style="background-image: url('{{Photo0}}'); background-position: center; background-repeat: no-repeat; background-size: 800px 600px; height: 403px; overflow: hidden; width: 660px;" class="ss-detail-main-photo"></div>
+                    <div style="background-image: url('{{Photo1}}'); background-position: center center; background-repeat: no-repeat; background-size: 400px 300px; border: 1px solid #ffffff; float: left; height: 129px; overflow: hidden; width: 328px;" class="ss-detail-photo-sm1 ss-center-cropped1"></div>
+                    <div style="background-image: url('{{Photo2}}'); background-position: center center; background-repeat: no-repeat; background-size: 400px 300px; border: 1px solid #ffffff; float: left; height: 129px; overflow: hidden; width: 328px;" class="ss-detail-photo-sm1 ss-center-cropped2"></div>
+                    <div style="background-image: url('{{Photo3}}'); background-position: center center; background-repeat: no-repeat; background-size: 400px 300px; border: 1px solid #ffffff; float: left; height: 129px; overflow: hidden; width: 328px;" class="ss-detail-photo-sm1 ss-center-cropped3"></div>
+                    <div style="background-image: url('{{Photo4}}'); background-position: center center; background-repeat: no-repeat; background-size: 400px 300px; border: 1px solid #ffffff; float: left; height: 129px; overflow: hidden; width: 328px;" class="ss-detail-photo-sm1 ss-center-cropped4"></div>
+                  </div>
+
+                  <div class="ss-detail-right" style="background-color: #f5f5f5; display: inline-block; height: 667px; margin-left: 2px; vertical-align: top; width: 328px;">
+                    <div class="ss-detail-broker" style="color: gray; font-size: 9px; margin-left: 10px; margin-top: 3px;">Listed By: {{listing.ListAgentInfo}}</div>
+                    <div class="ss-detail-prop-info" style="color: #000000; font-family: 'Open Sans',sans-serif; font-size: 20px; line-height: 25px; padding-left: 10px; padding-right: 10px;">{{listing.INetRemarks}}</div>
+                  </div>
+
+                  <div class="ss-clear-both" style="clear: both; margin: 0; padding: 0;"></div>
+
+                  <div class="ss-detail-ltblue" style="background-color: #009cde; border: 1px solid #ffffff; float: left; height: 100px; width: 328px;">
+                    <div class="ss-detail-offer" style="color: #ffffff; font-size: 18px; font-weight: 400; line-height: 18px; margin-left: 30px; margin-top: 17px;">offered at</div>
+                    <div class="ss-detail-price" style="color: #ffffff; font-size: 40px; font-weight: 700; line-height: 40px; margin-left: 30px;">{{listing.FormattedListingPrice}}</div>
+                  </div>
+                  <div class="ss-detail-dkblue" style="background-color: #0060b1; border: 1px solid #ffffff; float: left; height: 100px; width: 328px;">
+                    <div class="ss-detail-address1" style="color: #ffffff; font-size: 26px; font-weight: 600; line-height: 26px; margin-left: 20px; margin-top: 28px;">{{listing.Address}}</div>
+                    <div class="ss-detail-address2" style="color: #ffffff; font-size: 14px; font-weight: 400; line-height: 14px; margin-left: 20px;">{{listing.City}}, {{listing.Region}} {{listing.ZipCode}} | MLS#{{listing.MLSListingID}}</div>
+                  </div>
+                  <div class="ss-detail-ltblue" style="background-color: #009cde; border: 1px solid #ffffff; float: left; height: 100px; width: 328px;">
+                    <div class="ss-detail-text1" style="color: #ffffff; font-size: 20px; font-weight: 400; line-height: 20px; margin-left: 20px; margin-top: 28px;">View this property online:</div>
+                    <div class="ss-detail-text2" style="color: #ffffff; font-size: 20px; font-weight: 400; line-height: 20px; margin-left: 20px;"><a class="ss-detail-link1" href="{{miniSmartUrl}}" style="color: #ffffff; font-size: 20px; font-weight: 400; line-height: 20px; text-decoration: none;">{{miniSmartUrl}}</a></div>
+                  </div>
+                </div>
+
+
+                 {{{BizCardContent}}}
+
+</body>
+</html>

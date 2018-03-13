@@ -8,6 +8,7 @@ var argv = require('yargs').argv;
 
 gulp.task('default', buildHtmlEmails);
 gulp.task('test', test);
+gulp.task('buildpdf', buildPDFs);
 
 function buildHtmlEmails() {
     return gulp.src('./src/emails/**/*.html')
@@ -40,6 +41,39 @@ function buildHtmlEmails() {
         //.pipe(htmlmin({collapseWhitespace: true}))
         // .pipe(litmus(require('./config/litmus.config')))
         .pipe(gulp.dest('./build/'));
+}
+
+function buildPDFs() {
+    return gulp.src('./src/pdfTemplates/**/*.html')
+        .pipe(inlineCss({
+            // applies inlining to <style> tags
+            applyStyleTags: false,
+
+            // applies inlining to external <link> css
+            applyLinkTags: true,
+
+            // removes <style> tags
+            removeStyleTags: true,
+
+            // removes <link> tags
+            removeLinkTags: true,
+
+            // preserves any media queries in style tags when removeStyleTags is true
+            preserveMediaQueries: true,
+
+            // takes css pixel width and applies it as attribute
+            applyWidthAttributes: true,
+
+            // adds border,cellpadding,cellspacing = 0 to all tables
+            applyTableAttributes: false,
+
+            // removes class and id attributes from html
+            removeHtmlSelectors: false
+        }))
+        //.pipe(htmlEmailCustom()) // custom gulp plugin I wrote to do various things...
+        //.pipe(htmlmin({collapseWhitespace: true}))
+        // .pipe(litmus(require('./config/litmus.config')))
+        .pipe(gulp.dest('./buildPDF/'));
 }
 
 function test() {

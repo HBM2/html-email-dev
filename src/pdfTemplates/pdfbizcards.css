@@ -1,0 +1,209 @@
+html, body{margin:0;padding:0;min-width:100%;width:100%;max-width:100%;min-height:100%;height:100%;
+    font-family:"Open Sans",sans-serif;overflow-x:hidden;}
+.ss-bizcard-container{position:relative;width:995px;margin-left:auto;margin-right:auto;}
+.ss-bizcard-main{position:relative;height:400px;width:328px;overflow:hidden;border:1px solid #f2f2f2;float:left;}
+.ss-left-title{font-family:"Open Sans",sans-serif;font-size:12px;padding-left:5px;font-style:italic;}
+.ss-small-icon{width:20px;height:20px;background-size: 20px 20px;position:absolute;right:5px;top:5px;}
+.ss-circle-photo{float:left;height:55px;width:55px;margin-left:15px;margin-top:5px;}
+.ss-name{float:left;width:245px;margin-left:10px;margin-top:8px;font-weight:600;font-size:14px;}
+.ss-company-name{float:left;width:245px;margin-left:10px;font-weight:600;font-size:14px;}
+.ss-license{float:left;font-size:12px;margin-left:10px;margin-top:8px;}
+.ss-phones{margin-left:15px;margin-top:8px;}
+.ss-office-mobile{display:inline-block;font-size:12px;}
+.ss-tel-link{color:#3d9dd2;}
+.ss-email-link{font-family:"Open Sans",sans-serif;font-size:12px;color:#3d9dd2;}
+.ss-logo{position:absolute;bottom:10px;left:100px;width:125px;}
+.ss-nmls{font-size:12px;}
+.ss-nmls-link{;color:#3d9dd2;}
+.ss-clear-both{clear:both;margin:0;padding:0;}
+
+table td {
+    color: #343434;
+}
+
+.container_table {
+    width: 100%;
+}
+
+/* --------- bizcard stuff --------------*/
+.blue-left{width:120px;background-color:#1b5b7e;color:#ffffff;font-weight:400;
+  font-family:"Open Sans",sans-serif;padding-left:15px;line-height:22px;}
+.table-spacer{width:100%;height:10px;}
+.circle-photo{margin-left:25px;}
+.bizcard-logo{margin-left:10px;width:100px;}
+.name-company{font-family:"Open Sans",sans-serif;font-weight:600;font-size:14px;}
+.office-mobile{font-family:"Open Sans",sans-serif;font-size:12px;}
+.tel-link{color:#3d9dd2;}
+.email-link{font-family:"Open Sans",sans-serif;font-size:12px;color:#3d9dd2;}
+.blue-right{width:5px;background-color:#2fb6ef;}
+.green-right{width:5px;background-color:#12bc25;}
+.brown-right{width:5px;background-color:#bea486;}
+.right-title{font-family:"Open Sans",sans-serif;font-size:12px;padding-right:5px;font-style:italic;}
+.nmls{font-family:"Open Sans",sans-serif;font-size:12px;}
+.nmls-link{font-family:"Open Sans",sans-serif;color:#3d9dd2;}
+.spacer-size{font-size:8px;}
+.title-spacer{margin-bottom:15px;}
+/* --------- bizcard stuff --------------*/
+
+
+.content_padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.stack_column {
+    display: block !important;
+    width: 100% !important;
+}
+
+.bgcolor {
+    background-color: #ebeaea;
+}
+
+.fixedwidth {
+    width: 620px;
+}
+.header_table{
+  background-color:#1B75BC;
+}
+.houses_table{
+  background-color:#ffffff;
+}
+.houses_text{
+  color:#47c6ab;
+  font-size: 30px;
+  font-family:"Open Sans",sans-serif;
+}
+.hero-content{
+  font-size: 18px;
+  font-family:"Open Sans",sans-serif;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.hero-highlight{
+  color:#fc4a1a;
+}
+.header_container {
+    padding-top: 20px;
+}
+
+.header_logo {
+    width: 97px;
+    height:90px;
+}
+.falling_houses{
+  width:414px;
+  height:199px;
+}
+.header_text {
+    padding-left: 10px;
+    font-size: 24px;
+    font-family:"Open Sans",sans-serif;
+    color:#ffffff;
+}
+.superscript{font-size:6px;}
+.topcopy {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.whitebg {
+    background-color: #ffffff;
+}
+
+.listing_photo {
+    width: 290px;
+    display: block;
+}
+
+.listing_photo img {
+    max-width: 100%;
+}
+
+.listing_info {
+    display: block;
+    width: 220px;
+    padding-left: 20px;
+    padding-right: 0px;
+}
+.valign_top {
+    vertical-align: top;
+}
+.bizcard_padding {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.bizcard_photo {
+    width: 60px;
+}
+.bizcard_copy_td {
+    padding-left: 15px;
+}
+
+.bizcard_header {
+    font-weight: bold;
+    color: #363636;
+}
+
+.getapp {
+    color: #706e6e;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.appstore {
+    padding-right: 10px;
+}
+
+.unsub {
+  color:#47c6ab;
+  font-size: 9px;
+  font-family:"Open Sans",sans-serif;
+  text-decoration:none;
+}
+
+.fineprint {
+    color: #989b9d;
+}
+
+.listprice {
+    font-size: 18px;
+    font-family:"Open Sans",sans-serif;
+    padding-bottom: 4px;
+}
+
+.listing_info_copy {
+  font-family:"Open Sans",sans-serif;
+  font-size:14px;
+  padding-bottom: 3px;
+}
+
+.listing_status {
+    color: #3da938;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer-content{
+  font-size:9px;
+  font-family:"Open Sans",sans-serif;
+  color:#bcbcbc;
+  padding-bottom:20px;
+}
+.team-photo{
+  width:100px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.team-link{
+  text-decoration: none;
+}
+.header_text{
+  font-size:24px;
+  font-weight:bold;
+  color:#1B75BC;
+}
