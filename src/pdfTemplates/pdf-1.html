@@ -29,7 +29,12 @@
               Photo2: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924b.jpg",
               Photo3: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924c.jpg",
               Photo4: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924d.jpg",
-              Logo: "http://photos.hbm2.com/email-images/pdfTemplates/HomeScout_logo.png"
+              Logo: "http://photos.hbm2.com/email-images/pdfTemplates/HomeScout_logo.png",
+              Page2Bkg: "http://photos.hbm2.com/email-images/pdfTemplates/PDFpg2Base4.png",
+              SchoolRating: "B",
+              SchoolRatio: "14/1",
+              SchoolClosest: ".46 miles away",
+              Grocery: "within 0.26 miles"
             };
             // render with Mustache, using the above template data
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -42,7 +47,7 @@
 <body class="">
 
 
-<div class="ss-detail-container">
+<div class="ss-detail-container ss-detail-page">
                   <div class="ss-detail-left-column">
                     <div style="background-image:url('{{Logo}}')"  class="ss-detail-logo"></div>
                     <div class="ss-circle-photo-container">
@@ -107,10 +112,18 @@
                     <div class="ss-detail-text1">View this property online:</div>
                     <div class="ss-detail-text2"><a class="ss-detail-link1" href={{miniSmartUrl}}>{{miniSmartUrl}}</a></div>
                   </div>
+
+
+
+                  {{{BizCardContent}}}
                 </div>
 
-
-                 {{{BizCardContent}}}
-
+      <div class="ss-detail-container ss-detail-page">
+                <div style="background-image:url('{{Page2Bkg}}')"  class="ss-detail-page2-bkg"></div>
+                <div class="ss-school-rating">{{SchoolRating}}</div>
+                <div class="ss-school-ratio">{{SchoolRatio}}</div>
+                <div class="ss-school-closest">{{SchoolClosest}}</div>
+                <div class="ss-grocery">{{Grocery}}</div>
+      </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="font-family: 'Open Sans',sans-serif; height: 100%; margin: 0; max-width: 100%; min-height: 100%; min-width: 100%; overflow-x: hidden; padding: 0; width: 100%;">
+<html lang="en" style="font-family: 'Open Sans',sans-serif; margin: 0; padding: 0;">
 <head>
     <title>pdf</title>
     <meta charset="UTF-8">
@@ -29,7 +29,12 @@
               Photo2: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924b.jpg",
               Photo3: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924c.jpg",
               Photo4: "https://photos3.hbm2.com/000/3/4/2/9/HBMLG_4702924d.jpg",
-              Logo: "http://photos.hbm2.com/email-images/HomeScout_logo.png"
+              Logo: "http://photos.hbm2.com/email-images/pdfTemplates/HomeScout_logo.png",
+              Page2Bkg: "http://photos.hbm2.com/email-images/pdfTemplates/PDFpg2Base4.png",
+              SchoolRating: "B",
+              SchoolRatio: "14/1",
+              SchoolClosest: ".46 miles away",
+              Grocery: "within 0.26 miles"
             };
             // render with Mustache, using the above template data
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -39,43 +44,43 @@
     </script>
     
 </head>
-<body class="" style="font-family: 'Open Sans',sans-serif; height: 100%; margin: 0; max-width: 100%; min-height: 100%; min-width: 100%; overflow-x: hidden; padding: 0; width: 100%;">
+<body class="" style="font-family: 'Open Sans',sans-serif; margin: 0; padding: 0;">
 
 
-<div class="ss-detail-container" style="border: 1px solid red; margin-left: auto; margin-right: auto; position: relative; width: 995px;">
+<div class="ss-detail-container ss-detail-page" style="-webkit-region-break-inside: avoid; height: 1288px; page-break-after: always; page-break-inside: avoid; position: relative; width: 995px;">
                   <div class="ss-detail-left-column" style="display: inline-block; height: 667px; position: relative; width: 660px;">
                     <div style="background-image: url('{{Logo}}'); background-repeat: no-repeat; background-size: 215px 96px; height: 96px; left: 25px; position: absolute; top: 0; width: 215px; z-index: 999;" class="ss-detail-logo"></div>
-                    <div class="ss-circle-photo-container" style="height: 75px; position: absolute; top: 315px; width: 660px;">
-                      <div class="ss-circle-spacer" style="float: right; height: 75px; width: 25px;"></div>
+                    <div class="ss-circle-photo-container" style="height: 75px; position: absolute; top: 300px; width: 660px;">
+                      <div class="ss-circle-spacer" style="float: right; height: 90px; width: 25px;"></div>
 
-                      <div class="ss-circle ss-circle-red" style="background: #e1415a; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
-                        <div class="ss-circle-center" style="margin-top: 15px;">
-                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{PricePerSqFt}}</div>
-                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">/sqft</div>
+                      <div class="ss-circle ss-circle-red" style="background: #e1415a; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 90px; margin-left: 15px; opacity: .92; text-align: center; vertical-align: middle; width: 90px;">
+                        <div class="ss-circle-center" style="margin-top: 25px;">
+                          <div class="ss-circle-text" style="font-size: 24px; font-weight: bold; line-height: 20px; text-align: center; vertical-align: middle;">{{PricePerSqFt}}</div>
+                          <div class="ss-circle-text2" style="font-size: 20px; line-height: 18px; text-align: center; vertical-align: middle;">/sqft</div>
                         </div>
                       </div>
-                      <div class="ss-circle ss-circle-yellow" style="background: #dab043; border-radius: 50%; color: #000000; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
-                        <div class="ss-circle-center" style="margin-top: 15px;">
-                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.Acres}}</div>
-                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">acres</div>
+                      <div class="ss-circle ss-circle-yellow" style="background: #dab043; border-radius: 50%; color: #000000; display: inline-block; float: right; height: 90px; margin-left: 15px; opacity: .92; text-align: center; vertical-align: middle; width: 90px;">
+                        <div class="ss-circle-center" style="margin-top: 25px;">
+                          <div class="ss-circle-text" style="font-size: 24px; font-weight: bold; line-height: 20px; text-align: center; vertical-align: middle;">{{listing.Acres}}</div>
+                          <div class="ss-circle-text2" style="font-size: 20px; line-height: 18px; text-align: center; vertical-align: middle;">acres</div>
                         </div>
                       </div>
-                      <div class="ss-circle ss-circle-blue" style="background: #2194d2; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
-                        <div class="ss-circle-center" style="margin-top: 15px;">
-                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.SqFt}}</div>
-                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">sqft</div>
+                      <div class="ss-circle ss-circle-blue" style="background: #2194d2; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 90px; margin-left: 15px; opacity: .92; text-align: center; vertical-align: middle; width: 90px;">
+                        <div class="ss-circle-center" style="margin-top: 25px;">
+                          <div class="ss-circle-text" style="font-size: 24px; font-weight: bold; line-height: 20px; text-align: center; vertical-align: middle;">{{listing.SqFt}}</div>
+                          <div class="ss-circle-text2" style="font-size: 20px; line-height: 18px; text-align: center; vertical-align: middle;">sqft</div>
                         </div>
                       </div>
-                      <div class="ss-circle ss-circle-green" style="background: #93c25d; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
-                        <div class="ss-circle-center" style="margin-top: 15px;">
-                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.Baths}}</div>
-                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">baths</div>
+                      <div class="ss-circle ss-circle-green" style="background: #93c25d; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 90px; margin-left: 15px; opacity: .92; text-align: center; vertical-align: middle; width: 90px;">
+                        <div class="ss-circle-center" style="margin-top: 25px;">
+                          <div class="ss-circle-text" style="font-size: 24px; font-weight: bold; line-height: 20px; text-align: center; vertical-align: middle;">{{listing.Baths}}</div>
+                          <div class="ss-circle-text2" style="font-size: 20px; line-height: 18px; text-align: center; vertical-align: middle;">baths</div>
                         </div>
                       </div>
-                      <div class="ss-circle ss-circle-purple" style="background: #76519d; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 75px; margin-left: 15px; opacity: .85; text-align: center; vertical-align: middle; width: 75px;">
-                        <div class="ss-circle-center" style="margin-top: 15px;">
-                          <div class="ss-circle-text" style="font-size: 20px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle;">{{listing.Beds}}</div>
-                          <div class="ss-circle-text2" style="font-size: 18px; line-height: 16px; text-align: center; vertical-align: middle;">beds</div>
+                      <div class="ss-circle ss-circle-purple" style="background: #76519d; border-radius: 50%; color: #fff; display: inline-block; float: right; height: 90px; margin-left: 15px; opacity: .92; text-align: center; vertical-align: middle; width: 90px;">
+                        <div class="ss-circle-center" style="margin-top: 25px;">
+                          <div class="ss-circle-text" style="font-size: 24px; font-weight: bold; line-height: 20px; text-align: center; vertical-align: middle;">{{listing.Beds}}</div>
+                          <div class="ss-circle-text2" style="font-size: 20px; line-height: 18px; text-align: center; vertical-align: middle;">beds</div>
                         </div>
                       </div>
                     </div>
@@ -88,9 +93,9 @@
                     <div style="background-image: url('{{Photo4}}'); background-position: center center; background-repeat: no-repeat; background-size: 400px 300px; border: 1px solid #ffffff; float: left; height: 129px; overflow: hidden; width: 328px;" class="ss-detail-photo-sm1 ss-center-cropped4"></div>
                   </div>
 
-                  <div class="ss-detail-right" style="background-color: #f5f5f5; display: inline-block; height: 667px; margin-left: 2px; vertical-align: top; width: 328px;">
+                  <div class="ss-detail-right" style="background-color: #f9f9f9; display: inline-block; height: 667px; margin-left: 2px; vertical-align: top; width: 328px;">
                     <div class="ss-detail-broker" style="color: gray; font-size: 9px; margin-left: 10px; margin-top: 3px;">Listed By: {{listing.ListAgentInfo}}</div>
-                    <div class="ss-detail-prop-info" style="color: #000000; font-family: 'Open Sans',sans-serif; font-size: 20px; line-height: 25px; padding-left: 10px; padding-right: 10px;">{{listing.INetRemarks}}</div>
+                    <div class="ss-detail-prop-info" style="color: #000000; font-family: 'Open Sans',sans-serif; font-size: 22px; line-height: 26px; padding-left: 10px; padding-right: 10px;">{{listing.INetRemarks}}</div>
                   </div>
 
                   <div class="ss-clear-both" style="clear: both; margin: 0; padding: 0;"></div>
@@ -107,10 +112,18 @@
                     <div class="ss-detail-text1" style="color: #ffffff; font-size: 20px; font-weight: 400; line-height: 20px; margin-left: 20px; margin-top: 28px;">View this property online:</div>
                     <div class="ss-detail-text2" style="color: #ffffff; font-size: 20px; font-weight: 400; line-height: 20px; margin-left: 20px;"><a class="ss-detail-link1" href="{{miniSmartUrl}}" style="color: #ffffff; font-size: 20px; font-weight: 400; line-height: 20px; text-decoration: none;">{{miniSmartUrl}}</a></div>
                   </div>
+
+
+
+                  {{{BizCardContent}}}
                 </div>
 
-
-                 {{{BizCardContent}}}
-
+      <div class="ss-detail-container ss-detail-page" style="-webkit-region-break-inside: avoid; height: 1288px; page-break-after: always; page-break-inside: avoid; position: relative; width: 995px;">
+                <div style="background-image: url('{{Page2Bkg}}'); background-repeat: no-repeat; background-size: 995px 1288px; height: 1288px; width: 995px; z-index: 999;" class="ss-detail-page2-bkg"></div>
+                <div class="ss-school-rating" style="color: gray; font-family: 'Open Sans',sans-serif; font-size: 16px; font-weight: 500; left: 865px; position: absolute; top: 277px;">{{SchoolRating}}</div>
+                <div class="ss-school-ratio" style="color: gray; font-family: 'Open Sans',sans-serif; font-size: 16px; font-weight: 500; left: 930px; position: absolute; top: 299px;">{{SchoolRatio}}</div>
+                <div class="ss-school-closest" style="color: gray; font-family: 'Open Sans',sans-serif; font-size: 16px; font-weight: 500; left: 790px; position: absolute; top: 320px;">{{SchoolClosest}}</div>
+                <div class="ss-grocery" style="color: gray; font-family: 'Open Sans',sans-serif; font-size: 16px; font-weight: 500; left: 238px; position: absolute; top: 533px;">{{Grocery}}</div>
+      </div>
 </body>
 </html>
