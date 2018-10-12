@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>agent-enrollment-auto-response.html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+
+    <!-- TODO: CSS file with styles for this email template -->
+    <link rel="stylesheet" href="agent-enrollment-auto-response.css">
+
+
+    <!-- mustache for front-end javascript template rendering - removed during gulp build -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+
+    <!-- script for rendering template during development - this is removed during gulp build -->
+    <script type="text/javascript">
+        window.onload = function () {
+            // TODO: define your mock email "object" that is used to render the template
+            var templateData = {
+              VideoURL1: "http://dev-emailsapi.hbm2.com/EmailClick_AutoResponse?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=17&LinkClicked=48&DestinationURL=https%3A%2F%2Fvimeo.com%2F293378360%2F3c10396011",
+              VideoURL2: "http://dev-emailsapi.hbm2.com/EmailClick_AutoResponse?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=17&LinkClicked=49&DestinationURL=https%3A%2F%2Fvimeo.com%2F294224037%2F61f9241eb2",
+              NexgenSite:"http://dev-emailsapi.hbm2.com/EmailClick_AutoResponse?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=17&LinkClicked=50&DestinationURL=https%3A%2F%2Fwww.nexgenhbm.com"
+            };
+            // render the email with Mustache, using the above template data
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            // write the rendered email template to the body, replacing the template
+            document.body.innerHTML = html;
+        };
+    </script>
+</head>
+<body>
+  <table class="main-table">
+    <tr>
+      <td>
+  <p>
+  We've received your enrollment for <span class="nexgenhbm">Nexgen HBM</span>. We are currently processing your enrollment request and will follow up shortly.
+  </p>
+  
+  <p>
+  You are now one step closer to capturing more of the contacts you generate each month and increasing your closed transactions!
+  </p>
+  
+  <p>
+  While we set up your access to our reporting app and website, the <span class="hbmdash">HBM Dash®</span>, 
+  listen to how these real estate professionals use <span class="homescout">HomeScout®</span> 
+  and the <span class="hbmdash">HBM Dash®</span> to grow and maintain a successful business.
+  </p>
+
+
+  <table  class="videos" >
+      <tr>
+          <td align="center">
+            <a href="{{VideoURL1}}">
+            <img src="a1.jpg" class="imagecell"  >
+            </a>
+            
+          </td>
+          <td align="center">
+            <a href="{{VideoURL2}}">            
+            <img src="j1.jpg"  class="imagecell">
+            </a>
+          </td>
+      </tr>
+      <tr>
+          <td align="center">
+            <span class="nametextcell">Andy H., Real Estate Agent</span>
+          </td>
+          <td align="center">
+            <span class="nametextcell">Jessica D., Real Estate Agent</span>
+          </td>
+      </tr>
+      <tr>
+          <td>
+            <span class="quotetextcell">
+              "The HBM business plan is extremely simple to implement and use. Getting customers to the app store and downloading the app is key."
+            </span>
+          </td>
+          <td >
+            <span class="quotetextcell">
+              "The Nexgen business model has eliminated the roller coaster effect. It’s very steady. Build the pipeline and closings literally happen every single month."
+            </span>
+          </td>
+      </tr>
+  </table>
+
+  <p>
+    For more information about our products and services go to our website at <a href="{{NexgenSite}}">www.nexgenhbm.com</a>
+  </p>
+  <p>
+    Let us know if you have any questions,</br>
+    Your Nexgen HBM Client Services and Support Team</br>
+    952-831-1919 or <a href="mailto:support@hbm2.com">support@hbm2.com</a>
+  </p>
+
+
+  <p class="footer">
+  </br>
+  HomeScout™ is a free home finding service provided directly to you by HBM2, a licensed real estate brokerage. 
+  ©Home Buyers Marketing II, Inc. 6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+  </p>
+  
+  
+</td>
+</tr>
+  
+</table>
+</body>
+</html>
