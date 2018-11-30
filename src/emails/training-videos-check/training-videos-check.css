@@ -1,0 +1,62 @@
+body{
+    font-family: calibri;
+    font-size: 12px;   
+    max-width: 600px;
+    width:600px;
+    margin: auto;
+}
+
+p{
+  width: 600px;
+}
+
+.main-table{
+  width:600px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+
+.nexgenhbm{
+  color:#0077CB;
+  font-weight: bold;  
+}
+
+.hbmdash{
+  color:#ED8B00;
+  font-weight: bold;  
+}
+
+
+.homescout{
+  color:#009CDE;
+  font-weight: bold;  
+}
+
+.footer{
+  font-family: Calibri;
+  font-size:10px;  
+}
+
+.videos{
+  width:600px;
+  border-collapse: separate;
+  border-spacing:  10px;
+  background-color: #E8E8E8;  
+}
+
+.imagecell{
+  align:center;
+  width:240px;
+}
+
+.nametextcell{
+  text-align:center;
+  font-weight: bold;
+}
+
+.quotetextcell{
+  color: #25383C;  
+  font-family: Calibri
+}
+
