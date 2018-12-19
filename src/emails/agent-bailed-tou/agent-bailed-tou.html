@@ -16,7 +16,7 @@
             var templateData = {
               FirstName: "Michael",
               LastName: "Sera",
-              GetTrainingOnDashLink: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              GetTrainingOnTheDashURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
               UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
 
           };
@@ -24,7 +24,13 @@
             document.body.innerHTML = html;
         };
     </script>
-
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
 
 </head>
 <body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
@@ -145,8 +151,21 @@
 
                       <br/><br/>
                       <div>
-                              <a href="{{ConsumerActivityURL2}}" class="orange-button" >Get Training on the Dash</a>
-
+                        <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                            xmlns:w="urn:schemas-microsoft-com:office:word"
+                            href="{{GetTrainingOnTheDashURL}}"
+                            style="height:50px;v-text-anchor:middle;
+                            width:350px;"
+                            arcsize="20%" stroke="f" fillcolor="#f47532">
+                              <w:anchorlock/>
+                              <center>
+                            <![endif]-->
+                              <a href="{{GetTrainingOnTheDashURL}}" class="orange-button" >Get Training on the Dash</a>
+                              <!--[if mso]>
+                                </center>
+                              </v:roundrect>
+                            <![endif]-->
                       </div>
                       <br/><br/>
                 </td>
@@ -178,10 +197,10 @@
 
                 <tr>
                   <td class="message-txt">
-                  952-831-1919 or support@hbm2.com
+                  952-831-1919 or  <a href="mailto:support@hbm2.com">support@hbm2.com</a>
                   </td>
                 </tr>
-
+                </br>
             </table>
     </td>
   </tr>
