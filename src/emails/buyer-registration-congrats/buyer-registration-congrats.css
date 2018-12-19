@@ -37,6 +37,7 @@ a {text-decoration:none;}
 .white_table{
   background-color:#ffffff;
 }
+
 .main_heading_txt{
   color:#00688c;
   font-size: 34px;
@@ -45,6 +46,20 @@ a {text-decoration:none;}
   font-style: normal;
 
 }
+
+.sub_main_heading_txt{
+  color:#00688c;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'NunitoSansRegular';
+  font-style: normal;
+
+}
+
+.support{
+ color: #f47532;
+}
+
 .hero-content{
   color:#2898e9;
   font-size: 22px;
@@ -57,6 +72,7 @@ a {text-decoration:none;}
   font-family: 'NunitoSansRegular';
   font-style: normal;
 }
+
 .message-txt{
   color:black;
   font-size: 22px;
@@ -65,6 +81,16 @@ a {text-decoration:none;}
   padding-left:20px;
   padding-right:20px;
 }
+
+.message-bold-txt{
+  color:black;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'NunitoSansRegular';
+  font-style: normal;
+}
+
+
 
 .letus-txt{
   color:black;
@@ -170,5 +196,9 @@ a {text-decoration:none;}
   text-align:center;
   text-decoration:none;
   width:300px;
-  padding: 20px;
+  padding-top:20px;
+  padding-bottom: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+
 }
