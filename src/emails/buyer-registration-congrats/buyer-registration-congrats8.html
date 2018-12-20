@@ -24,7 +24,7 @@
     var templateData = {
        FirstName: "Michael",
        LastName: "Sera",
-       GetTrainingOnTheDashURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+       ViewBuyersURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
        UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
 
    };
@@ -103,7 +103,7 @@
 
                 <tr>
                   <td align="center" class="sub_main_heading_txt">
-                    You have 4 buyers using HomeScout®!
+                    You have 8 buyers using HomeScout®!
                   </td>
                 </tr>
 
@@ -131,14 +131,14 @@
                 <!--[if mso]>
                 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                 xmlns:w="urn:schemas-microsoft-com:office:word"
-                href="{{GetTrainingOnTheDashURL}}"
+                href="{{ViewBuyersURL}}"
                 style="height:50px;v-text-anchor:middle;
                 width:350px;"
                 arcsize="20%" stroke="f" fillcolor="#f47532">
                 <w:anchorlock/>
                 <center>
                 <![endif]-->
-                <a href="{{ViewBuyers}}" class="orange-button" >View buyers</a>
+                <a href="{{ViewBuyersURL}}" class="orange-button" >View buyers</a>
                 <!--[if mso]>
               </center>
             </v:roundrect>
@@ -168,16 +168,19 @@
               </tr>
               <tr>
                 <td align="left" class="hero-content">
-                </br>
+                <br>
                 Dear {{FirstName}} {{LastName}},
-                <br/><br/>
+                <br/>
               </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
             </tr>
 
             <tr>
               <td class="message-txt">
-                <span class="message-bold-txt">Congratulations! You've just added your 4th buyer to HomeScout®. </span>
-                Most importantly, you've taken those 4 buyers out of the public market and offered them a better way to search for real estate.
+                <span class="message-bold-txt">Congratulations on adding 8 buyers to your HomeScout® pipeline! </span>
+                You're on your way to building your personal community of buyers and sellers
               </td>
             </tr>
             <tr>
@@ -185,7 +188,7 @@
             </tr>
             <tr>
               <td class="message-txt">
-                Be sure to coach each buyer on the benefits of filtering their search criteria and saving their search for MLS listing updates!
+                Our coaches and top producers will tell you that adding a minimum of 8 buyers a month to the HomeScout® pipeline, who are willing to talk with a loan officer about pre-qualification, will generate 20 additional transactions for you each year.
               </td>
             </tr>
 
@@ -194,14 +197,13 @@
             </tr>
             <tr>
               <td class="message-txt">
-                Your next milestone is 8 buyers in the HomeScout® pipeline. Keep up the great work!
+                Today, 1 out of 2 buyers are finding their own house online. Offer HomeScout® to everyone you meet, even people who may not be ready to buy now. Let them learn the market with you and be there when they are ready to buy!
               </td>
             </tr>
             <tr>
-              <td>
-              </br>
-
-              </td>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
             </tr>
           </table>
 
@@ -235,9 +237,9 @@
           </td>
         </tr>
         <tr>
-          <td>
-          </br>
-          </td>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
         </tr>
     </table>
   </td>
