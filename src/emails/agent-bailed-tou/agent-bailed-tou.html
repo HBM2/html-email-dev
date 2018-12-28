@@ -18,6 +18,7 @@
               LastName: "Sera",
               GetTrainingOnTheDashURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
               UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              HBMDashURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
 
           };
             var html = Mustache.render(document.body.innerHTML, templateData);
@@ -126,7 +127,7 @@
                            </tr>
                            <tr>
                              <td class="message-txt">
-                               Login to your HBM Dash, follow the links on the training page and let seasoned real estate agents tell you how easy it is to build and sustain a successful real estate business with HomeScout® and the Dash.
+                               Login to your <a class="hbmdash" href="{{HBMDashURL}}">HBM Dash</a>, follow the links on the training page and let seasoned real estate agents tell you how easy it is to build and sustain a successful real estate business with HomeScout® and the Dash.
                              </td>
                           </tr>
                           </table>

@@ -122,6 +122,15 @@ a {text-decoration:none;}
 .right-corner{
   border-radius: 0 0 10px 0;
 }
+
+.hbmdash{
+  color:#f47532;
+  font-size: 22px;
+  font-weight: normal;
+
+  text-decoration:none;
+}
+
 .unsub {
   color:#f47532;
   font-size: 12px;
