@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Financing Request</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+    <link rel="stylesheet" href="agent-bailed-tou.css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css"/>
+
+    <!-- scripts for rendering template during development -->
+    <script src="../../scripts/mustache-2.3.0.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // mock "view model" object for mustache rendering engine
+            var templateData = {
+              FirstName: "Michael",
+              LastName: "Sera",
+              GetTrainingOnTheDashURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+              HBMDashURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+
+          };
+            var html = Mustache.render(document.body.innerHTML, templateData);
+            document.body.innerHTML = html;
+        };
+    </script>
+    <!-- correct line height in word-rendered emails:
+    (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+    <style>
+        td { mso-line-height-rule: exactly; }
+    </style>
+    <![endif]-->
+
+</head>
+<body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#00688d" class="header_table">
+                <tr>
+                    <td>
+                        <!-- content table -->
+                        <table border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                                <td class="header_logo">
+                                    <img src="dash_logo.png" class="header_logo" alt="Dash Nexgen HBM" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+    <tr>
+        <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#f47532" class="header_table_orange">
+                <tr>
+                    <td class="orange-bar">&nbsp;<br/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- container table -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600">
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="white_table">
+                          <tr>
+                            <td>&nbsp;</td>
+                          </tr>
+
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td align="center" class="main_heading_txt">
+                               Capture more leads!
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="text_spacer">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td align="left" class="hero-content">
+                                </br>
+                                  Dear {{FirstName}} {{LastName}},
+                                  <br/><br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                              <td class="message-txt">
+                                You're most likely a very busy real estate agent. You're doing everything you can to increase sales and save time. How often do you hear about training courses and applications that say, "Let's generate more contacts"? That all takes more time and money.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="message-txt">
+                              If you simply focused on a capture program with HomeScout®, you would find that most people are looking for a better way to search real estate. You've already spent the money to generate the contacts, let us help you capture more of those contacts, take them off the public real estate sites and apps and put them into your personal community of buyers and sellers.
+                              </td>
+                           </tr>
+
+                           <tr>
+                             <td>&nbsp;</td>
+                           </tr>
+                           <tr>
+                             <td class="message-txt">
+                               Login to your <a class="hbmdash" href="{{HBMDashURL}}">HBM Dash</a>, follow the links on the training page and let seasoned real estate agents tell you how easy it is to build and sustain a successful real estate business with HomeScout® and the Dash.
+                             </td>
+                          </tr>
+                          </table>
+
+                </td>
+              </tr>
+            </table>
+    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+                <tr>
+                  <td align="center" width="600">
+
+                      <br/><br/>
+                      <div>
+                        <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                            xmlns:w="urn:schemas-microsoft-com:office:word"
+                            href="{{GetTrainingOnTheDashURL}}"
+                            style="height:50px;v-text-anchor:middle;
+                            width:350px;"
+                            arcsize="20%" stroke="f" fillcolor="#f47532">
+                              <w:anchorlock/>
+                              <center>
+                            <![endif]-->
+                              <a href="{{GetTrainingOnTheDashURL}}" class="orange-button" >Get Training on the Dash</a>
+                              <!--[if mso]>
+                                </center>
+                              </v:roundrect>
+                            <![endif]-->
+                      </div>
+                      <br/><br/>
+                </td>
+              </tr>
+            </table>
+</td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <tr>
+    <td align="center" class="content_padding">
+            <!-- wrapper table - outlook needs a fixed width -->
+              <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+                <tr>
+                  <td class="letus-txt">
+                  </br>
+                  Let us know if you have any questions,
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="message-txt">
+                  Your Nexgen HBM Client Services and Support Teams
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="message-txt">
+                  952-831-1919 or  <a href="mailto:support@hbm2.com">support@hbm2.com</a>
+                  </td>
+                </tr>
+                </br>
+            </table>
+    </td>
+  </tr>
+</table>
+
+
+<!-- agent biz card  -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="footer-content">
+        <br/><br/>
+        HomeScout® is a free home finding service provided directly to you by HBM2,
+
+        <br/>
+        a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
+
+        <br/>
+        6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+        <br /><br />
+        <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
+        <br/><br/><br/>
+      </td>
+    </tr>
+</table>
+
+<!-- spacer -->
+<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
+    <tr><td height="10">&nbsp;</td></tr>
+</table>
+
+</body>
+</html>
