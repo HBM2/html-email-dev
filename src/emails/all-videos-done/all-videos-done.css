@@ -185,9 +185,8 @@ a {text-decoration:none;}
   padding-bottom:20px;
 }
 
-.orange-button{
-  background-color:#f47532;
-  border-radius:20px;
+.orange-button-txt{
+  
   color:#ffffff;
   font-size: 24px;
   font-family: 'NunitoSansRegular';
@@ -195,11 +194,11 @@ a {text-decoration:none;}
 
   text-align:center;
   text-decoration:none;
-  width:300px;
-  padding-top:20px;
-  padding-bottom: 20px;
-  padding-left: 70px;
-  padding-right: 70px;
+
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 
 }
 
@@ -211,6 +210,5 @@ a {text-decoration:none;}
   font-style: normal;
 
   text-decoration:none;
-  
-}
 
+}
