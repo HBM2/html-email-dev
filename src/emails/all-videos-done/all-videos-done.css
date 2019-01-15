@@ -2,8 +2,17 @@
 table td {
     color: #343434;
 }
+
+body {
+  padding:0;
+  margin:0;
+}
+
 a {text-decoration:none;}
+
 .container_table {
+    margin:0;
+    padding: 0;
     width: 100%;
 }
 .content_padding {
@@ -114,8 +123,15 @@ a {text-decoration:none;}
     width: 222px;
     height:64px;
 }
-.orange-bar{height:9px;width:100%;background-color:#f47532;}
-.text_spacer{font-size:6px;}
+.orange-bar
+{
+  height:9px;
+  width:100%;
+  background-color:#f47532;
+}
+.text_spacer{
+  font-size:6px;
+}
 .table_600{
   width:600px;
   /*height:199px;*/
