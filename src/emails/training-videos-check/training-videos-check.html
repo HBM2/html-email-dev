@@ -1,9 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+<html lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:w="urn:schemas-microsoft-com:office:word"
+  >
+
+
 <head>
   <title>agent-enrollment-auto-response.html</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width"/>
+
+    <!--gmail fix autoresizing https://css-tricks.com/override-gmail-mobile-optimized-email/ -->
+    <style>
+        @media only screen and (max-width: 600px) {
+          *[class="gmail-fix"] {
+            display: none !important;
+          }
+        }
+      </style>
+    
+    <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+    <!--[if mso]>
+      <style>
+      .mso-flex-btn {
+        margin-right:-0.1in;
+        text-indent: -0.1in
+      }
+      </style>
+    <![endif]-->
+    
 
   <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
   <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
@@ -54,6 +83,22 @@
 </head>
 <body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
 
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+        <!--gmail fix autoresizing https://css-tricks.com/override-gmail-mobile-optimized-email/ -->
+        <tr class="gmail-fix">
+          <td>
+            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600">
+              <tr>
+                <td cellpadding="0" cellspacing="0" border="0" height="1" ; style="line-height: 1px; min-width: 600px;">
+                  <img src="spacer.gif" width="600" height="1" style="display: block; max-height: 1px; min-height: 1px; min-width: 600px; width: 600px;" />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!--end gmail fix-->
+      </table>
+
   <!-- container table -->
   <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
@@ -80,7 +125,7 @@
     </tr>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
       <td align="center" class="content_padding">
         <!-- wrapper table - outlook needs a fixed width -->
@@ -93,7 +138,7 @@
     </tr>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
   <tr>
     <td align="center" class="content_padding">
       <!-- wrapper table - outlook needs a fixed width -->
@@ -136,7 +181,7 @@
 
 
 {{#Videos}}
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
   <tr>
     <td align="center" class="content_padding">
       <!-- wrapper table - outlook needs a fixed width -->
@@ -145,7 +190,6 @@
         <td align="center">
           <a href="{{VideoURL}}">
           <img src="{{Image}}" class="imagecell"  alt="{{Title}}">
-            <img src="dash_logo.png" class="header_logo" alt="Dash Nexgen HBM" />
           </a>
 
         </td>
@@ -162,62 +206,71 @@
 </table>
 {{/Videos}}
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
-  <tr>
-    <td align="center" class="content_padding">
-      <!-- wrapper table - outlook needs a fixed width -->
-      <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-        <tr>
-          <td class="letus-txt">
-            Let us know if we can be of any assistance, 
-          </td>
-        </tr>
 
-        <tr>
-          <td class="message-txt">
-            Your Nexgen HBM Client Services and Support Teams
-          </td>
-        </tr>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="content_padding">
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_table">
+          <tr>
+            <td class="letus-txt">
+              Let us know if you have any questions,
+            </td>
+          </tr>
 
-        <tr>
-          <td class="message-txt">
-            952-831-1919 or  <a class="support"  href="mailto:support@hbm2.com">support@hbm2.com</a>
-          </td>
-        </tr>
-        <tr>
+          <tr>
+            <td class="message-txt">
+              Your Nexgen HBM Client Services and Support Teams
+            </td>
+          </tr>
+
+          <tr>
+            <td class="message-txt">
+              952-831-1919 or <a class="support" href="mailto:support@hbm2.com">support@hbm2.com</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="content_padding">
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
           <tr>
             <td>&nbsp;</td>
           </tr>
-        </tr>
-    </table>
-  </td>
-</tr>
-</table>
+          <tr>
+            <td align="center" class="footer-content">
+              HomeScout® is a free home finding service provided directly to you by HBM2,
+              <br>
+              a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
+              <br>
+              6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+              <br>
+              <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
+            </td>
+          </tr>
 
+        </table>
+      </td>
+    </tr>
+  </table>
 
-<!-- agent biz card  -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
-  <tr>
-    <td align="center" class="footer-content">
-      <br/><br/>
-      HomeScout® is a free home finding service provided directly to you by HBM2,
+  <!-- spacer -->
+  <table border="0" cellspacing="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td height="10">&nbsp;</td>
+    </tr>
+  </table>
 
-      <br/>
-      a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
-
-      <br/>
-      6066 Shingle Creek Pkwy, Minneapolis, MN 55430
-      <br /><br />
-      <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
-      <br/><br/><br/>
-    </td>
-  </tr>
-</table>
-
-<!-- spacer -->
-<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
-  <tr><td height="10">&nbsp;</td></tr>
-</table>
 
 
 </body>

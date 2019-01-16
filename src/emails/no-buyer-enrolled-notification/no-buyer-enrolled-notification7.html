@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:w="urn:schemas-microsoft-com:office:word">
+
 <head>
   <title>agent-enrollment-auto-response.html</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width"/>
+  <meta name="viewport" content="width=device-width" />
+
+  <!--gmail fix autoresizing https://css-tricks.com/override-gmail-mobile-optimized-email/ -->
+  <style>
+    @media only screen and (max-width: 600px) {
+      *[class="gmail-fix"] {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+  <!--[if mso]>
+    <style>
+    .mso-flex-btn {
+      margin-right:-0.1in;
+      text-indent: -0.1in
+    }
+    </style>
+  <![endif]-->
+
 
   <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
-  <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
+  <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css" />
 
   <!-- TODO: CSS file with styles for this email template -->
   <link rel="stylesheet" href="no-buyer-enrolled-notification.css">
 
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css" />
 
 
   <!-- mustache for front-end javascript template rendering - removed during gulp build -->
@@ -19,25 +41,42 @@
 
   <!-- script for rendering template during development - this is removed during gulp build -->
   <script type="text/javascript">
-  window.onload = function () {
-    // TODO: define your mock email "object" that is used to render the template
-    var templateData = {
-       FirstName: "Michael",
-       LastName: "Sera",
-       ShareHomeScoutURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
-       UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+    window.onload = function () {
+      // TODO: define your mock email "object" that is used to render the template
+      var templateData = {
+        FirstName: "Michael",
+        LastName: "Sera",
+        ShareHomeScoutURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
+        UnsubscribeURL: "http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
 
-   };
+      };
 
 
-    // render the email with Mustache, using the above template data
-    var html = Mustache.render(document.body.innerHTML, templateData);
-    // write the rendered email template to the body, replacing the template
-    document.body.innerHTML = html;
-  };
+      // render the email with Mustache, using the above template data
+      var html = Mustache.render(document.body.innerHTML, templateData);
+      // write the rendered email template to the body, replacing the template
+      document.body.innerHTML = html;
+    };
   </script>
 </head>
+
 <body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <!--gmail fix autoresizing https://css-tricks.com/override-gmail-mobile-optimized-email/ -->
+    <tr class="gmail-fix">
+      <td>
+        <table cellpadding="0" cellspacing="0" border="0" align="center" width="600">
+          <tr>
+            <td cellpadding="0" cellspacing="0" border="0" height="1" ; style="line-height: 1px; min-width: 600px;">
+              <img src="spacer.gif" width="600" height="1" style="display: block; max-height: 1px; min-height: 1px; min-width: 600px; width: 600px;" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--end gmail fix-->
+  </table>
 
   <!-- container table -->
   <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
@@ -48,7 +87,7 @@
           <tr>
             <td>
               <!-- content table -->
-              <table border="0" cellpadding="0" cellspacing="0" >
+              <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="header_logo">
                     <img src="dash_logo.png" class="header_logo" alt="Dash Nexgen HBM" />
@@ -65,13 +104,13 @@
     </tr>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
       <td align="center" class="content_padding">
         <!-- wrapper table - outlook needs a fixed width -->
         <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#f47532" class="header_table_orange">
           <tr>
-            <td class="orange-bar">&nbsp;<br/></td>
+            <td class="orange-bar">&nbsp;<br /></td>
           </tr>
         </table>
       </td>
@@ -80,7 +119,7 @@
 
 
   <!-- container table -->
-  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
       <td align="center" class="content_padding">
         <!-- wrapper table - outlook needs a fixed width -->
@@ -109,7 +148,7 @@
     </tr>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <tr>
       <td align="center" class="content_padding">
         <!-- wrapper table - outlook needs a fixed width -->
@@ -120,139 +159,162 @@
           <tr>
             <td align="center" width="600">
 
-              <br/><br/>
-                <div>
-                <!--[if mso]>
-                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
-                xmlns:w="urn:schemas-microsoft-com:office:word"
-                href="{{ShareHomeScoutURL}}"
-                style="height:50px;v-text-anchor:middle;
-                width:350px;"
-                arcsize="20%" stroke="f" fillcolor="#f47532">
-                <w:anchorlock/>
-                <center>
-                <![endif]-->
-                <a href="{{ShareHomeScoutURL}}" class="orange-button" >Share HomeScout®</a>
-                <!--[if mso]>
-              </center>
-            </v:roundrect>
-            <![endif]-->
-              </div>
-            <br/><br/>
-          </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-</table>
+              <br>
+              <!-- Solution from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+              <!--BUTTON START-->
+              <a href="{{ShareHomeScoutURL}}" style="display: inline-block; text-decoration: none;">
+                <!--[if gte mso 9]>
+                      <v:roundrect arcsize="20%" stroke="false" fillcolor="#f47532" href="{{ShareHomeScoutURL}}" style="mso-wrap-style:none; mso-position-horizontal: center">
+                      <v:textbox inset="25px,15px,25px,10px" style="mso-fit-shape-to-text: t">
+                      <![endif]-->
+                <div style="background-color:#f47532; padding-bottom: 5px; border-radius:20px;">
+                  <center style="background: #f47532; padding: 25px 25px 25px 25px; border-radius: 20px;
+                font-size:24px; line-height: 16px; mso-line-height-alt: 110%;
+                font-family:NunitoSansRegular; font-weight:normal;color:#ffffff; text-decoration:none;"
+                    class="mso-flex-btn">
+                    <div style="Margin:0 0 5px 0" class="orange-button-txt">Share HomeScout®</div>
+
+                  </center>
+                </div>
+                <!--[if gte mso 9]>
+                      </v:textbox>
+                      </v:roundrect>
+                      <![endif]-->
+              </a>
+              <!--BUTTON END-->
+              <br>
+              <br>
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 
 
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
-  <tr>
-    <td align="center" class="content_padding">
-      <!-- wrapper table - outlook needs a fixed width -->
-      <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-        <tr>
-          <td>
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="white_table">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="content_padding">
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
+          <tr>
+            <td>
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" class="white_table">
 
-              <tr>
-                <td class="text_spacer">&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="left" class="hero-content">
-                <br>
-                Dear {{FirstName}} {{LastName}},
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
+                <tr>
+                  <td class="text_spacer">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="left" class="hero-content">
+                    <br>
+                    Dear {{FirstName}} {{LastName}},
+                    <br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
 
-            <tr>
-              <td class="message-txt">
-                Every real estate agent that enrolls with HBM2 is interested in building a large community of buyers and sellers for a consistent pipeline of business. Sometimes distractions and delays get in the way - we understand!
-              </td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td class="message-txt">
-                According to Google, there are 150 million unique visits to the internet each month searching for real estate related content. If you're not taking people out of the public market and putting them into your personal real estate community, then you're at risk of losing your customers and future business to the online disruptors like Zillow and Realtor.com.
-              </td>
-            </tr>
+                <tr>
+                  <td class="message-txt">
+                    Every real estate agent that enrolls with HBM2 is interested in building a large community of
+                    buyers and sellers for a consistent pipeline of business. Sometimes distractions and delays get in
+                    the way - we understand!
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="message-txt">
+                    According to Google, there are 150 million unique visits to the internet each month searching for
+                    real estate related content. If you're not taking people out of the public market and putting them
+                    into your personal real estate community, then you're at risk of losing your customers and future
+                    business to the online disruptors like Zillow and Realtor.com.
+                  </td>
+                </tr>
 
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </table>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
 
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-</table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table">
-  <tr>
-    <td align="center" class="content_padding">
-      <!-- wrapper table - outlook needs a fixed width -->
-      <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-        <tr>
-          <td class="letus-txt">
-            Let us know if you have any questions,
-          </td>
-        </tr>
 
-        <tr>
-          <td class="message-txt">
-            Your Nexgen HBM Client Services and Support Teams
-          </td>
-        </tr>
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="content_padding">
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" class="white_table">
+          <tr>
+            <td class="letus-txt">
+              Let us know if you have any questions,
+            </td>
+          </tr>
 
-        <tr>
-          <td class="message-txt">
-            952-831-1919 or  <a class="support"  href="mailto:support@hbm2.com">support@hbm2.com</a>
-          </td>
-        </tr>
-        <tr>
+          <tr>
+            <td class="message-txt">
+              Your Nexgen HBM Client Services and Support Teams
+            </td>
+          </tr>
+
+          <tr>
+            <td class="message-txt">
+              952-831-1919 or <a class="support" href="mailto:support@hbm2.com">support@hbm2.com</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td align="center" class="content_padding">
+        <!-- wrapper table - outlook needs a fixed width -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
           <tr>
             <td>&nbsp;</td>
           </tr>
-        </tr>
-    </table>
-  </td>
-</tr>
-</table>
+          <tr>
+            <td align="center" class="footer-content">
+              HomeScout® is a free home finding service provided directly to you by HBM2,
+              <br>
+              a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
+              <br>
+              6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+              <br>
+              <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- spacer -->
+  <table border="0" cellspacing="0" cellspacing="0" width="100%" class="container_table bgcolor">
+    <tr>
+      <td height="10">&nbsp;</td>
+    </tr>
+  </table>
 
 
-<!-- agent biz card  -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
-  <tr>
-    <td align="center" class="footer-content">
-      <br/><br/>
-      HomeScout® is a free home finding service provided directly to you by HBM2,
-
-      <br/>
-      a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
-
-      <br/>
-      6066 Shingle Creek Pkwy, Minneapolis, MN 55430
-      <br /><br />
-      <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
-      <br/><br/><br/>
-    </td>
-  </tr>
-</table>
-
-<!-- spacer -->
-<table border="0" cellspacing="0" cellspacing="0" width="100%" class="bgcolor">
-  <tr><td height="10">&nbsp;</td></tr>
-</table>
 
 </body>
+
 </html>
