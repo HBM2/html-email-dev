@@ -16,20 +16,10 @@
       }
     }
   </style>
-  <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
-  <!--[if mso]>
-  <style>
-  .mso-flex-btn {
-    margin-right:-0.1in;
-    text-indent: -0.1in
-  }
-  </style>
-<![endif]-->
-
-
   <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css" />
   <link rel="stylesheet" href="agent-bailed-tou.css" />
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 
   <!-- scripts for rendering template during development -->
   <script src="../../scripts/mustache-2.3.0.js"></script>
@@ -58,9 +48,31 @@
     </style>
     <![endif]-->
 
+
+    <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+    <!--[if mso]>
+    <style>
+    .mso-flex-btn {
+      margin-right:-0.1in;
+      text-indent: -0.1in
+    }
+
+    <!-- Outlook font rendering fix from: https://stackoverflow.com/questions/21467381/can-outlook-2010-use-a-web-font-in-an-html-email -->    
+    <!--[if mso]>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+      @media screen { /* hides this rule from unsupported clients */
+        .webfont {
+           font-family: 'Nunito Sans', sans-serif !important;
+        }
+        body,table tr,table td,a, div, span,table.MsoNormalTable { font-family: 'Nunito Sans', sans-serif !important;  }
+      }
+    </style>
+    <!--<![endif]-->
+
 </head>
 
-<body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
+<body class="bgcolor" style="font-family: 'Nunito Sans', sans-serif; margin: 0; padding: 0;">
 
   <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
     <!--gmail fix autoresizing https://css-tricks.com/override-gmail-mobile-optimized-email/ -->
@@ -200,22 +212,23 @@
           </tr>
           <tr>
             <td align="center" width="600">
-
               <br>
 
               <!-- Solution from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
               <!--BUTTON START-->
               <a href="{{GetTrainingOnTheDashURL}}" style="display: inline-block; text-decoration: none;">
                 <!--[if gte mso 9]>
-                                <v:roundrect arcsize="20%" stroke="false" fillcolor="#f47532" href="{{GetTrainingOnTheDashURL}}" style="mso-wrap-style:none; mso-position-horizontal: center">
+                                <v:roundrect arcsize="20%" stroke="false" fillcolor="#f47532"
+                                href="{{GetTrainingOnTheDashURL}}"
+                                style="mso-wrap-style:none; mso-position-horizontal: center;">
                                 <v:textbox inset="25px,15px,25px,10px" style="mso-fit-shape-to-text: t">
                                 <![endif]-->
                 <div style="background-color:#f47532; padding-bottom: 5px; border-radius:20px;">
                   <center style="background: #f47532; padding: 15px 15px 15px 15px; border-radius: 20px;
                           font-size:24px; line-height: 16px; mso-line-height-alt: 110%;
-                          font-family:NunitoSansRegular; font-weight:normal;color:#ffffff; text-decoration:none;"
+                          font-family: 'Nunito Sans', sans-serif !important; font-weight:normal;color:#ffffff; text-decoration:none;"
                     class="mso-flex-btn">
-                    <div style="Margin:0 0 5px 0" class="orange-button-txt">Get Training on the Dash</div>
+                    <div style="Margin:0 0 5px 0;"><span style="font-family: 'Nunito Sans', sans-serif !important;" >Get Training on the Dash</span></div>
 
                   </center>
                 </div>
