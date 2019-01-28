@@ -8,7 +8,6 @@
   xmlns:w="urn:schemas-microsoft-com:office:word"
   >
 
-
 <head>
   <title>agent-enrollment-auto-response.html</title>
   <meta charset="UTF-8">
@@ -22,26 +21,13 @@
           }
         }
       </style>
-    
-    <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
-    <!--[if mso]>
-      <style>
-      .mso-flex-btn {
-        margin-right:-0.1in;
-        text-indent: -0.1in
-      }
-      </style>
-    <![endif]-->
-    
-
   <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
   <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css"/>
 
   <!-- TODO: CSS file with styles for this email template -->
   <link rel="stylesheet" href="training-videos-check.css">
 
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css"/>
-
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 
   <!-- mustache for front-end javascript template rendering - removed during gulp build -->
   <script src="../../scripts/mustache-2.3.0.js"></script>
@@ -53,7 +39,7 @@
     var templateData = {
        FirstName: "Michael",
        LastName: "Sera",
-       UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",       
+       UnsubscribeURL:"http://dev-emailsapi.hbm2.com/EmailClick?EmailUniqueID=0647E122-84A1-449E-8004-18E8A920EE6&EmailTemplateID=1&EntityRoleId=12345&LinkClicked=1&DestinationURL=whatever",
        Videos: [
          {
            Title: "Video Title 1",
@@ -80,8 +66,38 @@
     document.body.innerHTML = html;
   };
   </script>
+
+
+    <!-- correct line height in word-rendered emails:
+        (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+      <style>
+            td { mso-line-height-rule: exactly; }
+      </style>
+    <![endif]-->
+
+
+    <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+    <!--[if mso]>
+    <style>
+      .mso-flex-btn {
+      margin-right:-0.1in;
+      text-indent: -0.1in
+    }
+    </style>
+    <![endif]-->
+
+    <!-- Outlook button rendering fix from (Zach Freed replied): https://litmus.com/community/discussions/982-outlook-overrides-font-to-times-new-roman -->
+    <!--[if gte mso 10]>
+    <style>
+      /* Style Definitions for MSO 2010 */
+        table.MsoNormalTable, p, span, div, table, tr, td, th, a { mso-style-priority:99;  font-family:"Arial","sans-serif"; }
+    </style>
+    <![endif]-->
+
+
 </head>
-<body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
+<body class="bgcolor" style="font-family: 'Nunito Sans', sans-serif; margin: 0; padding: 0;">
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
         <!--gmail fix autoresizing https://css-tricks.com/override-gmail-mobile-optimized-email/ -->
@@ -166,7 +182,7 @@
                 We're interested in your success and believe the following video(s) will be of interest to you:
               </td>
             </tr>
-            
+
             <tr>
               <td>&nbsp;</td>
             </tr>
@@ -186,20 +202,20 @@
     <td align="center" class="content_padding">
       <!-- wrapper table - outlook needs a fixed width -->
       <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" class="white_table">
-        
+
         <td align="center">
           <a href="{{VideoURL}}">
           <img src="{{Image}}" class="imagecell"  alt="{{Title}}">
           </a>
 
         </td>
-        
+
         <tr>
           <tr>
             <td>&nbsp;</td>
           </tr>
         </tr>
-        
+
     </table>
   </td>
 </tr>
@@ -254,6 +270,7 @@
               a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
               <br>
               6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+              <br>
               <br>
               <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
             </td>

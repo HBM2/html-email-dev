@@ -42,7 +42,6 @@ a {text-decoration:none;}
   color:#00688c;
   font-size: 34px;
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
 
 }
@@ -51,7 +50,6 @@ a {text-decoration:none;}
   color:#00688c;
   font-size: 30px;
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
 
 }
@@ -69,14 +67,12 @@ a {text-decoration:none;}
   padding-right: 20px;
 
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
 }
 
 .message-txt{
   color:black;
   font-size: 22px;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
   padding-left:20px;
   padding-right:20px;
@@ -86,7 +82,6 @@ a {text-decoration:none;}
   color:black;
   font-size: 22px;
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
 }
 
@@ -95,7 +90,6 @@ a {text-decoration:none;}
 .letus-txt{
   color:black;
   font-size: 22px;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
   font-weight: bold;
   padding-left:20px;
@@ -190,7 +184,6 @@ a {text-decoration:none;}
   border-radius:20px;
   color:#ffffff;
   font-size: 24px;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
 
   text-align:center;

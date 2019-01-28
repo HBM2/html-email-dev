@@ -42,8 +42,8 @@ a {text-decoration:none;}
   color:#00688c;
   font-size: 34px;
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
+
 
 }
 
@@ -51,8 +51,8 @@ a {text-decoration:none;}
   color:#00688c;
   font-size: 30px;
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
+
 
 }
 
@@ -69,25 +69,25 @@ a {text-decoration:none;}
   padding-right: 20px;
 
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
+
 }
 
 .message-txt{
   color:black;
   font-size: 22px;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
   padding-left:20px;
   padding-right:20px;
+
 }
 
 .message-bold-txt{
   color:black;
   font-size: 22px;
   font-weight: bold;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
+
 }
 
 
@@ -95,11 +95,11 @@ a {text-decoration:none;}
 .letus-txt{
   color:black;
   font-size: 22px;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
   font-weight: bold;
   padding-left:20px;
   padding-right:20px;
+
 }
 
 
@@ -126,6 +126,7 @@ a {text-decoration:none;}
     font-size: 24px;
 
     color:#ffffff;
+
 }
 .superscript{font-size:6px;}
 .topcopy {
@@ -154,6 +155,7 @@ a {text-decoration:none;}
   font-weight: bold;
 
   text-decoration:none;
+
 }
 
 .fineprint {
@@ -177,12 +179,14 @@ a {text-decoration:none;}
 
   color:#ffffff;
   font-size:16px;
+
 }
 
 .footer-content{
   font-size:12px;
   color:#ffffff;
   padding-bottom:20px;
+
 }
 
 .orange-button{
@@ -190,8 +194,8 @@ a {text-decoration:none;}
   border-radius:20px;
   color:#ffffff;
   font-size: 24px;
-  font-family: 'NunitoSansRegular';
   font-style: normal;
+
 
   text-align:center;
   text-decoration:none;

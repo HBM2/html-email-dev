@@ -40,35 +40,35 @@
   </script>
 
 
-  <!-- correct line height in word-rendered emails:
-    (this only works consistently when applied to table elements) -->
-  <!--[if gte mso 12]>
-    <style>
-        td { mso-line-height-rule: exactly; }
-    </style>
+    <!-- correct line height in word-rendered emails:
+        (this only works consistently when applied to table elements) -->
+    <!--[if gte mso 12]>
+      <style>
+            td { mso-line-height-rule: exactly; }
+      </style>
     <![endif]-->
 
 
     <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
     <!--[if mso]>
     <style>
-    .mso-flex-btn {
+      .mso-flex-btn {
       margin-right:-0.1in;
       text-indent: -0.1in
     }
-
-    <!-- Outlook font rendering fix from: https://stackoverflow.com/questions/21467381/can-outlook-2010-use-a-web-font-in-an-html-email -->    
-    <!--[if mso]>
-    <style type="text/css">
-      @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-      @media screen { /* hides this rule from unsupported clients */
-        .webfont {
-           font-family: 'Nunito Sans', sans-serif !important;
-        }
-        body,table tr,table td,a, div, span,table.MsoNormalTable { font-family: 'Nunito Sans', sans-serif !important;  }
-      }
     </style>
-    <!--<![endif]-->
+    <![endif]-->
+
+
+    <!-- Outlook button rendering fix from (Zach Freed replied): https://litmus.com/community/discussions/982-outlook-overrides-font-to-times-new-roman -->
+    <!--[if gte mso 10]>
+    <style>
+      /* Style Definitions for MSO 2010 */
+        table.MsoNormalTable, p, span, div, table, tr, td, th, a { mso-style-priority:99;  font-family:"Arial","sans-serif"; }
+    </style>
+    <![endif]-->
+
+
 
 </head>
 
@@ -296,6 +296,7 @@
               a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
               <br>
               6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+              <br>
               <br>
               <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
             </td>

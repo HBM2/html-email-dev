@@ -23,26 +23,14 @@
       }
     </style>
 
-  <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
-  <!--[if mso]>
-    <style>
-    .mso-flex-btn {
-      margin-right:-0.1in;
-      text-indent: -0.1in
-    }
-    </style>
-  <![endif]-->
-  
-
-
   <!-- mailchimp email css reset - https://templates.mailchimp.com/development/css/reset-styles/ -->
   <link rel="stylesheet" href="../../shared/styles/mailchimp-reset.css" />
 
   <!-- TODO: CSS file with styles for this email template -->
   <link rel="stylesheet" href="buyer-registration-congrats.css">
 
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css" />
 
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" media="screen" rel="stylesheet" type="text/css">
 
   <!-- mustache for front-end javascript template rendering - removed during gulp build -->
   <script src="../../scripts/mustache-2.3.0.js"></script>
@@ -66,9 +54,29 @@
       document.body.innerHTML = html;
     };
   </script>
-</head>
 
-<body class="bgcolor" style="font-family:Arial, Helvetica, sans-serif">
+  <!-- correct line height in word-rendered emails:
+      (this only works consistently when applied to table elements) -->
+  <!--[if gte mso 12]>
+    <style>
+          td { mso-line-height-rule: exactly; }
+    </style>
+  <![endif]-->
+
+
+  <!-- Outlook button rendering fix from: https://litmus.com/community/discussions/1269-flexible-multi-line-bulletproof-buttons -->
+  <!--[if mso]>
+  <style>
+    .mso-flex-btn {
+    margin-right:-0.1in;
+    text-indent: -0.1in
+  }
+  </style>
+  <![endif]-->
+
+
+<!-- Outlook button rendering fix from (Zach Freed replied): https://litmus.com/community/discussions/982-outlook-overrides-font-to-times-new-roman -->
+<body class="bgcolor" style="font-family: 'Nunito Sans', sans-serif; margin: 0; padding: 0;">
 
 
   <table border="0" cellpadding="0" cellspacing="0" width="100%" class="container_table bgcolor">
@@ -145,13 +153,13 @@
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
-                  <td align="center" class="main_heading_txt">
+                  <td align="center" class="main_heading_txt webfont">
                     Congratulations!
                   </td>
                 </tr>
 
                 <tr>
-                  <td align="center" class="sub_main_heading_txt">
+                  <td align="center" class="sub_main_heading_txt webfont">
                     You have 4 buyers using HomeScout®!
                   </td>
                 </tr>
@@ -182,24 +190,27 @@
               <!--BUTTON START-->
               <a href="{{ViewBuyersURL}}" style="display: inline-block; text-decoration: none;">
                 <!--[if gte mso 9]>
-                      <v:roundrect arcsize="20%" stroke="false" fillcolor="#f47532" href="{{ViewBuyersURL}}" style="mso-wrap-style:none; mso-position-horizontal: center">
-                      <v:textbox inset="25px,15px,25px,10px" style="mso-fit-shape-to-text: t">
-                      <![endif]-->
+                                <v:roundrect arcsize="20%" stroke="false" fillcolor="#f47532"
+                                href="{{ViewBuyersURL}}"
+                                style="mso-wrap-style:none; mso-position-horizontal: center;">
+                                <v:textbox inset="25px,15px,25px,10px" style="mso-fit-shape-to-text: t">
+                <![endif]-->
                 <div style="background-color:#f47532; padding-bottom: 5px; border-radius:20px;">
-                  <center style="background: #f47532; padding: 25px 25px 25px 25px; border-radius: 20px;
-                font-size:24px; line-height: 16px; mso-line-height-alt: 110%;
-                font-family:NunitoSansRegular; font-weight:normal;color:#ffffff; text-decoration:none;"
+                  <center style="background: #f47532; padding: 15px 15px 15px 15px; border-radius: 20px;
+                          font-size:24px; line-height: 16px; mso-line-height-alt: 110%;
+                          font-family: 'Nunito Sans', sans-serif !important; font-weight:normal;color:#ffffff; text-decoration:none;"
                     class="mso-flex-btn">
-                    <div style="Margin:0 0 5px 0" class="orange-button-txt">View buyers</div>
+                    <div style="Margin:0 0 5px 0;"><span style="font-family: 'Nunito Sans', sans-serif !important;" class="webfont" >View buyers</span></div>
 
                   </center>
                 </div>
                 <!--[if gte mso 9]>
-                      </v:textbox>
-                      </v:roundrect>
-                      <![endif]-->
+                                </v:textbox>
+                                </v:roundrect>
+                <![endif]-->
               </a>
               <!--BUTTON END-->
+
 
               <br>
               <br>
@@ -323,6 +334,7 @@
               a licensed real estate brokerage. © Home Buyers Marketing II, Inc.
               <br>
               6066 Shingle Creek Pkwy, Minneapolis, MN 55430
+              <br>
               <br>
               <a class="unsub" href="{{UnsubscribeURL}}">Unsubscribe</a>
             </td>
