@@ -3,6 +3,12 @@ table td {
     color: #343434;
 }
 
+
+sup { 
+  vertical-align: super;
+  font-size: small;
+}
+
 body {
   padding:0;
   margin:0;

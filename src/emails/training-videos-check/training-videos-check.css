@@ -2,6 +2,15 @@
 table td {
     color: #343434;
 }
+
+
+sup { 
+  vertical-align: super;
+  font-size: small;
+}
+
+
+
 a {text-decoration:none;}
 .container_table {
     width: 100%;

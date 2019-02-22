@@ -2,6 +2,12 @@ body{
     font-family: sans-serif;
 }
 
+
+sup { 
+    vertical-align: super;
+    font-size: small;
+  }
+
 /* --------- bizcard stuff --------------*/
 .blue-left{width:120px;background-color:#1b5b7e;color:#ffffff;font-weight:400;
   font-family:"Open Sans",sans-serif;padding-left:15px;line-height:22px;}

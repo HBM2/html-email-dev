@@ -6,6 +6,12 @@ body{
     margin: auto;
 }
 
+
+sup { 
+  vertical-align: super;
+  font-size: small;
+}
+
 p{
   width: 600px;
 }

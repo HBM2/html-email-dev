@@ -128,6 +128,13 @@ a {text-decoration:none;}
     color:#ffffff;
 
 }
+
+
+sup { 
+  vertical-align: super;
+  font-size: small;
+}
+
 .superscript{font-size:6px;}
 .topcopy {
     /*padding-top: 10px;*/
