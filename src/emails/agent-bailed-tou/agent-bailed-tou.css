@@ -3,12 +3,6 @@ table td {
     color: #343434;
 }
 
-
-sup { 
-  vertical-align: super;
-  font-size: small;
-}
-
 a {text-decoration:none;}
 .container_table {
     width: 100%;
@@ -69,6 +63,14 @@ a {text-decoration:none;}
   padding-left:20px;
   padding-right:20px;
 }
+
+
+.sup-message-txt{
+  font-size: 16px;
+  line-height: 0;
+  vertical-align: 10px
+}
+
 
 .letus-txt{
   color:black;
@@ -170,6 +172,14 @@ a {text-decoration:none;}
   color:#ffffff;
   padding-bottom:20px;
 }
+
+
+.sup-footer-content{
+  font-size: 10px;
+  line-height: 0;
+  vertical-align: 5px
+}
+
 
 .orange-button{
   background-color:#f47532;

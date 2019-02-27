@@ -4,11 +4,6 @@ table td {
 }
 
 
-sup { 
-  vertical-align: super;
-  font-size: small;
-}
-
 body {
   padding:0;
   margin:0;
@@ -91,6 +86,13 @@ a {text-decoration:none;}
   font-style: normal;
   padding-left:20px;
   padding-right:20px;
+}
+
+
+.sup-message-txt{
+  font-size: 16px;
+  line-height: 0;
+  vertical-align: 10px
 }
 
 .message-bold-txt{
@@ -200,6 +202,13 @@ a {text-decoration:none;}
   color:#ffffff;
   padding-bottom:20px;
 }
+
+.sup-footer-content{
+  font-size: 10px;
+  line-height: 0;
+  vertical-align: 5px
+}
+
 
 .orange-button-txt{
 
